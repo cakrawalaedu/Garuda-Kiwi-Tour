@@ -1,3 +1,4 @@
+/* Umum */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -39,9 +40,12 @@ nav a {
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
+    margin: 5px;
 }
 
-.paket-container, .galeri-container, .testimoni-container {
+.paket-container,
+.galeri-container,
+.testimoni-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -49,7 +53,8 @@ nav a {
     padding: 20px;
 }
 
-.paket, .testimoni {
+.paket,
+.testimoni {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -57,11 +62,24 @@ nav a {
     width: 30%;
 }
 
-.paket img, .galeri-container img {
+.paket img,
+.galeri-container img {
     width: 100%;
     border-radius: 10px;
 }
 
+/* Efek hover gambar paket */
+.paket-link img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paket-link:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Form Kontak */
 form {
     display: flex;
     flex-direction: column;
@@ -69,7 +87,8 @@ form {
     padding: 20px;
 }
 
-input, textarea {
+input,
+textarea {
     width: 80%;
     padding: 10px;
     margin: 5px 0;
@@ -99,14 +118,59 @@ footer {
     font-size: 20px;
 }
 
-/* Efek hover pada gambar paket */
-.paket-link img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Halaman Detail: Gambar header */
+.hero img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
-.paket-link:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+/* Halaman Detail: Section */
+section {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
 
+/* Halaman Detail: Itinerary list */
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    text-align: left;
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+section ul li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .paket,
+    .testimoni {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .button {
+        width: auto;
+    }
+}
