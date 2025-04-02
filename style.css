@@ -98,3 +98,15 @@ footer {
     margin: 0 10px;
     font-size: 20px;
 }
+
+/* Efek hover pada gambar paket */
+.paket-link img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paket-link:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
