@@ -1,66 +1,84 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detail Paket: South Island</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-  </style>
-</head>
-<body class="bg-white text-gray-800">
+<!-- Itinerary Interaktif -->
+<section class="py-12 px-6 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Rencana Perjalanan (Itinerary)</h2>
+  <div class="space-y-4" id="itineraryAccordion">
 
-  <!-- Header Hero Image -->
-  <section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('south island-a.jpg');">
-    <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-2xl">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">7D5N South Island Private Tour</h1>
-      <p class="text-lg">Eksplorasi epik Christchurch, Lake Tekapo, Mt Cook, Queenstown & Milford Sound.</p>
+    <!-- Hari 1 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(1)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 1: Jakarta – Transit Sydney
+      </button>
+      <div id="accordion1" class="hidden px-4 py-2 text-sm">
+        <p>Penerbangan malam dari Jakarta menggunakan Qantas. Transit di Sydney sebelum melanjutkan ke Christchurch. Peserta bermalam di pesawat dan bersiap memulai petualangan.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- Deskripsi Paket -->
-  <section class="py-12 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl font-bold text-blue-800 mb-4">Deskripsi Paket</h2>
-    <p>
-      Ikuti perjalanan tak terlupakan selama 7 hari 5 malam menjelajahi South Island, Selandia Baru. Mulai dari pemandangan spektakuler Lake Tekapo hingga kemegahan Milford Sound, nikmati perjalanan penuh kenyamanan dan keindahan alam dengan layanan eksklusif.
-    </p>
-  </section>
+    <!-- Hari 2 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(2)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 2: Tiba di Christchurch – City Tour
+      </button>
+      <div id="accordion2" class="hidden px-4 py-2 text-sm">
+        <p>Setibanya di Christchurch siang/sore hari, peserta dijemput oleh driver lokal. City tour santai menyusuri Hagley Park dan Avon River. Lalu check-in hotel dan waktu bebas untuk beristirahat.</p>
+      </div>
+    </div>
 
-  <!-- Itinerary -->
-  <section class="py-12 px-6 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Rencana Perjalanan (Itinerary)</h2>
-    <ol class="space-y-4 text-left">
-      <li><strong>Hari 1:</strong> Tiba di Christchurch – city tour, check in hotel</li>
-      <li><strong>Hari 2:</strong> Lake Tekapo – Church of the Good Shepherd – Mt. Cook</li>
-      <li><strong>Hari 3:</strong> Cromwell – Queenstown (via Lindis Pass)</li>
-      <li><strong>Hari 4:</strong> Milford Sound – Cruise dan pemandangan fjord</li>
-      <li><strong>Hari 5:</strong> Queenstown – aktivitas bebas (optional: gondola, bungee)</li>
-      <li><strong>Hari 6:</strong> Arrowtown – kembali ke Christchurch</li>
-      <li><strong>Hari 7:</strong> Belanja oleh-oleh – penerbangan kembali</li>
-    </ol>
-  </section>
+    <!-- Hari 3 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(3)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 3: Lake Tekapo & Mt Cook
+      </button>
+      <div id="accordion3" class="hidden px-4 py-2 text-sm">
+        <p>Kunjungan ke Danau Tekapo dan Church of the Good Shepherd. Peserta juga dapat ikut tur opsional ke Mt Cook National Park. Bermalam di Tekapo atau Twizel.</p>
+      </div>
+    </div>
 
-  <!-- Harga & Fasilitas -->
-  <section class="py-12 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl font-bold text-blue-800 mb-4">Harga & Fasilitas</h2>
-    <p class="mb-2"><strong>Harga mulai dari:</strong> <span class="text-blue-700 font-semibold">IDR 32.500.000/pax</span></p>
-    <p class="mb-2"><strong>Termasuk:</strong> Tiket Qantas PP, hotel bintang 4, makan halal, transportasi pribadi, guide, dokumentasi</p>
-    <p><strong>Tidak termasuk:</strong> Visa, pengeluaran pribadi</p>
-  </section>
+    <!-- Hari 4 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(4)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 4: Queenstown via Lindis Pass
+      </button>
+      <div id="accordion4" class="hidden px-4 py-2 text-sm">
+        <p>Melalui rute Lindis Pass menuju Queenstown, peserta dapat menikmati pemandangan alam yang dramatis. Sore hari bebas, atau mencoba aktivitas opsional seperti Skyline Gondola atau wine tour.</p>
+      </div>
+    </div>
 
-  <!-- Tombol Aksi -->
-  <section class="py-8 text-center space-x-4">
-    <a href="https://wa.me/6282154465074" target="_blank" class="inline-block bg-green-500 text-white px-5 py-2 rounded hover:bg-green-600 transition">💬 Hubungi via WhatsApp</a>
-    <a href="files/7D5N_South_Island_Private_Tour.pdf" target="_blank" class="inline-block bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-700 transition">📄 Unduh Brosur</a>
-    <a href="index.html#paket" class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-500 transition">⬅️ Kembali ke Beranda</a>
-  </section>
+    <!-- Hari 5 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(5)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 5: Milford Sound Cruise
+      </button>
+      <div id="accordion5" class="hidden px-4 py-2 text-sm">
+        <p>Wisata seharian ke Fiordland National Park dan Milford Sound. Naik cruise menyusuri fjord yang megah dengan air terjun dan tebing dramatis. Termasuk lunch box. Kembali ke Queenstown malam hari.</p>
+      </div>
+    </div>
 
-  <!-- Footer -->
-  <footer class="bg-blue-800 text-white py-6 text-center">
-    <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
-  </footer>
+    <!-- Hari 6 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(6)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 6: Hari Bebas di Queenstown
+      </button>
+      <div id="accordion6" class="hidden px-4 py-2 text-sm">
+        <p>Hari santai untuk aktivitas pribadi. Peserta dapat memilih jet boat, bungy jump, belanja suvenir, atau sekadar menikmati pemandangan danau.</p>
+      </div>
+    </div>
 
-</body>
-</html>
+    <!-- Hari 7 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(7)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 7: Kembali ke Jakarta
+      </button>
+      <div id="accordion7" class="hidden px-4 py-2 text-sm">
+        <p>Pagi hari, peserta akan diantar ke Bandara Queenstown untuk penerbangan pulang via Sydney. Tiba di Jakarta malam hari dengan kenangan luar biasa dari Selandia Baru.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleAccordion(id) {
+    const el = document.getElementById('accordion' + id);
+    el.classList.toggle('hidden');
+  }
+</script>
