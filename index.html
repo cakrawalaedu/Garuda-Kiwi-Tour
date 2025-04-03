@@ -1,126 +1,117 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garuda Kiwi Tour</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/ae943c6289.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garuda Kiwi Tour</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
 </head>
-<body>
+<body class="bg-white text-gray-800">
 
-    <header>
-        <h1>Garuda Kiwi Tour</h1>
-        <p>Jelajahi keindahan Selandia Baru & Indonesia dengan perjalanan terbaik</p>
-    </header>
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-blue-800">Garuda Kiwi Tour</h1>
+      <nav class="space-x-4 text-sm font-medium">
+        <a href="#home" class="hover:text-blue-600">Beranda</a>
+        <a href="#paket" class="hover:text-blue-600">Paket</a>
+        <a href="#galeri" class="hover:text-blue-600">Galeri</a>
+        <a href="#testimoni" class="hover:text-blue-600">Testimoni</a>
+        <a href="#kontak" class="hover:text-blue-600">Kontak</a>
+      </nav>
+    </div>
+  </header>
 
-    <nav>
-        <a href="#home">Beranda</a>
-        <a href="#paket">Paket Wisata</a>
-        <a href="#galeri">Galeri</a>
-        <a href="#testimoni">Testimoni</a>
-        <a href="#kontak">Kontak</a>
-    </nav>
+  <!-- Hero -->
+  <section id="home" class="relative h-[85vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('images/hero.jpg');">
+    <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Petualangan Tak Terlupakan Menanti Anda</h2>
+      <p class="mb-6">Temukan pengalaman wisata terbaik dengan layanan premium</p>
+      <a href="#paket" class="bg-yellow-400 hover:bg-yellow-300 text-black px-6 py-2 rounded-full font-medium transition">Lihat Paket Wisata</a>
+    </div>
+  </section>
 
-    <section id="home" class="hero">
-        <h2>Petualangan Tak Terlupakan Menanti Anda</h2>
-        <p>Temukan pengalaman wisata terbaik dengan layanan premium</p>
-        <a href="#paket" class="button">Lihat Paket Wisata</a>
-    </section>
-
-    <section id="paket">
-        <h2>Paket Wisata</h2>
-        <div class="paket-container">
-            <div class="paket">
-                <a href="detail-tour1.html" class="paket-link">
-                    <img src="images/tour1.jpg" alt="Tour 1">
-                </a>
-                <h3>Eksplorasi Alam NZ</h3>
-                <p>Jelajahi keindahan alam Selandia Baru dengan tur eksklusif.</p>
-            </div>
-
-            <div class="paket">
-                <a href="detail-tour2.html" class="paket-link">
-                    <img src="images/tour2.jpg" alt="Tour 2">
-                </a>
-                <h3>Wisata Kota & Budaya</h3>
-                <p>Rasakan pesona budaya dan kota metropolitan yang memukau.</p>
-            </div>
-
-            <div class="paket">
-                <a href="detail-tour3.html" class="paket-link">
-                    <img src="images/tour3.jpg" alt="Tour 3">
-                </a>
-                <h3>Petualangan & Aktivitas</h3>
-                <p>Petualangan seru seperti bungee jumping, hiking, dan lainnya.</p>
-            </div>
-
-            <div class="paket">
-                <a href="detail-southisland.html" class="paket-link">
-                    <img src="south island-a.jpg" alt="South Island Tour">
-                </a>
-                <h3>7D5N South Island Private Tour</h3>
-                <p>
-                    Private trip Selandia Baru dari Jakarta bersama Qantas. Jelajahi Christchurch,
-                    Lake Tekapo, Mt Cook, Queenstown & Milford Sound.
-                </p>
-                <p><strong>Mulai dari IDR 32.500.000/pax</strong></p>
-                <a href="https://wa.me/6282154465074" target="_blank" class="button">
-                    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
-                </a>
-                <a href="https://instagram.com/garudakiwi.tour" target="_blank" class="button">
-                    <i class="fab fa-instagram"></i> Lihat Instagram
-                </a>
-                <a href="/files/7D5N_South_Island_Private_Tour.pdf" target="_blank" class="button">
-                    📄 Unduh Brosur
-                </a>
-            </div>
+  <!-- Paket Wisata -->
+  <section id="paket" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Paket Wisata</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Paket Card -->
+        <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
+          <a href="detail-southisland.html">
+            <img src="south-island-a.jpg" alt="South Island" class="w-full h-56 object-cover">
+          </a>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">7D5N South Island Private Tour</h3>
+            <p class="text-sm mb-2">Eksplorasi Christchurch, Tekapo, Mt Cook, Queenstown & Milford Sound.</p>
+            <p class="text-blue-700 font-bold mb-4">Mulai dari IDR 32.500.000/pax</p>
+            <a href="detail-southisland.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">Lihat Detail</a>
+          </div>
         </div>
-    </section>
+        <!-- Tambahkan paket lainnya di sini -->
+      </div>
+    </div>
+  </section>
 
-    <section id="galeri">
-        <h2>Galeri Perjalanan</h2>
-        <div class="galeri-container">
-            <img src="south island-a.jpg" alt="Galeri 1">
-            <img src="south island-a.jpg" alt="Galeri 2">
-            <img src="south island-a.jpg" alt="Galeri 3">
+  <!-- Galeri -->
+  <section id="galeri" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Galeri Perjalanan</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="south-island-a.jpg" alt="Galeri 1" class="rounded-lg">
+        <img src="south-island-a.jpg" alt="Galeri 2" class="rounded-lg">
+        <img src="south-island-a.jpg" alt="Galeri 3" class="rounded-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section id="testimoni" class="py-16 bg-blue-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Apa Kata Mereka?</h2>
+      <div class="space-y-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="italic">"Perjalanan yang luar biasa! Sangat direkomendasikan!"</p>
+          <h4 class="mt-4 font-semibold text-right">- Rina, Jakarta</h4>
         </div>
-    </section>
-
-    <section id="testimoni">
-        <h2>Apa Kata Mereka?</h2>
-        <div class="testimoni-container">
-            <div class="testimoni">
-                <p>"Perjalanan yang luar biasa! Sangat direkomendasikan!"</p>
-                <h4>- Rina, Jakarta</h4>
-            </div>
-            <div class="testimoni">
-                <p>"Pelayanan sangat profesional dan wisata yang luar biasa!"</p>
-                <h4>- Budi, Surabaya</h4>
-            </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="italic">"Pelayanan sangat profesional dan wisata yang luar biasa!"</p>
+          <h4 class="mt-4 font-semibold text-right">- Budi, Surabaya</h4>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="kontak">
-        <h2>Hubungi Kami</h2>
-        <p>Email: <a href="mailto:info@garudakiwitour.com">info@garudakiwitour.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a></p>
-        <form action="https://formspree.io/f/mjkyejdg" method="POST">
-            <input type="text" name="nama" placeholder="Nama Anda" required>
-            <input type="email" name="email" placeholder="Email Anda" required>
-            <textarea name="pesan" placeholder="Pesan Anda"></textarea>
-            <button type="submit">Kirim</button>
-        </form>
-    </section>
+  <!-- Kontak -->
+  <section id="kontak" class="py-16">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-blue-800 mb-6">Hubungi Kami</h2>
+      <p>Email: <a href="mailto:info@garudakiwitour.com" class="text-blue-600 underline">info@garudakiwitour.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6281234567890" class="text-blue-600 underline" target="_blank">+62 812-3456-7890</a></p>
+      <form action="https://formspree.io/f/mjkyejdg" method="POST" class="mt-6 space-y-4">
+        <input type="text" name="nama" placeholder="Nama Anda" class="w-full border rounded px-4 py-2" required>
+        <input type="email" name="email" placeholder="Email Anda" class="w-full border rounded px-4 py-2" required>
+        <textarea name="pesan" placeholder="Pesan Anda" class="w-full border rounded px-4 py-2" rows="4"></textarea>
+        <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Kirim</button>
+      </form>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com/garudakiwi.tour"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/6282154465074"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white py-6 text-center">
+    <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
+    <div class="mt-2 space-x-4">
+      <a href="#" class="hover:text-yellow-300">Facebook</a>
+      <a href="https://instagram.com/garudakiwi.tour" class="hover:text-yellow-300">Instagram</a>
+      <a href="https://wa.me/6282154465074" class="hover:text-yellow-300">WhatsApp</a>
+    </div>
+  </footer>
 
 </body>
 </html>
