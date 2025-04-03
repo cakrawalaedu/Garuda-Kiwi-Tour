@@ -13,18 +13,35 @@
 
   <!-- Navbar -->
   <header class="sticky top-0 bg-white shadow z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-2xl font-bold text-blue-800">Garuda Kiwi Tour</h1>
-      <nav class="space-x-4 text-sm font-medium">
-        <a href="#home" class="hover:text-blue-600">Beranda</a>
-        <a href="#paket" class="hover:text-blue-600">Paket</a>
-        <a href="#galeri" class="hover:text-blue-600">Galeri</a>
-        <a href="#testimoni" class="hover:text-blue-600">Testimoni</a>
-        <a href="#kontak" class="hover:text-blue-600">Kontak</a>
-        <a href="#tentang" class="hover:text-blue-600">Tentang</a>
-      </nav>
-    </div>
+<!-- Responsive Navigation -->
+<div class="md:flex items-center space-x-6 hidden md:block">
+  <nav class="space-x-4 text-sm font-medium">
+    <a href="#home" class="hover:text-blue-600">Beranda</a>
+    <a href="#paket" class="hover:text-blue-600">Paket</a>
+    <a href="#tentang" class="hover:text-blue-600">Tentang</a>
+    <a href="#galeri" class="hover:text-blue-600">Galeri</a>
+    <a href="#testimoni" class="hover:text-blue-600">Testimoni</a>
+    <a href="#kontak" class="hover:text-blue-600">Kontak</a>
+  </nav>
+</div>
+
+<!-- Hamburger (Mobile Only) -->
+<div class="md:hidden">
+  <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="text-blue-800 focus:outline-none">
+    ☰
+  </button>
+</div>
   </header>
+
+  <!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden hidden px-4 py-4 space-y-2 text-sm font-medium bg-white shadow">
+  <a href="#home" class="block text-blue-800 hover:text-blue-600">Beranda</a>
+  <a href="#paket" class="block text-blue-800 hover:text-blue-600">Paket</a>
+  <a href="#tentang" class="block text-blue-800 hover:text-blue-600">Tentang</a>
+  <a href="#galeri" class="block text-blue-800 hover:text-blue-600">Galeri</a>
+  <a href="#testimoni" class="block text-blue-800 hover:text-blue-600">Testimoni</a>
+  <a href="#kontak" class="block text-blue-800 hover:text-blue-600">Kontak</a>
+</div>
 
   <!-- Hero -->
   <section id="home" class="relative h-[85vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('hero.jpg');">
