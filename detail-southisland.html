@@ -277,22 +277,73 @@
     <input type="text" id="nama" placeholder="Nama Lengkap" class="w-full border rounded px-3 py-2 text-sm" required>
     <input type="email" id="email" placeholder="Email" class="w-full border rounded px-3 py-2 text-sm" required>
     <input type="tel" id="wa" placeholder="Nomor WhatsApp" class="w-full border rounded px-3 py-2 text-sm" required>
+    
     <select id="paket" class="w-full border rounded px-3 py-2 text-sm">
       <option value="Lengkap">✈️ Paket Lengkap</option>
       <option value="Land Only">🧭 Land Only</option>
     </select>
+
     <input type="number" id="jumlah" placeholder="Jumlah Peserta" min="1" class="w-full border rounded px-3 py-2 text-sm" required>
-    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded w-full">Kirim via WhatsApp</button>
+
+    <!-- 💸 Harga Info -->
+    <div class="text-sm text-gray-700">
+      <p id="hargaPerOrang" class="mb-1">Harga per orang: -</p>
+      <p id="totalHarga" class="font-semibold">Total: -</p>
+      <p id="depositInfo" class="text-blue-700">Deposit 30%: -</p>
+    </div>
+
+    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded w-full">
+      Kirim via WhatsApp
+    </button>
   </form>
 </section>
 
   <script>
+  const hargaAwal = {
+    "Lengkap": 32500000,
+    "Land Only": 25000000
+  };
+
+  const diskonPerPax = 500000;
+  const batasDiskon = new Date("2025-07-31");
+  const today = new Date();
+  const isDiskonAktif = today <= batasDiskon;
+
+  function formatRupiah(num) {
+    return "IDR " + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  const paketEl = document.getElementById('paket');
+  const jumlahEl = document.getElementById('jumlah');
+  const hargaPerOrangText = document.getElementById('hargaPerOrang');
+  const totalHargaText = document.getElementById('totalHarga');
+  const depositInfoText = document.getElementById('depositInfo');
+
+  paketEl.addEventListener('change', updateHarga);
+  jumlahEl.addEventListener('input', updateHarga);
+
+  function updateHarga() {
+    const tipe = paketEl.value;
+    const jumlah = parseInt(jumlahEl.value) || 0;
+    const hargaSebelum = hargaAwal[tipe] || 0;
+    const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
+    const total = hargaDiskon * jumlah;
+    const deposit = Math.round(total * 0.3);
+
+    hargaPerOrangText.innerHTML = isDiskonAktif
+      ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
+      : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
+
+    totalHargaText.textContent = jumlah > 0 ? `Total: ${formatRupiah(total)}` : "Total: -";
+    depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+  }
+
   function sendToWhatsApp() {
     const nama = document.getElementById('nama').value.trim();
     const email = document.getElementById('email').value.trim();
     const wa = document.getElementById('wa').value.trim();
-    const paket = document.getElementById('paket').value;
-    const jumlah = parseInt(document.getElementById('jumlah').value);
+    const paket = paketEl.value;
+    const jumlah = parseInt(jumlahEl.value);
 
     if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
       alert("Harap lengkapi semua kolom dengan benar.");
@@ -310,10 +361,28 @@
       return;
     }
 
-    const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.\n\nNama: ${nama}\nEmail: ${email}\nWhatsApp: ${wa}\nPaket: ${paket}\nJumlah Peserta: ${jumlah}`;
+    const hargaSebelum = hargaAwal[paket];
+    const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
+    const totalHarga = hargaDiskon * jumlah;
+    const deposit = Math.round(totalHarga * 0.3);
+
+    const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.
+
+Nama: ${nama}
+Email: ${email}
+WhatsApp: ${wa}
+Paket: ${paket}
+Jumlah Peserta: ${jumlah}
+${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli)` : `Harga per pax: ${formatRupiah(hargaSebelum)}`}
+Total Harga: ${formatRupiah(totalHarga)}
+Deposit 30%: ${formatRupiah(deposit)}`;
+
     const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   }
+
+  // Inisialisasi tampilan harga saat halaman dimuat
+  updateHarga();
 </script>
 
 <!-- ❓ FAQ Section -->
