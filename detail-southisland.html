@@ -354,7 +354,7 @@
 
         <!-- Slide 1 -->
         <li class="splide__slide">
-          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+          <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
             <img src="auckland-tour.jpg" alt="Auckland Tour" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">5D4N North Island Explorer</h3>
@@ -366,7 +366,7 @@
 
         <!-- Slide 2 -->
         <li class="splide__slide">
-          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+          <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
             <img src="winter-queenstown.jpg" alt="Queenstown Winter" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">6D5N Winter Wonderland</h3>
@@ -378,7 +378,7 @@
 
         <!-- Slide 3 -->
         <li class="splide__slide">
-          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+          <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
             <img src="kiwi-family.jpg" alt="Family Tour" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">8D7N Family Fun NZ</h3>
@@ -390,7 +390,7 @@
 
         <!-- Slide 4 -->
         <li class="splide__slide">
-          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+          <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
             <img src="adventure-coast.jpg" alt="South Coast Adventure" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">7D6N South Coast Adventure</h3>
@@ -402,7 +402,7 @@
 
         <!-- Slide 5 -->
         <li class="splide__slide">
-          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+          <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
             <img src="hobbiton-day.jpg" alt="Hobbiton Tour" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">1D Hobbiton Day Escape</h3>
@@ -433,7 +433,7 @@
   }).mount();
 </script>
 
-<!-- Optional Custom Styling -->
+<!-- Optional Styling -->
 <style>
   .splide__arrow {
     background-color: rgba(30, 64, 175, 0.7);
@@ -444,7 +444,15 @@
     background-color: #1e40af;
     transform: scale(1.1);
   }
+
+  .zoom-hover img {
+    transition: transform 0.5s ease;
+  }
+  .zoom-hover:hover img {
+    transform: scale(1.05);
+  }
 </style>
+
   
 <!-- 🔻 Footer -->
 <footer class="bg-blue-800 text-white py-6 text-center mt-12 animate__animated animate__fadeInUp" data-aos="fade-up">
