@@ -6,41 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Garuda Kiwi Tour</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body { font-family: 'Poppins', sans-serif; }</style>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .fade-in { animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
-  <header class="py-8 text-center">
+  <header class="py-8 text-center fade-in">
     <h1 class="text-3xl font-bold text-blue-800">Blog Garuda Kiwi Tour</h1>
     <p class="text-gray-600">Tips, cerita, dan inspirasi liburan di New Zealand</p>
   </header>
 
-  <main class="py-16 bg-white">
+  <main class="py-16 bg-white fade-in">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Artikel Terbaru</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
         <!-- Artikel 1 -->
         <div class="bg-gray-50 rounded-lg shadow hover:shadow-lg transition">
-          <img src="hidden-gems-nz.jpg" alt="Hidden Gems NZ" class="w-full h-48 object-cover rounded-t-lg">
+          <img src="img/hidden-gems-nz.jpg" alt="Hidden Gems NZ" class="w-full h-48 object-cover rounded-t-lg">
           <div class="p-4">
             <h3 class="text-lg font-semibold text-blue-800 mb-2">
               <a href="artikel-hidden-gems.html" class="hover:underline">5 Hidden Gems di New Zealand</a>
             </h3>
             <p class="text-sm text-gray-600 mb-4">Temukan destinasi tersembunyi yang menakjubkan dari danau jernih hingga desa rahasia...</p>
-            <a href="artikel-hidden-gems.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
+            <div class="flex items-center justify-between">
+              <a href="artikel-hidden-gems.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
+              <a href="https://wa.me/?text=https://yourwebsite.com/artikel-hidden-gems.html" target="_blank" class="text-green-600 hover:underline text-sm">
+                <i class="fab fa-whatsapp"></i> Share
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Artikel 2 -->
         <div class="bg-gray-50 rounded-lg shadow hover:shadow-lg transition">
-          <img src="roadtrip-nz.jpg" alt="Road Trip NZ" class="w-full h-48 object-cover rounded-t-lg">
+          <img src="img/roadtrip-nz.jpg" alt="Road Trip NZ" class="w-full h-48 object-cover rounded-t-lg">
           <div class="p-4">
             <h3 class="text-lg font-semibold text-blue-800 mb-2">
               <a href="artikel-roadtrip.html" class="hover:underline">Panduan Road Trip 7 Hari di South Island</a>
             </h3>
             <p class="text-sm text-gray-600 mb-4">Rencanakan petualanganmu menyusuri South Island dari Christchurch hingga Queenstown!</p>
-            <a href="artikel-roadtrip.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
+            <div class="flex items-center justify-between">
+              <a href="artikel-roadtrip.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
+              <a href="https://wa.me/?text=https://yourwebsite.com/artikel-roadtrip.html" target="_blank" class="text-green-600 hover:underline text-sm">
+                <i class="fab fa-whatsapp"></i> Share
+              </a>
+            </div>
           </div>
         </div>
+
+        <!-- Artikel 3 -->
+        <div class="bg-gray-50 rounded-lg shadow hover:shadow-lg transition">
+          <img src="img/musim-nz.jpg" alt="Musim di New Zealand" class="w-full h-48 object-cover rounded-t-lg">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-blue-800 mb-2">
+              <a href="artikel-musim.html" class="hover:underline">Musim Terbaik untuk Liburan ke New Zealand</a>
+            </h3>
+            <p class="text-sm text-gray-600 mb-4">Panduan memilih waktu terbaik untuk menikmati pemandangan dan aktivitas terbaik di New Zealand sepanjang tahun.</p>
+            <div class="flex items-center justify-between">
+              <a href="artikel-musim.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
+              <a href="https://wa.me/?text=https://yourwebsite.com/artikel-musim.html" target="_blank" class="text-green-600 hover:underline text-sm">
+                <i class="fab fa-whatsapp"></i> Share
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
@@ -48,5 +84,8 @@
   <footer class="bg-blue-800 text-white py-6 text-center">
     <p>&copy; 2025 Garuda Kiwi Tour. All rights reserved.</p>
   </footer>
+
+  <!-- Font Awesome for share icons -->
+  <script src="https://kit.fontawesome.com/ae943c6289.js" crossorigin="anonymous"></script>
 </body>
 </html>
