@@ -4,26 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10D8N North & South Island Private Tour</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
     .dark-mode { background-color: #111827; color: #f9fafb; }
     .dark-mode header, .dark-mode footer, .dark-mode .bg-white { background-color: #1f2937 !important; }
     .dark-mode .text-blue-800 { color: #93c5fd !important; }
+    .animate-fade-in { animation: fadeIn 1.2s ease-in-out; }
+    .animate-fade-in-up { animation: fadeInUp 1.2s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
-
 <body class="bg-white text-gray-800">
 
   <!-- 🔔 Promo Banner -->
-  <div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
-    🎉 Promo Spesial: Booking sebelum  31 July & dapatkan diskon IDR 500.000!
+  <div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm animate-fade-in">
+    🎉 Promo Spesial: Booking sebelum 31 July & dapatkan diskon IDR 500.000!
     <button onclick="document.getElementById('promoBanner').style.display='none'" class="ml-4 font-bold">Tutup ✖</button>
   </div>
 
   <!-- 🧭 Navbar -->
-  <header class="sticky top-0 bg-white shadow z-40">
+  <header class="sticky top-0 bg-white shadow z-40 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html" class="text-2xl font-bold text-blue-800 hover:text-blue-600">Garuda Kiwi Tour</a>
       <button id="menuToggle" class="md:hidden text-2xl text-blue-800 focus:outline-none">
@@ -48,13 +52,13 @@
     </div>
   </header>
 
-<!-- 🌄 Hero -->
-<section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('northsouth-hero.jpg');">
-  <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-2xl">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4">10D8N North & South Island Private Tour</h1>
-    <p class="text-lg">Jelajahi Auckland, Hobbiton, Rotorua, Queenstown, Milford Sound, dan banyak lagi dalam satu paket epik!</p>
-  </div>
-</section>
+  <!-- 🌄 Hero -->
+  <section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center animate-fade-in" style="background-image: url('northsouth-hero.jpg');">
+    <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-2xl animate-fade-in-up">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">10D8N North & South Island Private Tour</h1>
+      <p class="text-lg">Jelajahi Auckland, Hobbiton, Rotorua, Queenstown, Milford Sound, dan banyak lagi dalam satu paket epik!</p>
+    </div>
+  </section>
 
 <!-- 📄 Deskripsi Paket -->
 <section class="py-12 px-6 max-w-4xl mx-auto text-center">
