@@ -51,7 +51,21 @@
     <a href="#kontak" class="block text-blue-800 hover:text-blue-600">Kontak</a>
   </div>
 </header>
+  
+<!-- Script toggle dark mode -->
+<script>
+  const toggleBtn = document.getElementById('toggleDark');
+  const htmlEl = document.documentElement;
+  toggleBtn.addEventListener('click', () => {
+    htmlEl.classList.toggle('dark');
+    localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+  });
 
+  // Apply saved mode on load
+  if (localStorage.getItem('theme') === 'dark') {
+    htmlEl.classList.add('dark');
+  }
+</script>
 <!-- Hero -->
 <section id="home" class="relative h-[85vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('hero.jpg');">
   <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-xl">
