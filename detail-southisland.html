@@ -343,6 +343,109 @@
   </div>
 </section>
   
+<!-- 🌍 Tertarik Paket Lainnya (Carousel) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css" />
+
+<section class="py-12 px-6 max-w-6xl mx-auto" data-aos="fade-up">
+  <h2 class="text-2xl font-bold text-blue-800 mb-8 text-center">🌍 Tertarik Paket Lainnya?</h2>
+  <div class="splide" id="paketLainnyaCarousel">
+    <div class="splide__track">
+      <ul class="splide__list">
+
+        <!-- Slide 1 -->
+        <li class="splide__slide">
+          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+            <img src="auckland-tour.jpg" alt="Auckland Tour" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-blue-800 mb-2">5D4N North Island Explorer</h3>
+              <p class="text-gray-600 mb-4">Jelajahi Auckland, Hobbiton & Rotorua dalam tur singkat penuh keajaiban.</p>
+              <a href="detail-northisland.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Slide 2 -->
+        <li class="splide__slide">
+          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+            <img src="winter-queenstown.jpg" alt="Queenstown Winter" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-blue-800 mb-2">6D5N Winter Wonderland</h3>
+              <p class="text-gray-600 mb-4">Nikmati salju, ski, dan pemandangan Queenstown di musim dingin Selandia Baru.</p>
+              <a href="detail-winter.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Slide 3 -->
+        <li class="splide__slide">
+          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+            <img src="kiwi-family.jpg" alt="Family Tour" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-blue-800 mb-2">8D7N Family Fun NZ</h3>
+              <p class="text-gray-600 mb-4">Paket seru untuk keluarga — cocok untuk anak-anak, lengkap dengan aktivitas edukatif.</p>
+              <a href="detail-family.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Slide 4 -->
+        <li class="splide__slide">
+          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+            <img src="adventure-coast.jpg" alt="South Coast Adventure" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-blue-800 mb-2">7D6N South Coast Adventure</h3>
+              <p class="text-gray-600 mb-4">Eksplorasi sisi liar NZ: dari Dunedin ke Catlins & pantai selatan yang dramatis.</p>
+              <a href="detail-southcoast.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Slide 5 -->
+        <li class="splide__slide">
+          <div class="bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
+            <img src="hobbiton-day.jpg" alt="Hobbiton Tour" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-blue-800 mb-2">1D Hobbiton Day Escape</h3>
+              <p class="text-gray-600 mb-4">Satu hari di dunia The Shire — cocok untuk fans Lord of the Rings!</p>
+              <a href="detail-hobbiton.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Splide JS -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+<script>
+  new Splide('#paketLainnyaCarousel', {
+    type   : 'loop',
+    perPage: 2,
+    gap    : '1.5rem',
+    autoplay: true,
+    interval: 4000,
+    pauseOnHover: true,
+    breakpoints: {
+      768: { perPage: 1 }
+    }
+  }).mount();
+</script>
+
+<!-- Optional Custom Styling -->
+<style>
+  .splide__arrow {
+    background-color: rgba(30, 64, 175, 0.7);
+    border-radius: 9999px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .splide__arrow:hover {
+    background-color: #1e40af;
+    transform: scale(1.1);
+  }
+</style>
+  
 <!-- 🔻 Footer -->
 <footer class="bg-blue-800 text-white py-6 text-center mt-12 animate__animated animate__fadeInUp" data-aos="fade-up">
   <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
