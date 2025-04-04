@@ -4,13 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10D8N North & South Island Private Tour</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .dark-mode { background-color: #111827; color: #f9fafb; }
+    .dark-mode header, .dark-mode footer, .dark-mode .bg-white { background-color: #1f2937 !important; }
+    .dark-mode .text-blue-800 { color: #93c5fd !important; }
   </style>
 </head>
+
 <body class="bg-white text-gray-800">
+
+  <!-- 🔔 Promo Banner -->
+  <div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
+    🎉 Promo Spesial: Booking sebelum  31 July & dapatkan diskon IDR 500.000!
+    <button onclick="document.getElementById('promoBanner').style.display='none'" class="ml-4 font-bold">Tutup ✖</button>
+  </div>
+
+  <!-- 🧭 Navbar -->
+  <header class="sticky top-0 bg-white shadow z-40">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold text-blue-800 hover:text-blue-600">Garuda Kiwi Tour</a>
+      <button id="menuToggle" class="md:hidden text-2xl text-blue-800 focus:outline-none">
+        <span id="menuIcon">☰</span>
+      </button>
+      <nav class="hidden md:flex space-x-4 text-sm font-medium">
+        <a href="index.html#home" class="hover:text-blue-600">Beranda</a>
+        <a href="index.html#paket" class="hover:text-blue-600">Paket</a>
+        <a href="index.html#tentang" class="hover:text-blue-600">Tentang</a>
+        <a href="index.html#galeri" class="hover:text-blue-600">Galeri</a>
+        <a href="index.html#testimoni" class="hover:text-blue-600">Testimoni</a>
+        <a href="index.html#kontak" class="hover:text-blue-600">Kontak</a>
+      </nav>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white transition-all duration-300 ease-in-out transform">
+      <a href="index.html#home" class="block text-blue-800 hover:text-blue-600">Beranda</a>
+      <a href="index.html#paket" class="block text-blue-800 hover:text-blue-600">Paket</a>
+      <a href="index.html#tentang" class="block text-blue-800 hover:text-blue-600">Tentang</a>
+      <a href="index.html#galeri" class="block text-blue-800 hover:text-blue-600">Galeri</a>
+      <a href="index.html#testimoni" class="block text-blue-800 hover:text-blue-600">Testimoni</a>
+      <a href="index.html#kontak" class="block text-blue-800 hover:text-blue-600">Kontak</a>
+    </div>
+  </header>
 
 <!-- 🌄 Hero -->
 <section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('northsouth-hero.jpg');">
