@@ -13,15 +13,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .animate-fade-in { animation: fadeIn 1s ease-in-out; }
+    .animate-slide-up { animation: slideUp 1.2s ease-out; }
+    .animate-zoom-in { animation: zoomIn 0.8s ease-in-out; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); }
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
 <!-- Navbar -->
-<header class="sticky top-0 bg-white shadow z-50">
+<header class="sticky top-0 bg-white shadow z-50 animate-fade-in">
   <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold text-blue-800">Garuda Kiwi Tour</h1>
+    <h1 class="text-2xl font-bold text-blue-800 animate-slide-up">Garuda Kiwi Tour</h1>
 
     <!-- Tombol hamburger di mobile -->
     <button id="menuToggle" class="md:hidden text-2xl text-blue-800 focus:outline-none">
@@ -29,7 +42,7 @@
     </button>
 
     <!-- Menu untuk desktop -->
-    <nav class="hidden md:flex space-x-4 text-sm font-medium">
+    <nav class="hidden md:flex space-x-4 text-sm font-medium animate-slide-up">
       <a href="#home" class="hover:text-blue-600">Beranda</a>
       <a href="#paket" class="hover:text-blue-600">Paket</a>
       <a href="#tentang" class="hover:text-blue-600">Tentang</a>
@@ -39,36 +52,11 @@
       <a href="#kontak" class="hover:text-blue-600">Kontak</a>
     </nav>
   </div>
-
-  <!-- Menu mobile -->
-  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white">
-    <a href="#home" class="block text-blue-800 hover:text-blue-600">Beranda</a>
-    <a href="#paket" class="block text-blue-800 hover:text-blue-600">Paket</a>
-    <a href="#tentang" class="block text-blue-800 hover:text-blue-600">Tentang</a>
-    <a href="blog.html" class="block text-blue-800 hover:text-blue-600">Blog</a>
-    <a href="#galeri" class="block text-blue-800 hover:text-blue-600">Galeri</a>
-    <a href="#testimoni" class="block text-blue-800 hover:text-blue-600">Testimoni</a>
-    <a href="#kontak" class="block text-blue-800 hover:text-blue-600">Kontak</a>
-  </div>
 </header>
-  
-<!-- Script toggle dark mode -->
-<script>
-  const toggleBtn = document.getElementById('toggleDark');
-  const htmlEl = document.documentElement;
-  toggleBtn.addEventListener('click', () => {
-    htmlEl.classList.toggle('dark');
-    localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
-  });
 
-  // Apply saved mode on load
-  if (localStorage.getItem('theme') === 'dark') {
-    htmlEl.classList.add('dark');
-  }
-</script>
 <!-- Hero -->
-<section id="home" class="relative h-[85vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('hero.jpg');">
-  <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-xl">
+<section id="home" class="relative h-[85vh] bg-cover bg-center flex items-center justify-center text-white text-center animate-fade-in" style="background-image: url('hero.jpg');">
+  <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-xl animate-zoom-in">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">Petualangan Tak Terlupakan Menanti Anda</h2>
     <p class="mb-6">Temukan pengalaman wisata terbaik dengan layanan premium</p>
     <a href="#paket" class="bg-yellow-400 hover:bg-yellow-300 text-black px-6 py-2 rounded-full font-medium transition">Lihat Paket Wisata</a>
@@ -196,7 +184,7 @@
     <div class="max-w-xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold text-blue-800 mb-6">Hubungi Kami</h2>
       <p>Email: <a href="mailto:info@garudakiwitour.com" class="text-blue-600 underline">info@garudakiwitour.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/6281234567890" class="text-blue-600 underline" target="_blank">+62 812-3456-7890</a></p>
+      <p>WhatsApp: <a href="https://wa.me/6282154465074" class="text-blue-600 underline" target="_blank">+62 821-5446-5074</a></p>
       <form action="https://formspree.io/f/mjkyejdg" method="POST" class="mt-6 space-y-4">
         <input type="text" name="nama" placeholder="Nama Anda" class="w-full border rounded px-4 py-2" required>
         <input type="email" name="email" placeholder="Email Anda" class="w-full border rounded px-4 py-2" required>
@@ -210,9 +198,9 @@
   <footer class="bg-blue-800 text-white py-6 text-center">
     <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
     <div class="mt-2 space-x-4">
-      <a href="#" class="hover:text-yellow-300"><i class="fab fa-facebook"></i> Facebook
-      <a href="https://instagram.com/garudakiwi.tour" class="hover:text-yellow-300"><i class="fab fa-instagram"></i> Instagram
-      <a href="https://wa.me/6282154465074" class="hover:text-yellow-300"><i class="fab fa-whatsapp"></i> WhatsApp
+      <a href="#" class="hover:text-yellow-300"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="https://instagram.com/garudakiwi.tour" class="hover:text-yellow-300"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://wa.me/6282154465074" class="hover:text-yellow-300"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
   </footer>
 
@@ -235,5 +223,6 @@
     });
   });
 </script>
+        
 </body>
 </html>
