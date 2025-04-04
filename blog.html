@@ -2,105 +2,73 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog Garuda Kiwi Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Garuda Kiwi Tour</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .hover-zoom:hover { transform: scale(1.02); transition: transform 0.3s ease; }
     .fade-in { animation: fadeIn 1s ease-in-out; }
+    .slide-up { animation: slideUp 0.8s ease-out; }
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-blue-800">Garuda Kiwi Tour</a>
-      <div class="space-x-4 hidden md:block text-sm font-medium">
-        <a href="index.html" class="hover:text-blue-600">Beranda</a>
-        <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
-        <a href="index.html#kontak" class="hover:text-blue-600">Kontak</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Blog Header -->
-  <header class="py-8 text-center fade-in bg-gray-50">
-    <h1 class="text-3xl font-bold text-blue-800">Blog Garuda Kiwi Tour</h1>
-    <p class="text-gray-600">Tips, cerita, dan inspirasi liburan di New Zealand</p>
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-8 text-center shadow fade-in">
+    <h1 class="text-4xl font-bold">Blog Wisata New Zealand</h1>
+    <p class="mt-2 text-base opacity-90">Tips, inspirasi & cerita dari Garuda Kiwi Tour</p>
   </header>
 
-  <!-- Artikel List -->
-  <main class="py-16 bg-white fade-in">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Artikel Terbaru</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!-- Konten Blog -->
+  <main class="py-16 px-4 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <!-- Artikel 1 -->
-        <div class="bg-gray-50 rounded-lg shadow hover:shadow-lg transition">
-          <img src="hidden-gems-nz.jpg" alt="Hidden Gems NZ" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h3 class="text-lg font-semibold text-blue-800 mb-2">
-              <a href="artikel-hidden-gems.html" class="hover:underline">5 Hidden Gems di New Zealand</a>
-            </h3>
-            <p class="text-sm text-gray-600 mb-4">Temukan destinasi tersembunyi yang menakjubkan dari danau jernih hingga desa rahasia...</p>
-            <div class="flex items-center justify-between">
-              <a href="artikel-hidden-gems.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
-              <a href="https://wa.me/?text=https://www.garudakiwitour.com/artikel-hidden-gems.html" target="_blank" class="text-green-600 hover:underline text-sm">
-                <i class="fab fa-whatsapp"></i> Share
-              </a>
-            </div>
-          </div>
+      <!-- Artikel 1 -->
+      <a href="artikel-hidden-gems.html" class="bg-white rounded-xl shadow-md hover:shadow-xl hover-zoom overflow-hidden border slide-up">
+        <img src="hidden-gems-nz.jpg" alt="Hidden Gems" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <span class="text-xs text-yellow-600 uppercase font-semibold">Destinasi</span>
+          <h2 class="text-lg font-semibold text-blue-800 mt-2 mb-2">5 Hidden Gems di New Zealand yang Jarang Dikunjungi</h2>
+          <p class="text-sm text-gray-600">Temukan destinasi rahasia yang indah & tenang di balik gemerlap Queenstown dan Rotorua.</p>
         </div>
+      </a>
 
-        <!-- Artikel 2 -->
-        <div class="bg-gray-50 rounded-lg shadow hover:shadow-lg transition">
-          <img src="roadtrip-nz.jpg" alt="Road Trip NZ" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h3 class="text-lg font-semibold text-blue-800 mb-2">
-              <a href="artikel-roadtrip.html" class="hover:underline">Panduan Road Trip 7 Hari di South Island</a>
-            </h3>
-            <p class="text-sm text-gray-600 mb-4">Rencanakan petualanganmu menyusuri South Island dari Christchurch hingga Queenstown!</p>
-            <div class="flex items-center justify-between">
-              <a href="artikel-roadtrip.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
-              <a href="https://wa.me/?text=https://www.garudakiwitour.com/artikel-roadtrip.html" target="_blank" class="text-green-600 hover:underline text-sm">
-                <i class="fab fa-whatsapp"></i> Share
-              </a>
-            </div>
-          </div>
+      <!-- Artikel 2 -->
+      <a href="artikel-roadtrip.html" class="bg-white rounded-xl shadow-md hover:shadow-xl hover-zoom overflow-hidden border slide-up">
+        <img src="roadtrip-nz.jpg" alt="Roadtrip NZ" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <span class="text-xs text-green-600 uppercase font-semibold">Tips</span>
+          <h2 class="text-lg font-semibold text-blue-800 mt-2 mb-2">Tips Roadtrip di Selandia Baru untuk Pemula</h2>
+          <p class="text-sm text-gray-600">Roadtrip sendiri di NZ? Gak perlu khawatir! Panduan lengkap buat kamu yang baru pertama kali.</p>
         </div>
+      </a>
 
-        <!-- Artikel 3 -->
-        <div class="bg-gray-50 rounded-lg shadow hover:shadow-lg transition">
-          <img src="musim-nz.jpg" alt="Musim di New Zealand" class="w-full h-48 object-cover rounded-t-lg">
-          <div class="p-4">
-            <h3 class="text-lg font-semibold text-blue-800 mb-2">
-              <a href="artikel-musim.html" class="hover:underline">Musim Terbaik untuk Liburan ke New Zealand</a>
-            </h3>
-            <p class="text-sm text-gray-600 mb-4">Panduan memilih waktu terbaik untuk menikmati pemandangan dan aktivitas terbaik di New Zealand sepanjang tahun.</p>
-            <div class="flex items-center justify-between">
-              <a href="artikel-musim.html" class="text-blue-600 text-sm font-medium hover:underline">Baca Selengkapnya →</a>
-              <a href="https://wa.me/?text=https://www.garudakiwitour.com/artikel-musim.html" target="_blank" class="text-green-600 hover:underline text-sm">
-                <i class="fab fa-whatsapp"></i> Share
-              </a>
-            </div>
-          </div>
+      <!-- Artikel 3 -->
+      <a href="artikel-musim.html" class="bg-white rounded-xl shadow-md hover:shadow-xl hover-zoom overflow-hidden border slide-up">
+        <img src="musim-nz.jpg" alt="Musim NZ" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <span class="text-xs text-blue-600 uppercase font-semibold">Musim</span>
+          <h2 class="text-lg font-semibold text-blue-800 mt-2 mb-2">Musim Terbaik untuk Liburan ke New Zealand</h2>
+          <p class="text-sm text-gray-600">Spring yang segar? Summer yang cerah? Temukan waktu terbaik untuk perjalanan impianmu.</p>
         </div>
+      </a>
 
-      </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-800 text-white py-6 text-center mt-10">
-    <p>&copy; 2025 Garuda Kiwi Tour. All rights reserved.</p>
+  <footer class="bg-blue-800 text-white py-6 text-center mt-16">
+    <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
   </footer>
 
-  <!-- Font Awesome for share icons -->
-  <script src="https://kit.fontawesome.com/ae943c6289.js" crossorigin="anonymous"></script>
 </body>
 </html>
