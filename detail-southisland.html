@@ -64,80 +64,123 @@
   </p>
 </section>
 
-<!-- 🧭 Itinerary Interaktif (AOS included) -->
+<!-- 🧭 Itinerary Interaktif (AOS included & diperluas) -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Rencana Perjalanan (Itinerary)</h2>
-  <div class="space-y-4" id="itineraryAccordion">
-       <!-- Hari 1 -->
-    <div class="border rounded-lg overflow-hidden">
-      <button onclick="toggleAccordion(1)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
-        📅 Hari 1: Jakarta – Transit Sydney
+  <div class="space-y-6" id="itineraryAccordion">
+
+    <!-- Hari 1 -->
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(1)" class="w-full flex items-center text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <div>
+          <h3 class="font-semibold text-blue-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Hari 1: Jakarta – Transit Sydney
+          </h3>
+          <p class="text-sm text-gray-600">Penerbangan malam dengan Qantas Airways</p>
+        </div>
       </button>
-      <div id="accordion1" class="hidden px-4 py-2 text-sm">
-        <p>Penerbangan malam dari Jakarta menggunakan Qantas. Transit di Sydney sebelum melanjutkan ke Christchurch. Peserta bermalam di pesawat dan bersiap memulai petualangan.</p>
+      <div id="accordion1" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Pertemuan di Bandara Soekarno-Hatta dan briefing singkat sebelum keberangkatan. Peserta akan menaiki penerbangan malam menggunakan Qantas Airways dengan transit di Sydney. Sepanjang perjalanan, peserta dapat menikmati makanan dalam pesawat dan fasilitas hiburan. Bermalam di pesawat.</p>
       </div>
     </div>
 
     <!-- Hari 2 -->
-    <div class="border rounded-lg overflow-hidden">
-      <button onclick="toggleAccordion(2)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
-        📅 Hari 2: Tiba di Christchurch – City Tour
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(2)" class="w-full flex items-center text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <div>
+          <h3 class="font-semibold text-blue-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Hari 2: Tiba di Christchurch – City Tour
+          </h3>
+          <p class="text-sm text-gray-600">Kunjungan Hagley Park & Avon River</p>
+        </div>
       </button>
-      <div id="accordion2" class="hidden px-4 py-2 text-sm">
-        <p>Setibanya di Christchurch siang/sore hari, peserta dijemput oleh driver lokal. City tour santai menyusuri Hagley Park dan Avon River. Lalu check-in hotel dan waktu bebas untuk beristirahat.</p>
+      <div id="accordion2" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Setibanya di Christchurch siang/sore hari, peserta dijemput oleh tim lokal. Perjalanan dilanjutkan dengan city tour santai mengunjungi Hagley Park, Avon River, dan Canterbury Museum. Setelah itu, peserta check-in hotel dan dapat beristirahat. Makan malam halal disediakan.</p>
       </div>
     </div>
 
     <!-- Hari 3 -->
-    <div class="border rounded-lg overflow-hidden">
-      <button onclick="toggleAccordion(3)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
-        📅 Hari 3: Lake Tekapo & Mt Cook
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(3)" class="w-full flex items-center text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <div>
+          <h3 class="font-semibold text-blue-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Hari 3: Lake Tekapo & Mt Cook
+          </h3>
+          <p class="text-sm text-gray-600">Pemandangan danau & gunung es</p>
+        </div>
       </button>
-      <div id="accordion3" class="hidden px-4 py-2 text-sm">
-        <p>Kunjungan ke Danau Tekapo dan Church of the Good Shepherd. Peserta juga dapat ikut tur opsional ke Mt Cook National Park. Bermalam di Tekapo atau Twizel.</p>
+      <div id="accordion3" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Setelah sarapan, peserta menuju Lake Tekapo dan menikmati keindahan danau berwarna turquoise serta mampir ke Church of the Good Shepherd. Kemudian perjalanan berlanjut ke Aoraki/Mount Cook National Park, rumah dari gunung tertinggi di NZ. Di sini peserta bisa ikut tur opsional ke Hooker Valley Track atau Glacier Explorer. Bermalam di area Tekapo atau Twizel.</p>
       </div>
     </div>
 
     <!-- Hari 4 -->
-    <div class="border rounded-lg overflow-hidden">
-      <button onclick="toggleAccordion(4)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
-        📅 Hari 4: Queenstown via Lindis Pass
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(4)" class="w-full flex items-center text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <div>
+          <h3 class="font-semibold text-blue-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Hari 4: Queenstown via Lindis Pass
+          </h3>
+          <p class="text-sm text-gray-600">Perjalanan melalui Lindis Pass</p>
+        </div>
       </button>
-      <div id="accordion4" class="hidden px-4 py-2 text-sm">
-        <p>Melalui rute Lindis Pass menuju Queenstown, peserta dapat menikmati pemandangan alam yang dramatis. Sore hari bebas, atau mencoba aktivitas opsional seperti Skyline Gondola atau wine tour.</p>
+      <div id="accordion4" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Peserta melanjutkan perjalanan melalui Lindis Pass dengan pemandangan pegunungan khas South Island. Tiba di Queenstown, kota resort yang indah di tepi Lake Wakatipu. Peserta dapat berbelanja atau bersantai di pusat kota. Malam hari bebas atau ikut aktivitas opsional seperti Skyline Gondola & Dinner, atau wine tour.</p>
       </div>
     </div>
 
     <!-- Hari 5 -->
-    <div class="border rounded-lg overflow-hidden">
-      <button onclick="toggleAccordion(5)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
-        📅 Hari 5: Milford Sound Cruise
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(5)" class="w-full flex items-center text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <div>
+          <h3 class="font-semibold text-blue-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Hari 5: Milford Sound Cruise
+          </h3>
+          <p class="text-sm text-gray-600">Wisata fjord dengan kapal pesiar</p>
+        </div>
       </button>
-      <div id="accordion5" class="hidden px-4 py-2 text-sm">
-        <p>Wisata seharian ke Fiordland National Park dan Milford Sound. Naik cruise menyusuri fjord yang megah dengan air terjun dan tebing dramatis. Termasuk lunch box. Kembali ke Queenstown malam hari.</p>
+      <div id="accordion5" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Pagi hari, peserta berangkat menuju Fiordland National Park. Dalam perjalanan, akan melewati Te Anau dan pemandangan spektakuler seperti Mirror Lakes. Sesampainya di Milford Sound, peserta naik kapal pesiar untuk menjelajahi fjord yang terkenal dengan tebing menjulang dan air terjun deras. Termasuk lunch box. Sore hari kembali ke Queenstown dan istirahat.</p>
       </div>
     </div>
 
     <!-- Hari 6 -->
-    <div class="border rounded-lg overflow-hidden">
-      <button onclick="toggleAccordion(6)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
-        📅 Hari 6: Hari Bebas di Queenstown
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(6)" class="w-full flex items-center text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <div>
+          <h3 class="font-semibold text-blue-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Hari 6: Hari Bebas di Queenstown
+          </h3>
+          <p class="text-sm text-gray-600">Waktu bebas untuk eksplorasi pribadi</p>
+        </div>
       </button>
-      <div id="accordion6" class="hidden px-4 py-2 text-sm">
-        <p>Hari santai untuk aktivitas pribadi. Peserta dapat memilih jet boat, bungy jump, belanja suvenir, atau sekadar menikmati pemandangan danau.</p>
+      <div id="accordion6" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Hari bebas untuk menikmati Queenstown. Rekomendasi aktivitas opsional: jet boat di Shotover River, bungy jumping di Kawarau Bridge, atau sekadar santai menikmati kopi di pinggir danau. Peserta juga bisa mengunjungi Arrowtown, kota tambang emas kecil nan indah. Malam hari kembali ke hotel dan persiapan untuk pulang.</p>
       </div>
     </div>
 
     <!-- Hari 7 -->
-    <div class="border rounded-lg overflow-hidden">
-      <button onclick="toggleAccordion(7)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
-        📅 Hari 7: Kembali ke Jakarta
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(7)" class="w-full flex items-center text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <div>
+          <h3 class="font-semibold text-blue-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Hari 7: Kembali ke Jakarta
+          </h3>
+          <p class="text-sm text-gray-600">Penerbangan pulang via Sydney</p>
+        </div>
       </button>
-      <div id="accordion7" class="hidden px-4 py-2 text-sm">
-        <p>Pagi hari, peserta akan diantar ke Bandara Queenstown untuk penerbangan pulang via Sydney. Tiba di Jakarta malam hari dengan kenangan luar biasa dari Selandia Baru.</p>
+      <div id="accordion7" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Setelah sarapan dan check-out hotel, peserta diantar ke Bandara Queenstown untuk penerbangan pulang via Sydney. Tiba di Jakarta pada malam hari dengan membawa kenangan tak terlupakan dari alam luar biasa Selandia Baru.</p>
       </div>
     </div>
-    </section>
+
   </div>
 </section>
   
