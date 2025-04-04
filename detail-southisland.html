@@ -81,21 +81,6 @@
   </p>
 </section>
 
-  <!-- 💼 Opsi Paket (Land Only vs Lengkap) -->
-<section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-  <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">💼 Opsi Paket</h2>
-  <div class="bg-blue-50 p-6 rounded-xl shadow-md text-sm text-gray-700 leading-relaxed">
-    <p class="mb-2">Kami menyediakan dua pilihan fleksibel untuk mengikuti tur ini:</p>
-    <ul class="list-disc list-inside mb-4">
-      <li><strong>✈️ Paket Lengkap</strong> — Termasuk tiket pulang-pergi Jakarta – New Zealand</li>
-      <li><strong>🧭 Paket Land Only</strong> — Cocok untuk traveler dari luar Jakarta atau yang ingin mengatur penerbangan sendiri</li>
-    </ul>
-    <p><strong>Harga Land Only:</strong> <span class="text-blue-700 font-semibold">IDR 22.500.000/pax</span></p>
-    <p><strong>Titik kumpul:</strong> Bandara Christchurch (CHC), pukul 14.00 waktu lokal pada tanggal keberangkatan</p>
-    <p class="mt-2 text-xs text-gray-500 italic">*Penjemputan bandara hanya tersedia bagi peserta yang tiba sesuai jadwal grup. Peserta land only disarankan tiba minimal 2 jam sebelum waktu kumpul.</p>
-  </div>
-</section>
-
 <!-- 🧭 Itinerary Interaktif (AOS included & diperluas) -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Rencana Perjalanan (Itinerary)</h2>
@@ -264,6 +249,67 @@
     <li>❌ Tur opsional (Skyline Gondola, Milford Scenic Flight, dll)</li>
   </ul>
 </section>
+
+    <!-- 💼 Opsi Paket (Land Only vs Lengkap) -->
+<section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+  <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">💼 Opsi Paket</h2>
+  <div class="bg-blue-50 p-6 rounded-xl shadow-md text-sm text-gray-700 leading-relaxed">
+    <p class="mb-2">Kami menyediakan dua pilihan fleksibel untuk mengikuti tur ini:</p>
+    <ul class="list-disc list-inside mb-4">
+      <li><strong>✈️ Paket Lengkap</strong> — Termasuk tiket pulang-pergi Jakarta – New Zealand</li>
+      <li><strong>🧭 Paket Land Only</strong> — Cocok untuk traveler dari luar Jakarta atau yang ingin mengatur penerbangan sendiri</li>
+    </ul>
+    <p><strong>Harga Land Only:</strong> <span class="text-blue-700 font-semibold">IDR 22.500.000/pax</span></p>
+    <p><strong>Titik kumpul:</strong> Bandara Christchurch (CHC), pukul 14.00 waktu lokal pada tanggal keberangkatan</p>
+    <p class="mt-2 text-xs text-gray-500 italic">*Penjemputan bandara hanya tersedia bagi peserta yang tiba sesuai jadwal grup. Peserta land only disarankan tiba minimal 2 jam sebelum waktu kumpul.</p>
+  </div>
+</section>
+
+  <!-- 📋 Formulir Pendaftaran via WhatsApp -->
+<section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+  <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">📋 Formulir Pendaftaran</h2>
+  <form onsubmit="sendToWhatsApp(); return false;" class="bg-white shadow-md rounded-lg p-6 space-y-4">
+    <input type="text" id="nama" placeholder="Nama Lengkap" class="w-full border rounded px-3 py-2 text-sm" required>
+    <input type="email" id="email" placeholder="Email" class="w-full border rounded px-3 py-2 text-sm" required>
+    <input type="tel" id="wa" placeholder="Nomor WhatsApp" class="w-full border rounded px-3 py-2 text-sm" required>
+    <select id="paket" class="w-full border rounded px-3 py-2 text-sm">
+      <option value="Lengkap">✈️ Paket Lengkap</option>
+      <option value="Land Only">🧭 Land Only</option>
+    </select>
+    <input type="number" id="jumlah" placeholder="Jumlah Peserta" min="1" class="w-full border rounded px-3 py-2 text-sm" required>
+    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded w-full">Kirim via WhatsApp</button>
+  </form>
+</section>
+
+  <script>
+  function sendToWhatsApp() {
+    const nama = document.getElementById('nama').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const wa = document.getElementById('wa').value.trim();
+    const paket = document.getElementById('paket').value;
+    const jumlah = parseInt(document.getElementById('jumlah').value);
+
+    if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
+      alert("Harap lengkapi semua kolom dengan benar.");
+      return;
+    }
+
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailValid) {
+      alert("Alamat email tidak valid.");
+      return;
+    }
+
+    if (!/^\d{10,15}$/.test(wa)) {
+      alert("Nomor WhatsApp harus berupa angka dan minimal 10 digit.");
+      return;
+    }
+
+    const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.\n\nNama: ${nama}\nEmail: ${email}\nWhatsApp: ${wa}\nPaket: ${paket}\nJumlah Peserta: ${jumlah}`;
+    const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
+</script>
 
 <!-- ❓ FAQ Section -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
