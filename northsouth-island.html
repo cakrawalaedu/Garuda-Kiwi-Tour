@@ -5,153 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10D8N North & South Island Private Tour</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    .badge { @apply inline-block bg-blue-100 text-blue-700 px-2 py-1 text-xs rounded; }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <main class="max-w-5xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold text-blue-800 mb-2">10D8N North & South Island Private Tour – New Zealand</h1>
-    <p class="mb-1">Auckland – Hobbiton – Rotorua – Taupo – Christchurch – Lake Tekapo – Mt Cook – Queenstown – Milford Sound</p>
-    <p class="text-sm text-gray-600 mb-6">📅 Musim: Semi (September–November) • 👥 Private trip – Min. 4 peserta • 🚐 Transportasi: Mini Van beserta driver</p>
+<!-- 🌄 Hero -->
+<section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url(northsouth-hero.jpg');">
+  <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-2xl">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">10D8N North & South Island Private Tour</h1>
+    <p class="text-lg">Jelajahi Auckland, Hobbiton, Rotorua, Queenstown, Milford Sound, dan banyak lagi dalam satu paket epik!</p>
+  </div>
+</section>
 
-    <h2 class="text-2xl font-bold text-blue-700 mt-8 mb-4">🗓️ Rangkuman Itinerary</h2>
+<!-- 📄 Deskripsi Paket -->
+<section class="py-12 px-6 max-w-4xl mx-auto text-center">
+  <h2 class="text-2xl font-bold text-blue-800 mb-4">Deskripsi Paket</h2>
+  <p>
+    Rasakan pengalaman terbaik dari North dan South Island dalam 10 hari 8 malam. Perjalanan ini menggabungkan budaya, alam, dan destinasi ikonik seperti Hobbiton, Rotorua, Lake Tekapo, dan Milford Sound dengan kenyamanan penuh dalam private trip.
+  </p>
+</section>
 
-    <div class="space-y-6">
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 1: Jakarta – Transit Sydney</h3>
-        <ul class="list-disc list-inside">
-          <li>Penerbangan malam dari Jakarta dengan Qantas</li>
-          <li>Transit di Sydney – lanjut ke Auckland</li>
-          <li>Bermalam di pesawat</li>
-        </ul>
-      </div>
+<!-- 🧭 Itinerary Interaktif -->
+<section class="py-12 px-6 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Rencana Perjalanan (Itinerary)</h2>
+  <div class="space-y-4" id="itineraryAccordion">
 
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 2: Tiba di Auckland – City Tour</h3>
-        <ul class="list-disc list-inside">
-          <li>Dijemput di bandara Auckland</li>
-          <li>City tour: Sky Tower, Queen Street, Viaduct Harbour</li>
-          <li>🏨 Hotel: Holiday Inn Express Auckland City Centre ★★★★</li>
-          <li>Bermalam di Auckland</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 3: Hobbiton & Rotorua</h3>
-        <ul class="list-disc list-inside">
-          <li>Perjalanan ke Matamata – tur Hobbiton Movie Set</li>
-          <li>Lanjut ke Rotorua – kunjungan ke Government Gardens & Lake Rotorua</li>
-          <li>🏨 Hotel: Jet Park Hotel Rotorua ★★★★</li>
-          <li>Bermalam di Rotorua</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 4: Rotorua – Taupo – Kembali ke Auckland</h3>
-        <ul class="list-disc list-inside">
-          <li>Kunjungan ke Wai-O-Tapu & Huka Falls, Taupo</li>
-          <li>Sore kembali ke Auckland</li>
-          <li>🏨 Hotel: President Hotel Auckland ★★★</li>
-          <li>Bermalam di Auckland</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 5: Auckland – Christchurch</h3>
-        <ul class="list-disc list-inside">
-          <li>Pagi bebas / opsional kunjungan ke Auckland Domain</li>
-          <li>Siang terbang ke Christchurch</li>
-          <li>City tour ringan: Hagley Park, Avon River, Riverside Market</li>
-          <li>🏨 Hotel: Wyndham Garden Christchurch ★★★★</li>
-          <li>Bermalam di Christchurch</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 6: Christchurch – Lake Tekapo – Mt Cook</h3>
-        <ul class="list-disc list-inside">
-          <li>Kunjungan ke Church of the Good Shepherd & Lake Tekapo</li>
-          <li>Photo stop di Mt Cook National Park</li>
-          <li>🏨 Hotel: The Godley Hotel Tekapo ★★★</li>
-          <li>Bermalam di Tekapo</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 7: Tekapo – Queenstown via Lindis Pass</h3>
-        <ul class="list-disc list-inside">
-          <li>Perjalanan scenic via Lindis Pass</li>
-          <li>Waktu bebas di Queenstown tepi danau</li>
-          <li>🏨 Hotel: Holiday Inn Queenstown Remarkables Park ★★★★</li>
-          <li>Bermalam di Queenstown</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 8: Milford Sound Cruise</h3>
-        <ul class="list-disc list-inside">
-          <li>Road trip ke Fiordland National Park</li>
-          <li>Milford Sound Cruise (termasuk lunch box)</li>
-          <li>🏨 Hotel: Holiday Inn Queenstown Remarkables Park ★★★★</li>
-          <li>Bermalam di Queenstown</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 9: Queenstown – Hari Bebas</h3>
-        <ul class="list-disc list-inside">
-          <li>Aktivitas pribadi: belanja, kuliner, foto-foto</li>
-          <li>🏨 Hotel: Holiday Inn Queenstown Remarkables Park ★★★★</li>
-          <li>Bermalam di Queenstown</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-semibold text-lg text-blue-600">📅 Hari 10: Queenstown – Jakarta</h3>
-        <ul class="list-disc list-inside">
-          <li>Transfer ke Bandara Queenstown</li>
-          <li>Penerbangan pulang via Sydney</li>
-          <li>Tiba malam hari di Jakarta</li>
-        </ul>
+    <!-- Hari 1 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(1)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 1: Jakarta – Transit Sydney
+      </button>
+      <div id="accordion1" class="hidden px-4 py-2 text-sm">
+        <p>Penerbangan malam dari Jakarta dengan Qantas. Transit di Sydney – lanjut ke Auckland. Bermalam di pesawat.</p>
       </div>
     </div>
 
-    <hr class="my-10">
-
-    <div class="bg-blue-50 p-6 rounded-lg">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">💰 Harga Paket</h2>
-      <p class="text-xl font-semibold text-blue-700 mb-2">IDR 38.000.000 / orang</p>
-      <p class="text-sm">(Minimal 4 peserta – private tour)</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-      <div>
-        <h3 class="text-xl font-semibold text-blue-800 mb-2">✅ Termasuk</h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>✈️ Tiket Qantas PP Jakarta – Auckland & Queenstown – Jakarta (promo fare)</li>
-          <li>✈️ Tiket domestik Auckland – Christchurch</li>
-          <li>🏨 8 malam akomodasi hotel bintang 3–4</li>
-          <li>🚐 Transportasi private antar kota (van dengan sopir & BBM)</li>
-          <li>🚢 Milford Sound Cruise (termasuk lunch box)</li>
-          <li>🎫 Tiket Hobbiton Movie Set</li>
-          <li>🎫 Tiket Wai-O-Tapu Thermal Wonderland</li>
-          <li>📍 Tiket masuk & parkir lokasi wisata</li>
-          <li>🧾 Koordinasi & bantuan lokal (tanpa tour guide full time)</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-red-700 mb-2">❌ Tidak Termasuk</h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>Makan siang & malam (biaya pribadi)</li>
-          <li>Aktivitas opsional (gondola, jet boat, bungy, dll.)</li>
-          <li>Visa NZeTA & asuransi perjalanan (bisa dibantu panduan pengurusan)</li>
-        </ul>
+    <!-- Hari 2 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(2)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 2: Tiba di Auckland – City Tour
+      </button>
+      <div id="accordion2" class="hidden px-4 py-2 text-sm">
+        <p>Dijemput di bandara Auckland. City tour: Sky Tower, Queen Street, Viaduct Harbour. Bermalam di Holiday Inn Express Auckland City Centre ★★★★.</p>
       </div>
     </div>
-  </main>
+
+    <!-- Hari 3 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(3)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 3: Hobbiton & Rotorua
+      </button>
+      <div id="accordion3" class="hidden px-4 py-2 text-sm">
+        <p>Perjalanan ke Matamata – tur Hobbiton Movie Set. Lanjut ke Rotorua – kunjungan ke Government Gardens & Lake Rotorua. Bermalam di Jet Park Hotel Rotorua ★★★★.</p>
+      </div>
+    </div>
+
+    <!-- Hari 4 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(4)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 4: Rotorua – Taupo – Kembali ke Auckland
+      </button>
+      <div id="accordion4" class="hidden px-4 py-2 text-sm">
+        <p>Kunjungan ke Wai-O-Tapu & Huka Falls, Taupo. Sore kembali ke Auckland. Bermalam di President Hotel Auckland ★★★.</p>
+      </div>
+    </div>
+
+    <!-- Hari 5 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(5)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 5: Auckland – Christchurch
+      </button>
+      <div id="accordion5" class="hidden px-4 py-2 text-sm">
+        <p>Pagi bebas / opsional kunjungan ke Auckland Domain. Siang terbang ke Christchurch. City tour ringan: Hagley Park, Avon River, Riverside Market. Bermalam di Wyndham Garden Christchurch ★★★★.</p>
+      </div>
+    </div>
+
+    <!-- Hari 6 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(6)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 6: Christchurch – Lake Tekapo – Mt Cook
+      </button>
+      <div id="accordion6" class="hidden px-4 py-2 text-sm">
+        <p>Kunjungan ke Church of the Good Shepherd & Lake Tekapo. Photo stop di Mt Cook National Park. Bermalam di The Godley Hotel Tekapo ★★★.</p>
+      </div>
+    </div>
+
+    <!-- Hari 7 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(7)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 7: Tekapo – Queenstown via Lindis Pass
+      </button>
+      <div id="accordion7" class="hidden px-4 py-2 text-sm">
+        <p>Perjalanan scenic via Lindis Pass. Waktu bebas di Queenstown tepi danau. Bermalam di Holiday Inn Queenstown Remarkables Park ★★★★.</p>
+      </div>
+    </div>
+
+    <!-- Hari 8 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(8)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 8: Milford Sound Cruise
+      </button>
+      <div id="accordion8" class="hidden px-4 py-2 text-sm">
+        <p>Road trip ke Fiordland National Park. Milford Sound Cruise (termasuk lunch box). Bermalam di Holiday Inn Queenstown Remarkables Park ★★★★.</p>
+      </div>
+    </div>
+
+    <!-- Hari 9 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(9)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 9: Queenstown – Hari Bebas
+      </button>
+      <div id="accordion9" class="hidden px-4 py-2 text-sm">
+        <p>Aktivitas pribadi: belanja, kuliner, foto-foto. Bermalam di Holiday Inn Queenstown Remarkables Park ★★★★.</p>
+      </div>
+    </div>
+
+    <!-- Hari 10 -->
+    <div class="border rounded-lg overflow-hidden">
+      <button onclick="toggleAccordion(10)" class="w-full text-left px-4 py-3 bg-blue-100 hover:bg-blue-200 font-semibold">
+        📅 Hari 10: Queenstown – Jakarta
+      </button>
+      <div id="accordion10" class="hidden px-4 py-2 text-sm">
+        <p>Transfer ke Bandara Queenstown. Penerbangan pulang via Sydney. Tiba malam hari di Jakarta.</p>
+      </div>
+    </div>
+    <!-- Hari-hari itinerary akan diinsert otomatis nanti -->
+  </div>
+</section>
+
+<!-- 💰 Harga & Fasilitas -->
+<section class="py-12 px-6 max-w-4xl mx-auto text-center">
+  <h2 class="text-2xl font-bold text-blue-800 mb-4">Harga & Fasilitas</h2>
+  <p class="mb-2"><strong>Harga mulai dari:</strong> <span class="text-blue-700 font-semibold">IDR 38.000.000/pax</span></p>
+  <p class="mb-2"><strong>Termasuk:</strong> Tiket Qantas, akomodasi bintang 3–4, transportasi pribadi, tiket objek wisata utama</p>
+  <p><strong>Tidak termasuk:</strong> Makan siang/malam, aktivitas opsional, visa & asuransi</p>
+</section>
+
+<!-- 🔘 Tombol Aksi -->
+<section class="py-8 text-center space-x-4">
+  <a href="https://wa.me/6282154465074" target="_blank" class="inline-block bg-green-500 text-white px-5 py-2 rounded hover:bg-green-600 transition">💬 Hubungi via WhatsApp</a>
+  <a href="files/10D8N_NorthSouth_Island_Private_Tour.pdf" target="_blank" class="inline-block bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-700 transition">📄 Unduh Brosur</a>
+  <a href="index.html#paket" class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-500 transition">⬅️ Kembali ke Beranda</a>
+</section>
+
+<!-- 🔻 Footer -->
+<footer class="bg-blue-800 text-white py-6 text-center">
+  <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
+</footer>
+
+<script>
+  function toggleAccordion(id) {
+    const el = document.getElementById('accordion' + id);
+    el.classList.toggle('hidden');
+  }
+</script>
 
 </body>
 </html>
