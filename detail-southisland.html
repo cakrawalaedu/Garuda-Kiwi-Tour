@@ -33,11 +33,6 @@
 </head>
 <body class="bg-white text-gray-800">
 
-<!-- 🌙 Dark Mode Toggle Button -->
-<button id="darkModeToggle" class="fixed top-4 right-4 z-50 bg-blue-600 text-white text-sm px-3 py-2 rounded-full shadow hover:bg-blue-500 transition">
-  🌙 Mode Gelap
-</button>
-
 <!-- 🔔 Promo Banner -->
 <div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
   🎉 Promo Spesial: Booking sebelum  31 July & dapatkan diskon IDR 500.000!
@@ -69,6 +64,7 @@
     <a href="index.html#kontak" class="block text-blue-800 hover:text-blue-600">Kontak</a>
   </div>
 </header>
+
 <!-- 🌄 Hero -->
 <section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('south island-a.jpg');">
   <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-2xl" data-aos="zoom-in">
@@ -83,6 +79,21 @@
   <p class="text-gray-700 leading-relaxed">
     Ikuti perjalanan tak terlupakan selama <strong>7 hari 5 malam</strong> menjelajahi South Island, Selandia Baru. Mulai dari pemandangan spektakuler <em>Lake Tekapo</em> hingga kemegahan <em>Milford Sound</em>, nikmati perjalanan penuh kenyamanan dan keindahan alam dengan layanan eksklusif.
   </p>
+</section>
+
+  <!-- 💼 Opsi Paket (Land Only vs Lengkap) -->
+<section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+  <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">💼 Opsi Paket</h2>
+  <div class="bg-blue-50 p-6 rounded-xl shadow-md text-sm text-gray-700 leading-relaxed">
+    <p class="mb-2">Kami menyediakan dua pilihan fleksibel untuk mengikuti tur ini:</p>
+    <ul class="list-disc list-inside mb-4">
+      <li><strong>✈️ Paket Lengkap</strong> — Termasuk tiket pulang-pergi Jakarta – New Zealand</li>
+      <li><strong>🧭 Paket Land Only</strong> — Cocok untuk traveler dari luar Jakarta atau yang ingin mengatur penerbangan sendiri</li>
+    </ul>
+    <p><strong>Harga Land Only:</strong> <span class="text-blue-700 font-semibold">IDR 22.500.000/pax</span></p>
+    <p><strong>Titik kumpul:</strong> Bandara Christchurch (CHC), pukul 14.00 waktu lokal pada tanggal keberangkatan</p>
+    <p class="mt-2 text-xs text-gray-500 italic">*Penjemputan bandara hanya tersedia bagi peserta yang tiba sesuai jadwal grup. Peserta land only disarankan tiba minimal 2 jam sebelum waktu kumpul.</p>
+  </div>
 </section>
 
 <!-- 🧭 Itinerary Interaktif (AOS included & diperluas) -->
@@ -311,15 +322,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once: true, duration: 800 });</script>
 <script>
-  // Dark Mode Toggle
-  if (localStorage.getItem('dark-mode') === 'true') {
-    document.body.classList.add('dark-mode');
-  }
-  document.getElementById('darkModeToggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
-  });
-
   // Promo Banner Hide with localStorage
   const promoBanner = document.getElementById('promoBanner');
   if (localStorage.getItem('hidePromo')) promoBanner.style.display = 'none';
