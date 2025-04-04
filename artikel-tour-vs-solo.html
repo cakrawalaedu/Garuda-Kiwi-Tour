@@ -8,21 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .highlight-box, .tip-box, .warning-box {
+      border-left-width: 4px;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 0.375rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
     .highlight-box {
-      @apply border-l-4 border-emerald-500 bg-emerald-50 p-4 my-4 rounded shadow-sm;
+      border-color: #3B82F6;
+      background-color: #EFF6FF;
     }
     .tip-box {
-      @apply border-l-4 border-emerald-400 bg-emerald-50 p-4 my-4 rounded shadow-sm;
+      border-color: #10B981;
+      background-color: #ECFDF5;
     }
     .warning-box {
-      @apply border-l-4 border-gray-500 bg-gray-50 p-4 my-4 rounded shadow-sm;
+      border-color: #F59E0B;
+      background-color: #FFFBEB;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white py-8 text-center shadow">
+  <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-8 text-center shadow">
     <h1 class="text-4xl font-bold">Tour vs Solo Travel: Mana yang Cocok untukmu?</h1>
     <p class="mt-2 text-base opacity-90">Menimbang keuntungan & kekurangan perjalanan sendiri vs ikut tur</p>
   </header>
@@ -64,16 +74,16 @@
       </ul>
     </div>
 
-    <p class="mt-6 text-sm text-gray-600">Apapun pilihanmu, yang penting adalah mempersiapkan dengan baik dan menikmati perjalananmu di Aotearoa 🌿</p>
+    <p class="mt-6 text-sm text-gray-500">Apapun pilihanmu, yang penting adalah mempersiapkan dengan baik dan menikmati perjalananmu di Aotearoa 🌿</p>
 
     <!-- Tombol kembali -->
     <div class="mt-10 text-center">
-      <a href="blog.html" class="inline-block bg-emerald-700 text-white px-6 py-2 rounded hover:bg-emerald-600 transition">⬅️ Kembali ke Blog</a>
+      <a href="blog.html" class="inline-block bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-600 transition">⬅️ Kembali ke Blog</a>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-emerald-800 text-white py-6 text-center mt-16">
+  <footer class="bg-blue-800 text-white py-6 text-center mt-16">
     <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
   </footer>
 
