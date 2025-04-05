@@ -23,7 +23,11 @@
 
   <!-- Custom Styles -->
   <style>
-    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    body {flex-direction: column;
+  min-height: 100vh;
+    }
+    main {
+  flex: 1; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
     .dark-mode { background-color: #111827; color: #f9fafb; }
     .dark-mode header, .dark-mode footer, .dark-mode .bg-white { background-color: #1f2937 !important; }
     .dark-mode .text-blue-800 { color: #93c5fd !important; }
@@ -42,11 +46,7 @@
     .zoom-hover:hover img {
       transform: scale(1.05);
       display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-    }
-    main {
-  flex: 1;
+
 }
   </style>
 </head>
