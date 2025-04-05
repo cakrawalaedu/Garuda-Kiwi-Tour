@@ -350,13 +350,13 @@
     depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
   }
 
-  function sendToWhatsApp() {
+ function sendToWhatsApp() {
     const nama = document.getElementById('nama').value.trim();
     const email = document.getElementById('email').value.trim();
     const wa = document.getElementById('wa').value.trim();
-    const paket = paketEl.value;
-    const isSingle = singleEl.checked;
-    const jumlah = parseInt(jumlahEl.value);
+    const paket = document.getElementById('paket').value;
+    const isSingle = document.getElementById('single').checked;
+    const jumlah = parseInt(document.getElementById('jumlah').value);
 
     if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
       alert("Harap lengkapi semua kolom dengan benar.");
@@ -369,8 +369,8 @@
       return;
     }
 
-    if (!/^\d{10,15}$/.test(wa)) {
-      alert("Nomor WhatsApp harus berupa angka dan minimal 8 digit.");
+    if (!/^\+?\d{6,15}$/.test(wa)) {
+      alert("Nomor WhatsApp tidak valid. Harap gunakan angka dengan kode negara, contoh: +6281...");
       return;
     }
 
