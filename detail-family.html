@@ -23,11 +23,7 @@
 
   <!-- Custom Styles -->
   <style>
-    body {flex-direction: column;
-  min-height: 100vh;
-    }
-    main {
-  flex: 1; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    body {font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
     .dark-mode { background-color: #111827; color: #f9fafb; }
     .dark-mode header, .dark-mode footer, .dark-mode .bg-white { background-color: #1f2937 !important; }
     .dark-mode .text-blue-800 { color: #93c5fd !important; }
@@ -471,69 +467,62 @@ Deposit 30%: ${formatRupiah(deposit)}`;
 </style>
 
 <!-- 🔻 Footer -->
-<footer class="bg-blue-800 text-white py-6 text-center mt-12" data-aos="fade-up">
-    <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
+<footer class="bg-blue-800 text-white py-6 text-center mt-12 animate__animated animate__fadeInUp" data-aos="fade-up">
+  <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
 </footer>
 
-<!-- 🔘 Tombol Kembali ke Atas -->
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-          class="fixed bottom-24 right-4 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-500 transition md:bottom-28 z-50 text-sm">
-    🔝 Kembali ke Atas
-</button>
 
-<!-- 💬 Floating WhatsApp Button -->
-<a href="https://wa.me/6282154465074" target="_blank"
-    class="fixed bottom-6 right-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 transition z-50 text-sm flex items-center gap-2">
-    💬 WhatsApp
-  </a>
-
-<!-- 📱 Sticky Bottom Nav (Mobile Only) -->
+<!-- Floating Buttons -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-24 right-4 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-500 transition md:bottom-28 z-50 text-sm">🔝 Kembali ke Atas</button>
+<a href="https://wa.me/6282154465074" target="_blank" class="fixed bottom-6 right-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 transition z-50 text-sm flex items-center gap-2">💬 WhatsApp</a>
 <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-40 md:hidden transition">
-    <div class="flex justify-around py-2 text-sm text-blue-800 font-medium">
-    <a href="index.html#home" class="flex flex-col items-center hover:text-blue-500">
-      <span class="text-xl">🏠</span><span class="text-xs">Home</span>
-    </a>
-    <a href="index.html#paket" class="flex flex-col items-center hover:text-blue-500">
-      <span class="text-xl">🧳</span><span class="text-xs">Paket</span>
-    </a>
-    <a href="index.html#galeri" class="flex flex-col items-center hover:text-blue-500">
-      <span class="text-xl">🖼️</span><span class="text-xs">Galeri</span>
-    </a>
-    <a href="index.html#kontak" class="flex flex-col items-center hover:text-blue-500">
-      <span class="text-xl">📞</span><span class="text-xs">Kontak</span>
-    </a>
+  <div class="flex justify-around py-2 text-sm text-blue-800 font-medium">
+    <a href="index.html#home" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">🏠</span><span class="text-xs">Home</span></a>
+    <a href="index.html#paket" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">🧳</span><span class="text-xs">Paket</span></a>
+    <a href="index.html#galeri" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">🖼️</span><span class="text-xs">Galeri</span></a>
+    <a href="index.html#kontak" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">📞</span><span class="text-xs">Kontak</span></a>
   </div>
 </div>
 
-<!-- AOS Animation -->
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once: true, duration: 800 });</script>
-
-<!-- Accordion Toggle Function -->
 <script>
-  function toggleAccordion(id) {
-    const el = document.getElementById('accordion' + id);
-    el.classList.toggle('hidden');
-  }
-</script>
+  // Promo Banner Hide with localStorage
+  const promoBanner = document.getElementById('promoBanner');
+  if (localStorage.getItem('hidePromo')) promoBanner.style.display = 'none';
+  document.getElementById('closePromoBanner').onclick = () => {
+    promoBanner.style.display = 'none';
+    localStorage.setItem('hidePromo', true);
+  };
 
-<script>
+  // Mobile menu toggle
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const menuIcon = document.getElementById('menuIcon');
   const menuLinks = mobileMenu.querySelectorAll('a');
-
   menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     menuIcon.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
   });
-
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
       menuIcon.textContent = '☰';
     });
   });
+
+  // Accordion eksklusif (hanya satu terbuka)
+  function toggleAccordion(id) {
+    const sections = document.querySelectorAll('[id^="accordion"]');
+    sections.forEach((sec) => {
+      if (sec.id === 'accordion' + id) {
+        sec.classList.toggle('hidden');
+      } else {
+        sec.classList.add('hidden');
+      }
+    });
+  }
 </script>
 </body>
 </html>
