@@ -7,6 +7,7 @@
   <meta name="description" content="Paket tur keluarga 8 hari 6 malam ke North Island, Selandia Baru. Kunjungi Auckland, Rotorua, Hobbiton, Taupo, dan Wellington. Cocok untuk anak-anak dan orang tua.">
   <meta name="keywords" content="family tour New Zealand, liburan keluarga Selandia Baru, paket tur NZ anak, Garuda Kiwi Tour">
   <meta name="author" content="Garuda Kiwi Tour">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,7 +44,7 @@
     }
   </style>
 </head>
-
+<body>
   <!-- 🔔 Promo Banner -->
 <div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
   🎉 Promo Spesial: Booking sebelum  31 July & dapatkan diskon IDR 500.000!
@@ -319,42 +320,42 @@
 
   const paketEl = document.getElementById('paket');
   const jumlahEl = document.getElementById('jumlah');
+  const singleEl = document.getElementById('single');
   const hargaPerOrangText = document.getElementById('hargaPerOrang');
   const totalHargaText = document.getElementById('totalHarga');
   const depositInfoText = document.getElementById('depositInfo');
 
   paketEl.addEventListener('change', updateHarga);
   jumlahEl.addEventListener('input', updateHarga);
+  singleEl.addEventListener('change', updateHarga);
 
   function updateHarga() {
-  const tipe = paketEl.value;
-  const jumlah = parseInt(jumlahEl.value) || 0;
-  const hargaSebelum = hargaAwal[tipe] || 0;
-  const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
+    const tipe = paketEl.value;
+    const jumlah = parseInt(jumlahEl.value) || 0;
+    const hargaSebelum = hargaAwal[tipe] || 0;
+    const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
 
-  const isSingle = document.getElementById('single').checked;
-  const extraSingle = isSingle ? singleSupplement : 0;
-  const total = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
-  const deposit = Math.round(total * 0.3);
+    const isSingle = singleEl.checked;
+    const total = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
+    const deposit = Math.round(total * 0.3);
 
-  hargaPerOrangText.innerHTML = isDiskonAktif
-    ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
-    : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
+    hargaPerOrangText.innerHTML = isDiskonAktif
+      ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
+      : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
 
-  totalHargaText.textContent = jumlah > 0
-    ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
-    : "Total: -";
+    totalHargaText.textContent = jumlah > 0
+      ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
+      : "Total: -";
 
-  depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
-}
+    depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+  }
 
   function sendToWhatsApp() {
     const nama = document.getElementById('nama').value.trim();
     const email = document.getElementById('email').value.trim();
     const wa = document.getElementById('wa').value.trim();
     const paket = paketEl.value;
-    const isSingle = document.getElementById('single').checked;
-${isSingle ? 'Permintaan kamar pribadi: ✅\n' : ''}
+    const isSingle = singleEl.checked;
     const jumlah = parseInt(jumlahEl.value);
 
     if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
@@ -375,8 +376,9 @@ ${isSingle ? 'Permintaan kamar pribadi: ✅\n' : ''}
 
     const hargaSebelum = hargaAwal[paket];
     const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
-    const totalHarga = hargaDiskon * jumlah;
+    const totalHarga = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
     const deposit = Math.round(totalHarga * 0.3);
+    const kamar = isSingle ? "Permintaan kamar pribadi: ✅\n" : "";
 
     const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur Family Fun NZ (8D6N).
 
@@ -385,7 +387,7 @@ Email: ${email}
 WhatsApp: ${wa}
 Paket: ${paket}
 Jumlah Peserta: ${jumlah}
-${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli)` : `Harga per pax: ${formatRupiah(hargaSebelum)}`}
+${kamar}${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli)` : `Harga per pax: ${formatRupiah(hargaSebelum)}`}
 Total Harga: ${formatRupiah(totalHarga)}
 Deposit 30%: ${formatRupiah(deposit)}`;
 
@@ -393,7 +395,6 @@ Deposit 30%: ${formatRupiah(deposit)}`;
     window.open(url, '_blank');
   }
 
-  // Inisialisasi tampilan harga saat halaman dimuat
   updateHarga();
 </script>
 
@@ -460,7 +461,7 @@ Deposit 30%: ${formatRupiah(deposit)}`;
   }
 </style>
 
-  <!-- 🔻 Footer -->
+<!-- 🔻 Footer -->
 <footer class="bg-blue-800 text-white py-6 text-center mt-12" data-aos="fade-up">
   <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
 </footer>
@@ -495,7 +496,7 @@ Deposit 30%: ${formatRupiah(deposit)}`;
   </div>
 </div>
 
-  <!-- AOS Animation -->
+<!-- AOS Animation -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once: true, duration: 800 });</script>
 
@@ -507,7 +508,7 @@ Deposit 30%: ${formatRupiah(deposit)}`;
   }
 </script>
 
-  <script>
+<script>
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const menuIcon = document.getElementById('menuIcon');
@@ -525,8 +526,8 @@ Deposit 30%: ${formatRupiah(deposit)}`;
     });
   });
 </script>
-
 </body>
 </html>
+
 
 
