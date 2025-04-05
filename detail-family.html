@@ -426,13 +426,13 @@ Deposit 30%: ${formatRupiah(deposit)}`;
   </div>
 </section>
 
-<!-- Splide.js -->
+<!-- Splide JS -->
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
 <script>
   new Splide('#paketLainnyaCarousel', {
-    type: 'loop',
+    type   : 'loop',
     perPage: 2,
-    gap: '1.5rem',
+    gap    : '1.5rem',
     autoplay: true,
     interval: 4000,
     pauseOnHover: true,
@@ -441,6 +441,26 @@ Deposit 30%: ${formatRupiah(deposit)}`;
     }
   }).mount();
 </script>
+
+<!-- Optional Styling -->
+<style>
+  .splide__arrow {
+    background-color: rgba(30, 64, 175, 0.7);
+    border-radius: 9999px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .splide__arrow:hover {
+    background-color: #1e40af;
+    transform: scale(1.1);
+  }
+
+  .zoom-hover img {
+    transition: transform 0.5s ease;
+  }
+  .zoom-hover:hover img {
+    transform: scale(1.05);
+  }
+</style>
 </main>
 
 <!-- 🔻 Footer -->
