@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detail Paket: 8D6N Family Fun NZ</title>
-  <meta name="description" content="Paket tur keluarga 8 hari 6 malam ke North Island, Selandia Baru. Kunjungi Auckland, Rotorua, Hobbiton, Taupo, dan Wellington. Cocok untuk anak-anak dan orang tua.">
-  <meta name="keywords" content="family tour New Zealand, liburan keluarga Selandia Baru, paket tur NZ anak, Garuda Kiwi Tour">
-  <meta name="author" content="Garuda Kiwi Tour">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,12 +17,20 @@
   <!-- Splide Carousel -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css" />
 
-  <!-- Custom Styles -->
   <style>
-    body {font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-    .dark-mode { background-color: #111827; color: #f9fafb; }
-    .dark-mode header, .dark-mode footer, .dark-mode .bg-white { background-color: #1f2937 !important; }
-    .dark-mode .text-blue-800 { color: #93c5fd !important; }
+    html, body {
+      overflow-x: hidden;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .zoom-hover img {
+      transition: transform 0.5s ease;
+    }
+    .zoom-hover:hover img {
+      transform: scale(1.05);
+    }
     .splide__arrow {
       background-color: rgba(30, 64, 175, 0.7);
       border-radius: 9999px;
@@ -36,26 +40,18 @@
       background-color: #1e40af;
       transform: scale(1.1);
     }
-    .zoom-hover img {
-      transition: transform 0.5s ease;
-    }
-    .zoom-hover:hover img {
-      transform: scale(1.05);
-      display: flex;
-
-}
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
-
-  <!-- 🔔 Promo Banner -->
-  <div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
-    🎉 Promo Spesial: Booking sebelum  31 July & dapatkan diskon IDR 500.000!
-    <button id="closePromoBanner" class="ml-4 font-bold">Tutup ✖</button>
-  </div>
+  
+<!-- 🔔 Promo Banner -->
+<div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
+  🎉 Promo Spesial: Booking sebelum 31 Juli & dapatkan diskon IDR 500.000!
+  <button id="closePromoBanner" class="ml-4 font-bold">Tutup ✖</button>
+</div>
 
 <!-- 🧭 Navbar -->
-  <header class="sticky top-0 bg-white shadow z-40">
+<header class="sticky top-0 bg-white shadow z-40">
   <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
     <a href="index.html" class="text-2xl font-bold text-blue-800 hover:text-blue-600">Garuda Kiwi Tour</a>
     <button id="menuToggle" class="md:hidden text-2xl text-blue-800 focus:outline-none">
@@ -79,15 +75,15 @@
     <a href="index.html#kontak" class="block text-blue-800 hover:text-blue-600">Kontak</a>
   </div>
 </header>
-  
+
+  <main class="flex-grow">
 <!-- 🌄 Hero Section -->
- <section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('family-fun-hero.jpg');">
+<section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('family-fun-hero.jpg');">
   <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-2xl" data-aos="zoom-in">
     <h1 class="text-3xl md:text-4xl font-bold mb-4">8D6N Family Fun NZ</h1>
     <p class="text-lg">Paket seru untuk keluarga! Auckland, Rotorua, Hobbiton, Taupo & Wellington — cocok untuk semua usia.</p>
   </div>
 </section>
-
 <!-- 📄 Deskripsi Paket -->
 <section class="py-12 px-6 max-w-4xl mx-auto text-center bg-white" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-4">Deskripsi Paket</h2>
@@ -96,7 +92,6 @@
     Cocok untuk anak-anak, orang tua, maupun pasangan yang ingin menikmati Selandia Baru secara nyaman dan fleksibel.
   </p>
 </section>
-
 <!-- 🧭 Itinerary Interaktif -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Rencana Perjalanan (Itinerary)</h2>
@@ -134,7 +129,6 @@
         <p>Perjalanan menuju Hobbiton Movie Set – lokasi syuting Lord of the Rings yang sangat populer, cocok untuk keluarga. Lanjut ke Rotorua, mengunjungi desa budaya Māori dan menikmati pemandian geothermal.</p>
       </div>
     </div>
-
     <!-- Hari 4 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
       <button onclick="toggleAccordion(4)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
@@ -146,66 +140,60 @@
       </div>
     </div>
 
- <!-- Hari 5 -->
-<div class="border rounded-lg overflow-hidden shadow-md">
-  <button onclick="toggleAccordion(5)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
-    <h3 class="font-semibold text-blue-800">Hari 5: Aktivitas di Taupo – Menuju Palmerston North</h3>
-    <p class="text-sm text-gray-600">Relaksasi pagi & perjalanan ke kota pendidikan</p>
-  </button>
-  <div id="accordion5" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-    <p>Pagi hari bebas untuk menikmati keindahan Lake Taupo dan sekitarnya. Peserta dapat memilih aktivitas ringan seperti:</p>
-    <ul class="list-disc list-inside mt-2">
-      <li>Berjalan santai di sepanjang <strong>Lakefront Taupo</strong></li>
-      <li>Mengunjungi <strong>Huka Honey Hive</strong> – pusat edukasi lebah & produk lokal</li>
-      <li>Relaksasi di <strong>Spa Thermal Park</strong> – hot pools alami (gratis)</li>
-    </ul>
-    <p class="mt-2">Setelah makan siang, peserta melanjutkan perjalanan darat ke Palmerston North (~3 jam). Tiba sore/malam hari dan check-in hotel.</p>
-  </div>
-</div>
+    <!-- Hari 5 -->
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(5)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <h3 class="font-semibold text-blue-800">Hari 5: Aktivitas di Taupo – Menuju Palmerston North</h3>
+        <p class="text-sm text-gray-600">Relaksasi pagi & perjalanan ke kota pendidikan</p>
+      </button>
+      <div id="accordion5" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Pagi hari bebas untuk menikmati keindahan Lake Taupo dan sekitarnya. Peserta dapat memilih aktivitas ringan seperti:</p>
+        <ul class="list-disc list-inside mt-2">
+          <li>Berjalan santai di sepanjang <strong>Lakefront Taupo</strong></li>
+          <li>Mengunjungi <strong>Huka Honey Hive</strong> – pusat edukasi lebah & produk lokal</li>
+          <li>Relaksasi di <strong>Spa Thermal Park</strong> – hot pools alami (gratis)</li>
+        </ul>
+        <p class="mt-2">Setelah makan siang, peserta melanjutkan perjalanan darat ke Palmerston North (~3 jam). Tiba sore/malam hari dan check-in hotel.</p>
+      </div>
+    </div>
 
+    <!-- Hari 6 -->
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(6)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <h3 class="font-semibold text-blue-800">Hari 6: Palmerston North – Wellington</h3>
+        <p class="text-sm text-gray-600">Perjalanan santai ke ibukota</p>
+      </button>
+      <div id="accordion6" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Setelah check-out, peserta melanjutkan perjalanan ke Wellington (~2 jam). Tiba siang hari dan check-in hotel. Waktu bebas untuk bersantai di waterfront, jalan-jalan ke Cuba Street, atau eksplorasi pribadi.</p>
+      </div>
+    </div>
+    <!-- Hari 7 -->
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(7)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <h3 class="font-semibold text-blue-800">Hari 7: Wellington City Tour</h3>
+        <p class="text-sm text-gray-600">Museum, cable car, dan studio film</p>
+      </button>
+      <div id="accordion7" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Hari ini peserta akan diajak eksplorasi penuh ibukota Selandia Baru. Kegiatan meliputi:</p>
+        <ul class="list-disc list-inside mt-2">
+          <li>Naik <strong>Wellington Cable Car</strong> ke Botanical Garden</li>
+          <li>Kunjungan ke <strong>Te Papa National Museum</strong>, museum interaktif kelas dunia</li>
+          <li>Aktivitas opsional: <strong>Weta Workshop Tour</strong> (studio film Lord of the Rings & Avatar)</li>
+        </ul>
+        <p class="mt-2">Sore hari bebas untuk menikmati waterfront atau belanja oleh-oleh di kawasan Cuba Street.</p>
+      </div>
+    </div>
 
-   <!-- Hari 6 -->
-<div class="border rounded-lg overflow-hidden shadow-md">
-  <button onclick="toggleAccordion(6)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
-    <h3 class="font-semibold text-blue-800">Hari 6: Palmerston North – Wellington</h3>
-    <p class="text-sm text-gray-600">Perjalanan santai ke ibukota</p>
-  </button>
-  <div id="accordion6" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-    <p>Setelah check-out, peserta melanjutkan perjalanan ke Wellington (~2 jam). Tiba siang hari dan check-in hotel. Waktu bebas untuk bersantai di waterfront, jalan-jalan ke Cuba Street, atau eksplorasi pribadi.</p>
-  </div>
-</div>
-
-
-  <!-- Hari 7 -->
-<div class="border rounded-lg overflow-hidden shadow-md">
-  <button onclick="toggleAccordion(7)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
-    <h3 class="font-semibold text-blue-800">Hari 7: Wellington City Tour</h3>
-    <p class="text-sm text-gray-600">Museum, cable car, dan studio film</p>
-  </button>
-  <div id="accordion7" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-    <p>Hari ini peserta akan diajak eksplorasi penuh ibukota Selandia Baru. Kegiatan meliputi:</p>
-    <ul class="list-disc list-inside mt-2">
-      <li>Naik <strong>Wellington Cable Car</strong> ke Botanical Garden</li>
-      <li>Kunjungan ke <strong>Te Papa National Museum</strong>, museum interaktif kelas dunia</li>
-      <li>Aktivitas opsional: <strong>Weta Workshop Tour</strong> (studio film Lord of the Rings & Avatar)</li>
-    </ul>
-    <p class="mt-2">Sore hari bebas untuk menikmati waterfront atau belanja oleh-oleh di kawasan Cuba Street.</p>
-  </div>
-</div>
-
-
-<!-- Hari 8 -->
-<div class="border rounded-lg overflow-hidden shadow-md">
-  <button onclick="toggleAccordion(8)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
-    <h3 class="font-semibold text-blue-800">Hari 8: Wellington – Jakarta</h3>
-    <p class="text-sm text-gray-600">Penerbangan pulang via Sydney</p>
-  </button>
-  <div id="accordion8" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-    <p>Check-out hotel pagi hari dan berangkat ke Bandara Wellington. Penerbangan kembali menuju Jakarta melalui transit di Sydney. Tiba di Tanah Air dengan kenangan manis dari Selandia Baru.</p>
-  </div>
-</div>
-
-
+    <!-- Hari 8 -->
+    <div class="border rounded-lg overflow-hidden shadow-md">
+      <button onclick="toggleAccordion(8)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+        <h3 class="font-semibold text-blue-800">Hari 8: Wellington – Jakarta</h3>
+        <p class="text-sm text-gray-600">Penerbangan pulang via Sydney</p>
+      </button>
+      <div id="accordion8" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Check-out hotel pagi hari dan berangkat ke Bandara Wellington. Penerbangan kembali menuju Jakarta melalui transit di Sydney. Tiba di Tanah Air dengan kenangan manis dari Selandia Baru.</p>
+      </div>
+    </div>
 <!-- 🗺️ Highlight Destinasi -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">Highlight Destinasi</h3>
@@ -222,7 +210,6 @@
     <p><strong>Keunggulan Tur:</strong> Fleksibel, tanpa jadwal padat, guide berpengalaman, dan opsional upgrade akomodasi sesuai kebutuhan keluarga.</p>
   </div>
 </section>
-
 <!-- 💰 Harga & Fasilitas -->
 <section class="py-12 px-6 max-w-4xl mx-auto text-center bg-gradient-to-b from-blue-50 to-white" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-4">Harga & Fasilitas</h2>
@@ -247,10 +234,11 @@
     <li>❌ Makan & minum (dibebaskan agar fleksibel)</li>
     <li>❌ Pengeluaran pribadi & aktivitas opsional</li>
   </ul>
-<p class="text-sm text-gray-600 italic mt-4">
-  *Jika peserta ingin menginap sendiri (tanpa sharing kamar), biaya tambahan <strong>Single Supplement</strong> sebesar <strong>IDR 5.000.000</strong> akan dikenakan.
-</p>
 
+  <p class="text-sm text-gray-600 italic mt-4">
+    *Jika peserta ingin menginap sendiri (tanpa sharing kamar), biaya tambahan <strong>Single Supplement</strong> sebesar <strong>IDR 5.000.000</strong> akan dikenakan.
+  </p>
+</section>
 <!-- ❓ FAQ Section -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Pertanyaan yang Sering Diajukan (FAQ)</h2>
@@ -273,7 +261,6 @@
     </div>
   </div>
 </section>
-
 <!-- 📋 Formulir Pendaftaran via WhatsApp -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">📋 Formulir Pendaftaran</h2>
@@ -281,15 +268,17 @@
     <input type="text" id="nama" placeholder="Nama Lengkap" class="w-full border rounded px-3 py-2 text-sm" required>
     <input type="email" id="email" placeholder="Email" class="w-full border rounded px-3 py-2 text-sm" required>
     <input type="tel" id="wa" placeholder="Nomor WhatsApp" class="w-full border rounded px-3 py-2 text-sm" required>
-    
+
     <select id="paket" class="w-full border rounded px-3 py-2 text-sm">
       <option value="Lengkap">✈️ Paket Lengkap</option>
       <option value="Land Only">🧭 Land Only</option>
     </select>
+    
     <label class="flex items-center text-sm text-gray-700">
-  <input type="checkbox" id="single" class="mr-2">
-  Saya ingin kamar pribadi (Single Supplement +IDR 5.000.000)
-</label>
+      <input type="checkbox" id="single" class="mr-2">
+      Saya ingin kamar pribadi (Single Supplement +IDR 5.000.000)
+    </label>
+
     <input type="number" id="jumlah" placeholder="Jumlah Peserta" min="1" class="w-full border rounded px-3 py-2 text-sm" required>
 
     <!-- 💸 Harga Info -->
@@ -304,7 +293,6 @@
     </button>
   </form>
 </section>
-
 <script>
   const hargaAwal = {
     "Lengkap": 28000000,
@@ -353,7 +341,7 @@
     depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
   }
 
- function sendToWhatsApp() {
+  function sendToWhatsApp() {
     const nama = document.getElementById('nama').value.trim();
     const email = document.getElementById('email').value.trim();
     const wa = document.getElementById('wa').value.trim();
@@ -400,8 +388,7 @@ Deposit 30%: ${formatRupiah(deposit)}`;
 
   updateHarga();
 </script>
-
-  <!-- 🌍 Tertarik Paket Lainnya -->
+<!-- 🌍 Tertarik Paket Lainnya -->
 <section class="py-12 px-8 w-full max-w-none mx-auto" data-aos="fade-up"> 
   <h2 class="text-2xl font-bold text-blue-800 mb-8 text-center">🌍 Tertarik Paket Lainnya?</h2>
   <div class="splide" id="paketLainnyaCarousel">
@@ -421,7 +408,7 @@ Deposit 30%: ${formatRupiah(deposit)}`;
           </div>
         </li>
 
-       <!-- Slide 2 -->
+        <!-- Slide 2 -->
         <li class="splide__slide">
           <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300 border border-blue-100">
             <img src="auckland-tour.jpg" alt="North Island" class="w-full h-40 object-cover">
@@ -434,14 +421,12 @@ Deposit 30%: ${formatRupiah(deposit)}`;
           </div>
         </li>
 
-        <!-- Tambah slide lain sesuai kebutuhan -->
-
       </ul>
     </div>
   </div>
 </section>
 
-  <!-- Splide.js -->
+<!-- Splide.js -->
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
 <script>
   new Splide('#paketLainnyaCarousel', {
@@ -456,23 +441,25 @@ Deposit 30%: ${formatRupiah(deposit)}`;
     }
   }).mount();
 </script>
-  
-<style>
-  .zoom-hover img {
-    transition: transform 0.5s ease;
-  }
-  .zoom-hover:hover img {
-    transform: scale(1.05);
-  }
-</style>
+
+<!-- 🎯 Floating Buttons -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-24 right-4 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-500 transition md:bottom-28 z-50 text-sm">🔝 Kembali ke Atas</button>
+<div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-40 md:hidden transition">
+  <div class="flex justify-around py-2 text-sm text-blue-800 font-medium">
+    <a href="index.html#home" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">🏠</span><span class="text-xs">Home</span></a>
+    <a href="index.html#paket" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">🧳</span><span class="text-xs">Paket</span></a>
+    <a href="index.html#galeri" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">🖼️</span><span class="text-xs">Galeri</span></a>
+    <a href="index.html#kontak" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">📞</span><span class="text-xs">Kontak</span></a>
+  </div>
+</div>
+  </main>
 
 <!-- 🔻 Footer -->
 <footer class="bg-blue-800 text-white py-6 text-center mt-12 animate__animated animate__fadeInUp" data-aos="fade-up">
   <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
 </footer>
 
-
-<!-- Floating Buttons -->
+<!-- 🔘 Floating Buttons -->
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-24 right-4 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-500 transition md:bottom-28 z-50 text-sm">🔝 Kembali ke Atas</button>
 <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-40 md:hidden transition">
   <div class="flex justify-around py-2 text-sm text-blue-800 font-medium">
@@ -483,35 +470,24 @@ Deposit 30%: ${formatRupiah(deposit)}`;
   </div>
 </div>
 
-<!-- Scripts -->
+<!-- 📜 Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ once: true, duration: 800 });</script>
 <script>
-  // Promo Banner Hide with localStorage
-  const promoBanner = document.getElementById('promoBanner');
-  if (localStorage.getItem('hidePromo')) promoBanner.style.display = 'none';
-  document.getElementById('closePromoBanner').onclick = () => {
-    promoBanner.style.display = 'none';
-    localStorage.setItem('hidePromo', true);
-  };
-
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuIcon = document.getElementById('menuIcon');
-  const menuLinks = mobileMenu.querySelectorAll('a');
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    menuIcon.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
-  });
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuIcon.textContent = '☰';
-    });
-  });
-
-  // Accordion eksklusif (hanya satu terbuka)
+  AOS.init({ once: true, duration: 800 });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+<script>
+  new Splide('#paketLainnyaCarousel', {
+    type: 'loop',
+    perPage: 2,
+    gap: '1.5rem',
+    autoplay: true,
+    interval: 4000,
+    pauseOnHover: true,
+    breakpoints: { 768: { perPage: 1 } }
+  }).mount();
+</script>
+<script>
   function toggleAccordion(id) {
     const sections = document.querySelectorAll('[id^="accordion"]');
     sections.forEach((sec) => {
@@ -525,6 +501,3 @@ Deposit 30%: ${formatRupiah(deposit)}`;
 </script>
 </body>
 </html>
-
-
-
