@@ -441,8 +441,14 @@ Deposit 30%: ${formatRupiah(deposit)}`;
     }
   }).mount();
 </script>
+</main>
 
-<!-- 🎯 Floating Buttons -->
+<!-- 🔻 Footer -->
+<footer class="bg-blue-800 text-white py-6 text-center mt-12 animate__animated animate__fadeInUp" data-aos="fade-up">
+  <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
+</footer>
+
+<!-- Floating Buttons -->
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-24 right-4 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-500 transition md:bottom-28 z-50 text-sm">🔝 Kembali ke Atas</button>
 <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-40 md:hidden transition">
   <div class="flex justify-around py-2 text-sm text-blue-800 font-medium">
@@ -452,19 +458,36 @@ Deposit 30%: ${formatRupiah(deposit)}`;
     <a href="index.html#kontak" class="flex flex-col items-center hover:text-blue-500"><span class="text-xl">📞</span><span class="text-xs">Kontak</span></a>
   </div>
 </div>
-  </main>
 
-<!-- 🔻 Footer -->
-<footer class="bg-blue-800 text-white py-6 text-center mt-12 animate__animated animate__fadeInUp" data-aos="fade-up">
-  <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
-</footer>
-
-<!-- 📜 Scripts -->
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true, duration: 800 });</script>
 <script>
-  AOS.init({ once: true, duration: 800 });
-</script>
-<script>
+  // Promo Banner Hide with localStorage
+  const promoBanner = document.getElementById('promoBanner');
+  if (localStorage.getItem('hidePromo')) promoBanner.style.display = 'none';
+  document.getElementById('closePromoBanner').onclick = () => {
+    promoBanner.style.display = 'none';
+    localStorage.setItem('hidePromo', true);
+  };
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+  });
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon.textContent = '☰';
+    });
+  });
+
+  // Accordion eksklusif (hanya satu terbuka)
   function toggleAccordion(id) {
     const sections = document.querySelectorAll('[id^="accordion"]');
     sections.forEach((sec) => {
