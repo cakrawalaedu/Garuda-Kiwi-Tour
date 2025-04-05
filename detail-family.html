@@ -185,16 +185,17 @@
     </div>
 <!-- 🗺️ Highlight Destinasi -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-  <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">Highlight Destinasi</h3>
-  <div class="flex flex-wrap justify-center gap-4 text-gray-700 text-sm">
+  <div class="bg-white rounded-xl shadow-md p-6">
+    <h3 class="text-2xl font-bold text-blue-800 mb-6 text-center">Highlight Destinasi</h3>
+    <div class="flex flex-wrap justify-center gap-4 text-gray-700 text-sm mb-6">
     <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-full shadow-sm">📍 Auckland</div>
     <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-full shadow-sm">📍 Hobbiton Movie Set</div>
     <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-full shadow-sm">📍 Rotorua</div>
     <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-full shadow-sm">📍 Lake Taupo</div>
     <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-full shadow-sm">📍 Wellington</div>
   </div>
-  <div class="mt-8 max-w-3xl mx-auto text-sm text-gray-600 leading-relaxed">
-    <p class="mb-2"><strong>Kenapa Paket Ini Cocok untuk Keluarga?</strong> Semua destinasi dipilih karena aman, edukatif, dan memiliki daya tarik yang ramah anak seperti Hobbiton, Agrodome, dan museum interaktif.</p>
+   <div class="max-w-3xl mx-auto text-sm text-gray-600 leading-relaxed">
+      <p class="mb-2">Kenapa Paket Ini Cocok untuk Keluarga?</strong> Semua destinasi dipilih karena aman, edukatif, dan memiliki daya tarik yang ramah anak seperti Hobbiton, Agrodome, dan museum interaktif.</p>
     <p class="mb-2"><strong>Untuk Siapa?</strong> Keluarga dengan anak kecil, orang tua, pasangan muda, atau siapa pun yang ingin menjelajahi NZ secara santai dan menyenangkan.</p>
     <p><strong>Keunggulan Tur:</strong> Fleksibel, tanpa jadwal padat, guide berpengalaman, dan opsional upgrade akomodasi sesuai kebutuhan keluarga.</p>
   </div>
@@ -228,6 +229,7 @@
     *Jika peserta ingin menginap sendiri (tanpa sharing kamar), biaya tambahan <strong>Single Supplement</strong> sebesar <strong>IDR 5.000.000</strong> akan dikenakan.
   </p>
 </section>
+    
 <!-- ❓ FAQ Section -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Pertanyaan yang Sering Diajukan (FAQ)</h2>
@@ -250,10 +252,12 @@
     </div>
   </div>
 </section>
+    
 <!-- 📋 Formulir Pendaftaran via WhatsApp -->
-<section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-  <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">📋 Formulir Pendaftaran</h2>
-  <form onsubmit="sendToWhatsApp(); return false;" class="bg-white shadow-md rounded-lg p-6 space-y-4">
+<section class="py-12 px-6 max-w-4xl mx-auto" id="formulir" data-aos="fade-up">
+  <div class="bg-white rounded-xl shadow-md p-6">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">📋 Formulir Pendaftaran</h2>
+    <form onsubmit="sendToWhatsApp(); return false;" class="space-y-4">
     <input type="text" id="nama" placeholder="Nama Lengkap" class="w-full border rounded px-3 py-2 text-sm" required>
     <input type="email" id="email" placeholder="Email" class="w-full border rounded px-3 py-2 text-sm" required>
     <input type="tel" id="wa" placeholder="Nomor WhatsApp" class="w-full border rounded px-3 py-2 text-sm" required>
