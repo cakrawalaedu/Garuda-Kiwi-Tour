@@ -44,15 +44,16 @@
     }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
+
   <!-- 🔔 Promo Banner -->
-<div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
-  🎉 Promo Spesial: Booking sebelum  31 July & dapatkan diskon IDR 500.000!
-  <button id="closePromoBanner" class="ml-4 font-bold">Tutup ✖</button>
-</div>
+  <div id="promoBanner" class="bg-yellow-300 text-black px-4 py-3 text-center text-sm">
+    🎉 Promo Spesial: Booking sebelum  31 July & dapatkan diskon IDR 500.000!
+    <button id="closePromoBanner" class="ml-4 font-bold">Tutup ✖</button>
+  </div>
 
 <!-- 🧭 Navbar -->
-<header class="sticky top-0 bg-white shadow z-40">
+  <header class="sticky top-0 bg-white shadow z-40">
   <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
     <a href="index.html" class="text-2xl font-bold text-blue-800 hover:text-blue-600">Garuda Kiwi Tour</a>
     <button id="menuToggle" class="md:hidden text-2xl text-blue-800 focus:outline-none">
@@ -78,7 +79,7 @@
 </header>
   
 <!-- 🌄 Hero Section -->
-<section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('family-fun-hero.jpg');">
+ <section class="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white text-center" style="background-image: url('family-fun-hero.jpg');">
   <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-2xl" data-aos="zoom-in">
     <h1 class="text-3xl md:text-4xl font-bold mb-4">8D6N Family Fun NZ</h1>
     <p class="text-lg">Paket seru untuk keluarga! Auckland, Rotorua, Hobbiton, Taupo & Wellington — cocok untuk semua usia.</p>
@@ -399,7 +400,8 @@ Deposit 30%: ${formatRupiah(deposit)}`;
 </script>
 
   <!-- 🌍 Tertarik Paket Lainnya -->
-<section class="py-12 px-8 w-full max-w-none mx-auto" data-aos="fade-up">  <h2 class="text-2xl font-bold text-blue-800 mb-8 text-center">🌍 Tertarik Paket Lainnya?</h2>
+<section class="py-12 px-8 w-full max-w-none mx-auto" data-aos="fade-up"> 
+  <h2 class="text-2xl font-bold text-blue-800 mb-8 text-center">🌍 Tertarik Paket Lainnya?</h2>
   <div class="splide" id="paketLainnyaCarousel">
     <div class="splide__track">
       <ul class="splide__list">
@@ -464,24 +466,24 @@ Deposit 30%: ${formatRupiah(deposit)}`;
 
 <!-- 🔻 Footer -->
 <footer class="bg-blue-800 text-white py-6 text-center mt-12" data-aos="fade-up">
-  <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
+    <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
 </footer>
 
 <!-- 🔘 Tombol Kembali ke Atas -->
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="fixed bottom-24 right-4 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-500 transition md:bottom-28 z-50 text-sm">
-  🔝 Kembali ke Atas
+          class="fixed bottom-24 right-4 bg-blue-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-blue-500 transition md:bottom-28 z-50 text-sm">
+    🔝 Kembali ke Atas
 </button>
 
 <!-- 💬 Floating WhatsApp Button -->
 <a href="https://wa.me/6282154465074" target="_blank"
-   class="fixed bottom-6 right-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 transition z-50 text-sm flex items-center gap-2">
-  💬 WhatsApp
-</a>
+    class="fixed bottom-6 right-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 transition z-50 text-sm flex items-center gap-2">
+    💬 WhatsApp
+  </a>
 
 <!-- 📱 Sticky Bottom Nav (Mobile Only) -->
 <div class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md z-40 md:hidden transition">
-  <div class="flex justify-around py-2 text-sm text-blue-800 font-medium">
+    <div class="flex justify-around py-2 text-sm text-blue-800 font-medium">
     <a href="index.html#home" class="flex flex-col items-center hover:text-blue-500">
       <span class="text-xl">🏠</span><span class="text-xs">Home</span>
     </a>
