@@ -507,6 +507,25 @@ Deposit 30%: ${formatRupiah(deposit)}`;
   }
 </script>
 
+  <script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon.textContent = '☰';
+    });
+  });
+</script>
+
 </body>
 </html>
 
