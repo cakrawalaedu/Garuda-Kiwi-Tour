@@ -7,9 +7,24 @@
   <meta name="description" content="Jelajahi Selandia Baru dengan Garuda Kiwi Tour. Dapatkan pengalaman tur private eksklusif bersama pemandu lokal Indonesia di NZ.">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/ae943c6289.js" crossorigin="anonymous"></script>
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Custom CSS Animation -->
   <style>
     body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
     .animate-fade-in { animation: fadeIn 1s ease-in-out; }
@@ -59,14 +74,58 @@
   </div>
 </header>
 
-<!-- Hero -->
-<section id="home" class="relative h-[85vh] bg-cover bg-center flex items-center justify-center text-white text-center animate-fade-in" style="background-image: url('hero.jpg');">
-  <div class="bg-black bg-opacity-50 p-6 rounded-xl max-w-xl animate-zoom-in">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Petualangan Tak Terlupakan Menanti Anda</h2>
-    <p class="mb-6">Temukan pengalaman wisata terbaik dengan layanan premium</p>
-    <a href="#paket" class="bg-yellow-400 hover:bg-yellow-300 text-black px-6 py-2 rounded-full font-medium transition">Lihat Paket Wisata</a>
+<!-- 🎯 Hero Section -->
+<section id="home" class="relative h-[90vh] flex items-center justify-center bg-cover bg-center text-white" style="background-image: url('hero-nz.jpg');">
+  <!-- Overlay agar teks terbaca -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <!-- 🎯 HERO SECTION - Slideshow + Overlay + Konten -->
+<section id="home" class="relative h-[90vh] overflow-hidden text-white">
+
+  <!-- 🔄 Background Slideshow -->
+  <div class="absolute inset-0 z-0">
+    <!-- Overlay gelap -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+    <!-- Gambar Slideshow -->
+    <div id="heroSlideshow" class="absolute inset-0 w-full h-full z-0">
+      <img src="images/hero1.jpg" alt="Milford Sound" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000" />
+      <img src="images/hero2.jpg" alt="Tekapo Lake" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000" />
+      <img src="images/hero3.jpg" alt="Mount Cook" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000" />
+    </div>
+  </div>
+
+  <!-- 📝 Konten Tengah -->
+  <div class="relative z-20 flex items-center justify-center h-full px-6 text-center max-w-2xl mx-auto" data-aos="zoom-in">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
+        🌄 Petualangan Tak Terlupakan Menanti Anda
+      </h1>
+      <p class="text-lg md:text-xl mb-6 text-gray-100 animate__animated animate__fadeInUp animate__delay-1s">
+        Jelajahi keindahan Selandia Baru bersama <strong>Garuda Kiwi Tour</strong> — dirancang oleh tim lokal yang tinggal langsung di NZ. Aman, fleksibel, dan cocok untuk keluarga.
+      </p>
+      <a href="#paket" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition animate__animated animate__fadeInUp animate__delay-2s">
+        ✈️ Lihat Paket Wisata
+      </a>
+    </div>
   </div>
 </section>
+
+<!-- 🔁 Script Slideshow -->
+<script>
+  const slides = document.querySelectorAll('#heroSlideshow img');
+  let index = 0;
+
+  function showSlide() {
+    slides.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+    });
+    index = (index + 1) % slides.length;
+  }
+
+  showSlide(); // tampil pertama
+  setInterval(showSlide, 4000); // ganti tiap 4 detik
+</script>
 
  <!-- Paket Wisata -->
 <section id="paket" class="py-16 bg-gray-50" data-aos="fade-up">
@@ -242,6 +301,11 @@
     });
   });
 </script>
-
+<script>
+  AOS.init({
+    once: true,
+    duration: 800
+  });
+</script>
 </body>
 </html>
