@@ -211,9 +211,9 @@
     <li>❌ Makan & minum (dibebaskan agar fleksibel)</li>
     <li>❌ Pengeluaran pribadi & aktivitas opsional</li>
   </ul>
-
-  <p class="text-sm text-gray-600 italic">Upgrade ke hotel bintang 4 tersedia dengan tambahan biaya <strong>+IDR 3.500.000/pax</strong></p>
-</section>
+<p class="text-sm text-gray-600 italic mt-4">
+  *Jika peserta ingin menginap sendiri (tanpa sharing kamar), biaya tambahan <strong>Single Supplement</strong> sebesar <strong>IDR 5.000.000</strong> akan dikenakan.
+</p>
 
 <!-- ❓ FAQ Section -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
@@ -250,7 +250,10 @@
       <option value="Lengkap">✈️ Paket Lengkap</option>
       <option value="Land Only">🧭 Land Only</option>
     </select>
-
+    <label class="flex items-center text-sm text-gray-700">
+  <input type="checkbox" id="single" class="mr-2">
+  Saya ingin kamar pribadi (Single Supplement +IDR 5.000.000)
+</label>
     <input type="number" id="jumlah" placeholder="Jumlah Peserta" min="1" class="w-full border rounded px-3 py-2 text-sm" required>
 
     <!-- 💸 Harga Info -->
@@ -271,6 +274,7 @@
     "Lengkap": 28000000,
     "Land Only": 18800000
   };
+  const singleSupplement = 5000000;
 
   const diskonPerPax = 500000;
   const batasDiskon = new Date("2025-07-31");
@@ -291,26 +295,34 @@
   jumlahEl.addEventListener('input', updateHarga);
 
   function updateHarga() {
-    const tipe = paketEl.value;
-    const jumlah = parseInt(jumlahEl.value) || 0;
-    const hargaSebelum = hargaAwal[tipe] || 0;
-    const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
-    const total = hargaDiskon * jumlah;
-    const deposit = Math.round(total * 0.3);
+  const tipe = paketEl.value;
+  const jumlah = parseInt(jumlahEl.value) || 0;
+  const hargaSebelum = hargaAwal[tipe] || 0;
+  const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
 
-    hargaPerOrangText.innerHTML = isDiskonAktif
-      ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
-      : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
+  const isSingle = document.getElementById('single').checked;
+  const extraSingle = isSingle ? singleSupplement : 0;
+  const total = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
+  const deposit = Math.round(total * 0.3);
 
-    totalHargaText.textContent = jumlah > 0 ? `Total: ${formatRupiah(total)}` : "Total: -";
-    depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
-  }
+  hargaPerOrangText.innerHTML = isDiskonAktif
+    ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
+    : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
+
+  totalHargaText.textContent = jumlah > 0
+    ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
+    : "Total: -";
+
+  depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+}
 
   function sendToWhatsApp() {
     const nama = document.getElementById('nama').value.trim();
     const email = document.getElementById('email').value.trim();
     const wa = document.getElementById('wa').value.trim();
     const paket = paketEl.value;
+    const isSingle = document.getElementById('single').checked;
+${isSingle ? 'Permintaan kamar pribadi: ✅\n' : ''}
     const jumlah = parseInt(jumlahEl.value);
 
     if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
@@ -420,15 +432,6 @@ Deposit 30%: ${formatRupiah(deposit)}`;
 <footer class="bg-blue-800 text-white py-6 text-center mt-12" data-aos="fade-up">
   <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
 </footer>
-
-<!-- 🔳 Sticky Harga & CTA Box (Desktop only) -->
-<div class="hidden lg:block fixed top-28 right-6 w-72 bg-white border border-gray-200 shadow-xl rounded-xl p-5 z-40 animate__animated animate__fadeInUp" data-aos="fade-left">
-  <h4 class="text-blue-800 font-bold text-lg mb-1">Harga Mulai Dari</h4>
-  <p class="text-2xl font-bold text-gray-800 mb-2">IDR 28.000.000</p>
-  <p class="text-sm text-gray-500 mb-4">Keberangkatan Terdekat:<br><strong>18 November 2025</strong></p>
-  <a href="https://wa.me/6282154465074" target="_blank"
-     class="block w-full bg-green-500 text-white text-center py-2 rounded-lg font-semibold hover:bg-green-600 transition">💬 Hubungi Sekarang</a>
-</div>
 
 <!-- 🔘 Tombol Kembali ke Atas -->
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
