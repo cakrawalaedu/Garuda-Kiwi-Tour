@@ -304,6 +304,7 @@
     "Lengkap": 32500000,
     "Land Only": 22500000
   };
+  const singleSupplement = 5000000;
 
   const diskonPerPax = 500000;
   const batasDiskon = new Date("2025-07-31");
@@ -316,27 +317,45 @@
 
   const paketEl = document.getElementById('paket');
   const jumlahEl = document.getElementById('jumlah');
+  const singleEl = document.createElement('input');
+  singleEl.type = 'checkbox';
+  singleEl.id = 'single';
+  singleEl.className = 'mr-2';
+  
+  // Tambah ke dalam form
+  const checkboxLabel = document.createElement('label');
+  checkboxLabel.className = 'flex items-center text-sm text-gray-700';
+  checkboxLabel.appendChild(singleEl);
+  checkboxLabel.appendChild(document.createTextNode("Saya ingin kamar pribadi (Single Supplement +IDR 5.000.000)"));
+  jumlahEl.parentNode.insertBefore(checkboxLabel, jumlahEl.nextSibling);
+
   const hargaPerOrangText = document.getElementById('hargaPerOrang');
   const totalHargaText = document.getElementById('totalHarga');
   const depositInfoText = document.getElementById('depositInfo');
 
   paketEl.addEventListener('change', updateHarga);
   jumlahEl.addEventListener('input', updateHarga);
+  singleEl.addEventListener('change', updateHarga);
 
   function updateHarga() {
     const tipe = paketEl.value;
     const jumlah = parseInt(jumlahEl.value) || 0;
     const hargaSebelum = hargaAwal[tipe] || 0;
     const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
-    const total = hargaDiskon * jumlah;
+    const isSingle = singleEl.checked;
+
+    const total = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
     const deposit = Math.round(total * 0.3);
 
     hargaPerOrangText.innerHTML = isDiskonAktif
-      ? Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>
-      : Harga per orang: ${formatRupiah(hargaSebelum)};
+      ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
+      : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
 
-    totalHargaText.textContent = jumlah > 0 ? Total: ${formatRupiah(total)} : "Total: -";
-    depositInfoText.textContent = jumlah > 0 ? Deposit 30%: ${formatRupiah(deposit)} : "Deposit 30%: -";
+    totalHargaText.textContent = jumlah > 0
+      ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
+      : "Total: -";
+
+    depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
   }
 
   function sendToWhatsApp() {
@@ -344,6 +363,7 @@
     const email = document.getElementById('email').value.trim();
     const wa = document.getElementById('wa').value.trim();
     const paket = paketEl.value;
+    const isSingle = singleEl.checked;
     const jumlah = parseInt(jumlahEl.value);
 
     if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
@@ -357,32 +377,32 @@
       return;
     }
 
-    if (!/^\d{10,15}$/.test(wa)) {
-      alert("Nomor WhatsApp harus berupa angka dan minimal 10 digit.");
+    if (!/^\+?\d{6,15}$/.test(wa)) {
+      alert("Nomor WhatsApp tidak valid. Harap gunakan angka dengan kode negara, contoh: +6281...");
       return;
     }
 
     const hargaSebelum = hargaAwal[paket];
     const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
-    const totalHarga = hargaDiskon * jumlah;
+    const totalHarga = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
     const deposit = Math.round(totalHarga * 0.3);
+    const kamar = isSingle ? "Permintaan kamar pribadi: ✅\n" : "";
 
-    const msg = Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.
+    const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.
 
 Nama: ${nama}
 Email: ${email}
 WhatsApp: ${wa}
 Paket: ${paket}
 Jumlah Peserta: ${jumlah}
-${isDiskonAktif ? Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli) : Harga per pax: ${formatRupiah(hargaSebelum)}}
+${kamar}${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli)` : `Harga per pax: ${formatRupiah(hargaSebelum)}`}
 Total Harga: ${formatRupiah(totalHarga)}
-Deposit 30%: ${formatRupiah(deposit)};
+Deposit 30%: ${formatRupiah(deposit)}`;
 
-    const url = https://wa.me/6282154465074?text=${encodeURIComponent(msg)};
+    const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   }
 
-  // Inisialisasi tampilan harga saat halaman dimuat
   updateHarga();
 </script>
 
