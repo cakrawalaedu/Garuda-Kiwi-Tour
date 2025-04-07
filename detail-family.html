@@ -531,6 +531,15 @@ Deposit 30%: ${formatRupiah(deposit)}`;
     });
   });
 </script>
+    <script>
+  // fungsi toggle accordion itinerary
+  function toggleAccordion(id) {
+    const content = document.getElementById('accordion' + id);
+    if (content) {
+      content.classList.toggle('hidden');
+    }
+  }
+</script>
 </body>
 </html>
 
