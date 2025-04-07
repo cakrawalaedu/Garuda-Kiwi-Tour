@@ -208,24 +208,178 @@
         <p>Transfer ke Bandara Queenstown. Penerbangan pulang via Sydney. Tiba malam hari di Jakarta.</p>
       </div>
     </div>
-    <!-- Hari-hari itinerary akan diinsert otomatis nanti -->
   </div>
 </section>
 
-<!-- 💰 Harga & Fasilitas -->
-<section class="py-12 px-6 max-w-4xl mx-auto text-center">
-  <h2 class="text-2xl font-bold text-blue-800 mb-4">Harga & Fasilitas</h2>
-  <p class="mb-2"><strong>Harga mulai dari:</strong> <span class="text-blue-700 font-semibold">IDR 38.000.000/pax</span></p>
-  <p class="mb-2"><strong>Termasuk:</strong> Tiket Qantas, akomodasi bintang 3–4, transportasi pribadi, tiket objek wisata utama</p>
-  <p><strong>Tidak termasuk:</strong> Makan siang/malam, aktivitas opsional, visa & asuransi</p>
-</section>
+ <!-- 💼 Opsi Paket & Formulir -->
+  <section id="form-daftar" class="py-12 px-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">📋 Formulir Pendaftaran</h2>
+    <form onsubmit="sendToWhatsApp(); return false;" class="bg-white shadow-md rounded-lg p-6 space-y-4">
+      <input type="text" id="nama" placeholder="Nama Lengkap" class="w-full border rounded px-3 py-2 text-sm" required>
+      <input type="email" id="email" placeholder="Email" class="w-full border rounded px-3 py-2 text-sm" required>
+      <input type="tel" id="wa" placeholder="Nomor WhatsApp" class="w-full border rounded px-3 py-2 text-sm" required>
 
-<!-- 🔘 Tombol Aksi -->
-<section class="py-8 text-center space-x-4">
-  <a href="https://wa.me/6282154465074" target="_blank" class="inline-block bg-green-500 text-white px-5 py-2 rounded hover:bg-green-600 transition">💬 Hubungi via WhatsApp</a>
-  <a href="files/10D8N_NorthSouth_Island_Private_Tour.pdf" target="_blank" class="inline-block bg-gray-800 text-white px-5 py-2 rounded hover:bg-gray-700 transition">📄 Unduh Brosur</a>
-  <a href="index.html#paket" class="inline-block bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-500 transition">⬅️ Kembali ke Beranda</a>
-</section>
+      <select id="paket" class="w-full border rounded px-3 py-2 text-sm">
+        <option value="Lengkap">✈️ Paket Lengkap</option>
+        <option value="Land Only">🧭 Land Only</option>
+      </select>
+
+      <label class="flex items-center text-sm text-gray-700">
+        <input type="checkbox" id="single" class="mr-2">
+        Saya ingin kamar pribadi (Single Supplement +IDR 5.000.000)
+      </label>
+
+      <input type="number" id="jumlah" placeholder="Jumlah Peserta" min="1" class="w-full border rounded px-3 py-2 text-sm" required>
+
+      <div class="text-sm text-gray-700">
+        <p id="hargaPerOrang" class="mb-1">Harga per orang: -</p>
+        <p id="totalHarga" class="font-semibold">Total: -</p>
+        <p id="depositInfo" class="text-blue-700">Deposit 30%: -</p>
+      </div>
+
+      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded w-full">
+        Kirim via WhatsApp
+      </button>
+    </form>
+  </section>
+
+  <!-- ❓ FAQ Section -->
+  <section class="py-12 px-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+    <div class="text-sm text-gray-700 space-y-4 max-w-2xl mx-auto">
+      <div>
+        <p class="font-semibold">Apakah tur ini cocok untuk anak-anak?</p>
+        <p>Ya! Itinerary ini ramah keluarga dan cocok untuk anak-anak maupun lansia.</p>
+      </div>
+      <div>
+        <p class="font-semibold">Apakah harga sudah termasuk makan?</p>
+        <p>Sebagian besar makan tidak termasuk agar fleksibel, tetapi sarapan biasanya disediakan oleh hotel.</p>
+      </div>
+      <div>
+        <p class="font-semibold">Apakah visa termasuk?</p>
+        <p>Tidak, peserta perlu mengurus visa sendiri atau bisa dibantu dengan biaya tambahan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌍 Paket Lainnya Carousel -->
+  <section class="py-12 px-6 w-full max-w-6xl mx-auto">
+    <h2 class="text-2xl font-bold text-blue-800 mb-8 text-center">🌍 Tertarik Paket Lainnya?</h2>
+    <div class="splide" id="paketLainnyaCarousel">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+              <img src="south island-a.jpg" alt="South Island Tour" class="w-full h-48 object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4 flex flex-col justify-end">
+                <span class="text-xs text-yellow-300 font-semibold mb-1">Privat & Alam</span>
+                <h3 class="text-white text-lg font-bold leading-snug">7D5N South Island Tour</h3>
+                <p class="text-white text-sm mt-1 mb-2">Eksplorasi Queenstown, Tekapo, dan Milford Sound secara privat.</p>
+                <a href="detail-southisland.html" class="text-sm text-white underline hover:text-yellow-300 transition">Lihat Detail →</a>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="relative group rounded-lg overflow-hidden shadow-lg">
+              <img src="family-fun-hero.jpg" alt="Family Fun Tour" class="w-full h-48 object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-4 flex flex-col justify-end">
+                <span class="text-xs text-green-200 font-semibold mb-1">Keluarga & Edukasi</span>
+                <h3 class="text-white text-lg font-bold leading-snug">8D6N Family Fun NZ</h3>
+                <p class="text-white text-sm mt-1 mb-2">Jelajahi Auckland, Rotorua, Hobbiton & Wellington untuk keluarga.</p>
+                <a href="detail-familyfun.html" class="text-sm text-white underline hover:text-green-200 transition">Lihat Detail →</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+
+    if (localStorage.getItem('hidePromo')) document.getElementById('promoBanner').style.display = 'none';
+    document.getElementById('closePromoBanner').onclick = () => {
+      document.getElementById('promoBanner').style.display = 'none';
+      localStorage.setItem('hidePromo', true);
+    };
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
+
+    new Splide('#paketLainnyaCarousel', {
+      type: 'loop', perPage: 2, gap: '1.5rem', autoplay: true,
+      interval: 4000, pauseOnHover: true, arrows: true, pagination: true,
+      breakpoints: { 768: { perPage: 1 } }
+    }).mount();
+
+    const hargaAwal = { "Lengkap": 38000000, "Land Only": 29500000 };
+    const singleSupplement = 5000000;
+    const diskonPerPax = 500000;
+    const batasDiskon = new Date("2025-07-31");
+    const today = new Date();
+    const isDiskonAktif = today <= batasDiskon;
+
+    const paketEl = document.getElementById('paket');
+    const jumlahEl = document.getElementById('jumlah');
+    const singleEl = document.getElementById('single');
+    const hargaPerOrangText = document.getElementById('hargaPerOrang');
+    const totalHargaText = document.getElementById('totalHarga');
+    const depositInfoText = document.getElementById('depositInfo');
+
+    paketEl.addEventListener('change', updateHarga);
+    jumlahEl.addEventListener('input', updateHarga);
+    singleEl.addEventListener('change', updateHarga);
+
+    function formatRupiah(num) {
+      return "IDR " + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function updateHarga() {
+      const tipe = paketEl.value;
+      const jumlah = parseInt(jumlahEl.value) || 0;
+      const hargaSebelum = hargaAwal[tipe] || 0;
+      const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
+      const isSingle = singleEl.checked;
+      const total = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
+      const deposit = Math.round(total * 0.3);
+
+      hargaPerOrangText.innerHTML = isDiskonAktif ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>` : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
+      totalHargaText.textContent = jumlah > 0 ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}` : "Total: -";
+      depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+    }
+
+    function sendToWhatsApp() {
+      const nama = document.getElementById('nama').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const wa = document.getElementById('wa').value.trim();
+      const paket = paketEl.value;
+      const isSingle = singleEl.checked;
+      const jumlah = parseInt(jumlahEl.value);
+
+      if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
+        alert("Harap lengkapi semua kolom dengan benar.");
+        return;
+      }
+
+      const hargaSebelum = hargaAwal[paket];
+      const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
+      const totalHarga = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
+      const deposit = Math.round(totalHarga * 0.3);
+      const kamar = isSingle ? "Permintaan kamar pribadi: ✅\n" : "";
+
+      const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur North & South Island.\n\nNama: ${nama}\nEmail: ${email}\nWhatsApp: ${wa}\nPaket: ${paket}\nJumlah Peserta: ${jumlah}\n${kamar}${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli)` : `Harga per pax: ${formatRupiah(hargaSebelum)}`}\nTotal Harga: ${formatRupiah(totalHarga)}\nDeposit 30%: ${formatRupiah(deposit)}`;
+
+      const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+
+    updateHarga();
+  </script>
 
 <!-- 🔻 Footer -->
 <footer class="bg-blue-800 text-white py-6 text-center">
