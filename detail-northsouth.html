@@ -104,14 +104,14 @@
   </p>
 </section>
 
-    <!-- 🧭 Itinerary Interaktif (Format AOS) -->
+   <!-- 🧭 Itinerary Interaktif (Hari 1-10, scalable) -->
 <section class="py-12 px-6 max-w-4xl mx-auto" data-aos="fade-up">
   <h2 class="text-2xl font-bold text-blue-800 mb-6 text-center">Rencana Perjalanan (Itinerary)</h2>
   <div class="space-y-6" id="itineraryAccordion">
 
     <!-- Hari 1 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(1)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
             <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -122,158 +122,175 @@
           <p class="text-sm text-gray-600">Penerbangan malam dengan Qantas Airways</p>
         </div>
       </button>
-      <div id="accordion1" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
         <p>Peserta berkumpul di Bandara Soekarno-Hatta untuk penerbangan malam menuju Auckland, dengan transit terlebih dahulu di Sydney menggunakan maskapai Qantas. Bermalam di pesawat.</p>
       </div>
     </div>
 
     <!-- Hari 2 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(2)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 2: Tiba di Auckland – City Tour
           </h3>
           <p class="text-sm text-gray-600">Sky Tower, Queen Street, Viaduct Harbour</p>
         </div>
       </button>
-      <div id="accordion2" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-        <p>Setibanya di Auckland, peserta dijemput oleh tim lokal dan langsung memulai city tour singkat. Mengunjungi Sky Tower (photo stop), berjalan di Queen Street, serta menikmati pemandangan pelabuhan di Viaduct Harbour. Setelah itu, check-in hotel dan beristirahat. Bermalam di Holiday Inn Express Auckland City Centre ★★★★.</p>
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Setibanya di Auckland, peserta dijemput oleh tim lokal dan langsung memulai city tour singkat. Mengunjungi Sky Tower (photo stop), berjalan di Queen Street, serta menikmati pemandangan pelabuhan di Viaduct Harbour. Setelah itu, check-in hotel dan beristirahat. Bermalam di Holiday Inn Express Auckland City Centre ☆☆☆☆.</p>
       </div>
     </div>
 
     <!-- Hari 3 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(3)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 3: Hobbiton & Rotorua
           </h3>
           <p class="text-sm text-gray-600">Tur ke Hobbiton Movie Set dan Lake Rotorua</p>
         </div>
       </button>
-      <div id="accordion3" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-        <p>Perjalanan menuju Matamata untuk mengikuti tur ke Hobbiton Movie Set – lokasi ikonik dari film Lord of The Rings. Kemudian dilanjutkan ke Rotorua untuk mengunjungi Government Gardens dan menikmati pemandangan di sekitar Lake Rotorua. Bermalam di Jet Park Hotel Rotorua ★★★★.</p>
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Perjalanan menuju Matamata untuk mengikuti tur ke Hobbiton Movie Set – lokasi ikonik dari film Lord of The Rings. Kemudian dilanjutkan ke Rotorua untuk mengunjungi Government Gardens dan menikmati pemandangan di sekitar Lake Rotorua. Bermalam di Jet Park Hotel Rotorua ☆☆☆☆.</p>
       </div>
     </div>
 
     <!-- Hari 4 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(4)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 4: Rotorua – Taupo – Auckland
           </h3>
           <p class="text-sm text-gray-600">Wai-O-Tapu, Huka Falls, Lake Taupo</p>
         </div>
       </button>
-      <div id="accordion4" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-        <p>Pagi hari mengunjungi kawasan geotermal Wai-O-Tapu dan menikmati keindahan air terjun Huka Falls di Taupo. Setelah makan siang, peserta melanjutkan perjalanan kembali ke Auckland untuk check-in dan bermalam di President Hotel Auckland ★★★.</p>
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Pagi hari mengunjungi kawasan geotermal Wai-O-Tapu dan menikmati keindahan air terjun Huka Falls di Taupo. Setelah makan siang, peserta melanjutkan perjalanan kembali ke Auckland untuk check-in dan bermalam di President Hotel Auckland ☆☆☆.</p>
       </div>
     </div>
 
     <!-- Hari 5 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(5)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 5: Auckland – Christchurch
           </h3>
           <p class="text-sm text-gray-600">Penerbangan domestik & city tour ringan</p>
         </div>
       </button>
-      <div id="accordion5" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-        <p>Pagi hari waktu bebas (opsional: kunjungan ke Auckland Domain). Siang hari terbang ke Christchurch. Setibanya, peserta diajak city tour ringan mengunjungi Hagley Park, Avon River, dan Riverside Market. Bermalam di Wyndham Garden Christchurch ★★★★.</p>
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Pagi hari waktu bebas (opsional: kunjungan ke Auckland Domain). Siang hari terbang ke Christchurch. Setibanya, peserta diajak city tour ringan mengunjungi Hagley Park, Avon River, dan Riverside Market. Bermalam di Wyndham Garden Christchurch ☆☆☆☆.</p>
       </div>
     </div>
 
     <!-- Hari 6 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(6)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 6: Christchurch – Lake Tekapo – Mt Cook
           </h3>
           <p class="text-sm text-gray-600">Danau, gereja batu, dan pegunungan ikonik</p>
         </div>
       </button>
-      <div id="accordion6" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-        <p>Perjalanan menuju Lake Tekapo dan mengunjungi Church of the Good Shepherd yang indah. Lanjut ke Mt Cook National Park untuk photo stop dan menikmati pemandangan gunung tertinggi di Selandia Baru. Bermalam di The Godley Hotel Tekapo ★★★.</p>
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Perjalanan menuju Lake Tekapo dan mengunjungi Church of the Good Shepherd yang indah. Lanjut ke Mt Cook National Park untuk photo stop dan menikmati pemandangan gunung tertinggi di Selandia Baru. Bermalam di The Godley Hotel Tekapo ☆☆☆.</p>
       </div>
     </div>
 
     <!-- Hari 7 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(7)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 7: Tekapo – Queenstown via Lindis Pass
           </h3>
           <p class="text-sm text-gray-600">Perjalanan cantik ke kota wisata</p>
         </div>
       </button>
-      <div id="accordion7" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
-        <p>Perjalanan santai melalui Lindis Pass yang memukau menuju Queenstown. Tiba sore hari dan menikmati waktu bebas di tepi Danau Wakatipu. Bermalam di Holiday Inn Queenstown Remarkables Park ★★★★.</p>
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
+        <p>Perjalanan santai melalui Lindis Pass yang memukau menuju Queenstown. Tiba sore hari dan menikmati waktu bebas di tepi Danau Wakatipu. Bermalam di Holiday Inn Queenstown Remarkables Park ☆☆☆☆.</p>
       </div>
     </div>
 
     <!-- Hari 8 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(8)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 8: Milford Sound Cruise
           </h3>
           <p class="text-sm text-gray-600">Tur fjord dengan pemandangan spektakuler</p>
         </div>
       </button>
-      <div id="accordion8" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
         <p>Road trip ke Fiordland National Park dan mengikuti Milford Sound Cruise. Menyaksikan tebing tinggi, air terjun megah, dan lanskap dramatis. Termasuk lunch box. Kembali ke Queenstown dan bermalam di hotel yang sama.</p>
       </div>
     </div>
 
     <!-- Hari 9 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(9)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 9: Queenstown – Hari Bebas
           </h3>
           <p class="text-sm text-gray-600">Eksplorasi opsional & belanja</p>
         </div>
       </button>
-      <div id="accordion9" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
         <p>Hari bebas untuk peserta. Pilihan aktivitas: keliling kota, kulineran, belanja souvenir, atau ikut tur opsional seperti jetboat, naik gondola, atau bungee jumping. Bermalam di Queenstown.</p>
       </div>
     </div>
 
     <!-- Hari 10 -->
     <div class="border rounded-lg overflow-hidden shadow-md">
-      <button onclick="toggleAccordion(10)" class="w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3">
+      <button class="accordion-header w-full text-left bg-blue-100 hover:bg-blue-200 transition px-4 py-3 relative">
         <div>
           <h3 class="font-semibold text-blue-800 flex items-center gap-2">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
             Hari 10: Queenstown – Jakarta
           </h3>
           <p class="text-sm text-gray-600">Penerbangan pulang via Sydney</p>
         </div>
       </button>
-      <div id="accordion10" class="hidden px-4 py-3 text-sm text-gray-700 bg-white">
+      <div class="accordion-content hidden px-4 py-3 text-sm text-gray-700 bg-white">
         <p>Peserta diantar menuju Bandara Queenstown untuk penerbangan kembali ke Jakarta via Sydney. Tiba di Tanah Air dengan membawa kenangan tak terlupakan dari petualangan di Selandia Baru.</p>
       </div>
     </div>
 
   </div>
 </section>
-
 <!-- ✨ Highlight Destinasi -->
 <section class="py-12 px-6 max-w-4xl mx-auto">
   <div class="bg-white rounded-xl shadow-md p-6">
@@ -524,6 +541,24 @@
     const el = document.getElementById('accordion' + id);
     el.classList.toggle('hidden');
   }
+</script>
+  
+<script>
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+
+      // Tutup konten lain
+      document.querySelectorAll(".accordion-content").forEach(item => {
+        if (item !== content) {
+          item.classList.add("hidden");
+        }
+      });
+
+      // Toggle konten yang diklik
+      content.classList.toggle("hidden");
+    });
+  });
 </script>
 
 </body>
