@@ -530,6 +530,17 @@
     el.classList.toggle('hidden');
   }
 </script>
+    
+<script>
+  function toggleAccordion(id) {
+    const el = document.getElementById('accordion' + id);
+    if (el.classList.contains('accordion-open')) {
+      el.classList.remove('accordion-open');
+    } else {
+      el.classList.add('accordion-open');
+    }
+  }
+</script>
 
 </body>
 </html>
