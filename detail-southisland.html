@@ -43,10 +43,19 @@
 <!-- 🧭 Navbar -->
 <header class="sticky top-0 bg-white shadow z-40">
   <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    <a href="index.html" class="text-2xl font-bold text-blue-800 hover:text-blue-600">Garuda Kiwi Tour</a>
+    
+    <!-- Logo + Brand Name -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="logo.png" alt="Garuda Kiwi Tour Logo" class="h-10 w-auto">
+      <span class="text-xl font-bold text-blue-800 hover:text-blue-600 hidden sm:inline">Garuda Kiwi Tour</span>
+    </a>
+
+    <!-- Hamburger Menu (Mobile) -->
     <button id="menuToggle" class="md:hidden text-2xl text-blue-800 focus:outline-none">
       <span id="menuIcon">☰</span>
     </button>
+
+    <!-- Desktop Navigation -->
     <nav class="hidden md:flex space-x-4 text-sm font-medium">
       <a href="index.html#home" class="hover:text-blue-600">Beranda</a>
       <a href="index.html#paket" class="hover:text-blue-600">Paket</a>
@@ -56,6 +65,8 @@
       <a href="index.html#kontak" class="hover:text-blue-600">Kontak</a>
     </nav>
   </div>
+
+  <!-- Mobile Navigation -->
   <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white transition-all duration-300 ease-in-out transform">
     <a href="index.html#home" class="block text-blue-800 hover:text-blue-600">Beranda</a>
     <a href="index.html#paket" class="block text-blue-800 hover:text-blue-600">Paket</a>
