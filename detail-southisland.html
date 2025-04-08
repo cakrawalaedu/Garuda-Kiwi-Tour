@@ -433,36 +433,41 @@
   }
 
   function sendToWhatsApp() {
-    const nama = document.getElementById('nama').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const wa = document.getElementById('wa').value.trim();
-    const paket = paketEl.value;
-    const isSingle = singleEl.checked;
-    const jumlah = parseInt(jumlahEl.value);
+  const nama = document.getElementById('nama').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const wa = document.getElementById('wa').value.trim();
+  const paket = paketEl.value;
+  const isSingle = singleEl.checked;
+  const jumlah = parseInt(jumlahEl.value);
 
-    if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
-      alert("Harap lengkapi semua kolom dengan benar.");
-      return;
-    }
+  if (!nama || !email || !wa || isNaN(jumlah) || jumlah < 1) {
+    alert("Harap lengkapi semua kolom dengan benar.");
+    return;
+  }
 
-    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!emailValid) {
-      alert("Alamat email tidak valid.");
-      return;
-    }
+  const emailValid = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
+  if (!emailValid) {
+    alert("Alamat email tidak valid.");
+    return;
+  }
 
-    if (!/^\+?\d{6,15}$/.test(wa)) {
-      alert("Nomor WhatsApp tidak valid. Harap gunakan angka dengan kode negara, contoh: +6281...");
-      return;
-    }
+  if (!/^\\+?\\d{6,15}$/.test(wa)) {
+    alert("Nomor WhatsApp tidak valid. Harap gunakan angka dengan kode negara, contoh: +6281...");
+    return;
+  }
 
-    const hargaSebelum = hargaAwal[paket];
-    const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
-    const totalHarga = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
-    const deposit = Math.round(totalHarga * 0.3);
-    const kamar = isSingle ? "Permintaan kamar pribadi: ✅\n" : "";
+  if (jumlah < 4) {
+    alert("Minimal pemesanan untuk paket ini adalah 4 peserta.\nSilakan hubungi kami untuk harga custom jika kurang dari 4 orang.");
+    return;
+  }
 
-    const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.
+  const hargaSebelum = hargaAwal[paket];
+  const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
+  const totalHarga = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
+  const deposit = Math.round(totalHarga * 0.3);
+  const kamar = isSingle ? "Permintaan kamar pribadi: ✅\\n" : "";
+
+  const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.
 
 Nama: ${nama}
 Email: ${email}
@@ -473,11 +478,9 @@ ${kamar}${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (D
 Total Harga: ${formatRupiah(totalHarga)}
 Deposit 30%: ${formatRupiah(deposit)}`;
 
-    const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-  }
-
-  updateHarga();
+  const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
 </script>
 
 <!-- ❓ FAQ Section -->
