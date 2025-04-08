@@ -310,6 +310,14 @@
   </div>
 </div>
   
+  <script>
+  function toggleTerms() {
+    const content = document.getElementById('termsContent');
+    const icon = document.getElementById('iconArrow');
+    content.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+  }
+</script>
 <!-- 💼 Opsi Paket (Land Only vs Lengkap) -->
 <section class="text-center py-6">
   <a href="#form-daftar" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow transition">
