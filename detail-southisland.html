@@ -373,7 +373,7 @@
   </form>
 </section>
 
-  <script>
+ <script>
   const hargaAwal = {
     "Lengkap": 29800000,
     "Land Only": 18500000
@@ -395,7 +395,7 @@
   singleEl.type = 'checkbox';
   singleEl.id = 'single';
   singleEl.className = 'mr-2';
-  
+
   // Tambah ke dalam form
   const checkboxLabel = document.createElement('label');
   checkboxLabel.className = 'flex items-center text-sm text-gray-700';
@@ -425,11 +425,17 @@
       ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
       : `Harga per orang: ${formatRupiah(hargaSebelum)}`;
 
-    totalHargaText.textContent = jumlah > 0
-      ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
-      : "Total: -";
+    if (jumlah > 0 && jumlah < 4) {
+      totalHargaText.textContent = "Total: -";
+      depositInfoText.textContent = "Deposit 30%: -";
+      hargaPerOrangText.innerHTML += `<br><span class="text-red-600 italic">*Minimal 4 peserta untuk harga ini</span>`;
+    } else {
+      totalHargaText.textContent = jumlah > 0
+        ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
+        : "Total: -";
 
-    depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+      depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+    }
   }
 
   function sendToWhatsApp() {
