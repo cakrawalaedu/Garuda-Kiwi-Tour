@@ -31,18 +31,52 @@
     .animate-slide-up { animation: slideUp 1.2s ease-out; }
     .animate-zoom-in { animation: zoomIn 0.8s ease-in-out; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes zoomIn {
-      from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); }
-    }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes slideUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes zoomIn { from{opacity:0;transform:scale(0.9)} to{opacity:1;transform:scale(1)} }
   </style>
+
+  <!-- SEO: JSON-LD Event for Open Trip -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Event",
+    "name":"Open Trip South Island New Zealand 8D6N (1–8 April 2026)",
+    "startDate":"2026-04-01T09:00:00+13:00",
+    "endDate":"2026-04-08T18:00:00+12:00",
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus":"https://schema.org/EventScheduled",
+    "description":"Open Trip 8D6N: Christchurch, Tekapo, Mt Cook, Wanaka, Arrowtown, Queenstown, Milford Sound, Glenorchy. Early Bird s/d 31 Des 2025.",
+    "image":["https://yourdomain.com/opentrip-hero.jpg"],
+    "location":{
+      "@type":"Place",
+      "name":"Christchurch, New Zealand",
+      "address":{"@type":"PostalAddress","addressCountry":"NZ"}
+    },
+    "organizer":{
+      "@type":"Organization",
+      "name":"Garuda Kiwi Tour",
+      "url":"https://yourdomain.com"
+    },
+    "offers":{
+      "@type":"AggregateOffer",
+      "lowPrice":"16800000",
+      "highPrice":"28900000",
+      "priceCurrency":"IDR",
+      "availability":"https://schema.org/InStock",
+      "url":"https://yourdomain.com/open-trip-early-autumn.html",
+      "validFrom":"2025-06-01T00:00:00+07:00"
+    }
+  }
+  </script>
 </head>
 <body class="bg-white text-gray-800">
+
+<!-- Promo bar global -->
+<div class="w-full bg-blue-900 text-white text-center text-sm py-2">
+  <strong>Open Trip 1–8 April 2026</strong> • Early Bird s/d 31 Des 2025 •
+  <a href="open-trip-early-autumn.html" class="underline">Booking di sini</a>
+</div>
 
 <!-- Navbar -->
 <header class="sticky top-0 bg-white shadow z-50 animate-fade-in">
@@ -62,6 +96,12 @@
     <nav class="hidden md:flex space-x-4 text-sm font-medium animate-slide-up">
       <a href="#home" class="hover:text-blue-600">Beranda</a>
       <a href="#paket" class="hover:text-blue-600">Paket</a>
+
+      <!-- NEW: Nav langsung ke landing page Open Trip -->
+      <a href="open-trip-early-autumn.html" class="text-white bg-blue-700 hover:bg-blue-600 px-3 py-1.5 rounded-lg">
+        Open Trip 1–8 Apr 2026
+      </a>
+
       <a href="#tentang" class="hover:text-blue-600">Tentang</a>
       <a href="blog.html" class="hover:text-blue-600">Blog</a>
       <a href="#galeri" class="hover:text-blue-600">Galeri</a>
@@ -74,6 +114,10 @@
   <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white">
     <a href="#home" class="block text-blue-800 hover:text-blue-600">Beranda</a>
     <a href="#paket" class="block text-blue-800 hover:text-blue-600">Paket</a>
+    <!-- NEW -->
+    <a href="open-trip-early-autumn.html" class="block text-white bg-blue-700 px-3 py-2 rounded-lg">
+      Open Trip 1–8 Apr 2026
+    </a>
     <a href="#tentang" class="block text-blue-800 hover:text-blue-600">Tentang</a>
     <a href="blog.html" class="block text-blue-800 hover:text-blue-600">Blog</a>
     <a href="#galeri" class="block text-blue-800 hover:text-blue-600">Galeri</a>
@@ -104,9 +148,20 @@
       <p class="text-lg md:text-xl mb-6 text-gray-100 animate__animated animate__fadeInUp animate__delay-1s">
         Jelajahi keindahan Selandia Baru bersama <strong>Garuda Kiwi Tour</strong> — dirancang oleh tim lokal yang tinggal langsung di NZ. Aman, fleksibel, dan cocok untuk keluarga.
       </p>
-      <a href="#paket" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition animate__animated animate__fadeInUp animate__delay-2s">
-        ✈️ Lihat Paket Wisata
-      </a>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#paket" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition">
+          ✈️ Lihat Paket Wisata
+        </a>
+        <!-- NEW: fokus Open Trip -->
+        <a href="open-trip-early-autumn.html"
+           class="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold px-6 py-3 rounded-full shadow-lg transition">
+          🚀 Open Trip 1–8 Apr 2026 (Early Bird)
+        </a>
+      </div>
+      <!-- Badge + Countdown -->
+      <div class="mt-3 inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm">
+        Early Bird s/d 31 Des 2025 • <span id="otCountdown" class="font-semibold">—</span>
+      </div>
     </div>
   </div>
 </section>
@@ -116,23 +171,66 @@
 <script>
   const slides = document.querySelectorAll('#heroSlideshow img');
   let index = 0;
-
   function showSlide() {
-    slides.forEach((img, i) => {
-      img.style.opacity = i === index ? '1' : '0';
-    });
+    slides.forEach((img, i) => { img.style.opacity = i === index ? '1' : '0'; });
     index = (index + 1) % slides.length;
   }
-
-  showSlide(); // tampil pertama
-  setInterval(showSlide, 4000); // ganti tiap 4 detik
+  showSlide();
+  setInterval(showSlide, 4000);
 </script>
 
- <section id="paket" class="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-50" data-aos="fade-up">
+<!-- Countdown Open Trip (NZ time) -->
+<script>
+  (function(){
+    const el = document.getElementById('otCountdown');
+    if(!el) return;
+    const target = new Date('2026-04-01T09:00:00+13:00'); // keberangkatan
+    function tick(){
+      const now = new Date();
+      const diff = target - now;
+      if(diff <= 0){ el.textContent = 'Boarding time!'; return; }
+      const d = Math.floor(diff/86400000);
+      const h = Math.floor((diff%86400000)/3600000);
+      el.textContent = d + ' hari ' + h + ' jam';
+    }
+    tick();
+    setInterval(tick, 60000);
+  })();
+</script>
+
+<!-- Paket -->
+<section id="paket" class="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-50" data-aos="fade-up">
   <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Paket Wisata</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- FEATURED: Open Trip April -->
+      <div class="relative bg-white border-2 border-yellow-300 shadow-xl rounded-lg overflow-hidden transform hover:shadow-2xl hover:scale-[1.02] transition" data-aos="zoom-in">
+        <a href="open-trip-early-autumn.html">
+          <img src="opentrip-hero.jpg" alt="Open Trip South Island 1–8 April 2026" class="w-full h-56 object-cover">
+        </a>
+        <!-- Badge pojok -->
+        <div class="absolute top-3 left-3 bg-yellow-400 text-blue-900 font-semibold text-xs px-3 py-1 rounded-full shadow">
+          EARLY BIRD s/d 31 Des 2025
+        </div>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2 text-blue-800">Open Trip 8D6N – 1–8 April 2026</h3>
+          <p class="text-sm text-gray-600 mb-2">Christchurch • Tekapo • Mt Cook • Wanaka • Arrowtown • Queenstown • Milford Sound • Glenorchy</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="line-through text-gray-400 text-sm">All-In: IDR 28.900.000</span>
+            <span class="text-blue-700 font-bold">IDR 27.900.000</span>
+          </div>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="line-through text-gray-400 text-sm">Land Only: IDR 17.800.000</span>
+            <span class="text-blue-700 font-bold">IDR 16.800.000</span>
+            <span class="ml-2 inline-flex items-center text-xs px-2 py-0.5 bg-blue-50 text-blue-700 rounded">Maks. 20 pax</span>
+          </div>
+          <a href="open-trip-early-autumn.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">
+            Lihat Detail Open Trip
+          </a>
+        </div>
+      </div>
 
       <!-- Paket South Island -->
       <div class="bg-white border border-blue-100 shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-[1.02]" data-aos="zoom-in" data-aos-delay="100">
@@ -185,11 +283,12 @@
           <a href="detail-custom.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">Mulai Custom Paket</a>
         </div>
       </div>
-      
+
+    </div>
   </div>
 </section>
 
-  <!-- Tentang Kami -->
+<!-- Tentang Kami -->
 <section id="tentang" class="py-16 bg-white">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h2 class="text-3xl font-bold text-blue-800 mb-6">Tentang Kami</h2>
@@ -223,19 +322,19 @@
   </div>
 </section>
 
-  <!-- Galeri -->
-  <section id="galeri" class="py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Galeri Perjalanan</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="Mount-Cook-in-NZ.jpeg" alt="Galeri 1" class="rounded-lg">
-        <img src="queenstown-from-bob-s-peak.webp" alt="Galeri 2" class="rounded-lg">
-        <img src="south island-a.jpg" alt="Galeri 3" class="rounded-lg">
-      </div>
+<!-- Galeri -->
+<section id="galeri" class="py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Galeri Perjalanan</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="Mount-Cook-in-NZ.jpeg" alt="Galeri 1" class="rounded-lg">
+      <img src="queenstown-from-bob-s-peak.webp" alt="Galeri 2" class="rounded-lg">
+      <img src="south island-a.jpg" alt="Galeri 3" class="rounded-lg">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
+<!-- FAQ -->
 <section class="py-16 bg-white">
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Pertanyaan Umum (FAQ)</h2>
@@ -289,20 +388,20 @@
   </div>
 </section>
 
-  <!-- Kontak -->
-  <section id="kontak" class="py-16">
-    <div class="max-w-xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-blue-800 mb-6">Hubungi Kami</h2>
-      <p>Email: <a href="mailto:info@garudakiwitour.com" class="text-blue-600 underline">info@garudakiwitour.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/6282154465074" class="text-blue-600 underline" target="_blank">+62 821-5446-5074</a></p>
-      <form action="https://formspree.io/f/mjkyejdg" method="POST" class="mt-6 space-y-4">
-        <input type="text" name="nama" placeholder="Nama Anda" class="w-full border rounded px-4 py-2" required>
-        <input type="email" name="email" placeholder="Email Anda" class="w-full border rounded px-4 py-2" required>
-        <textarea name="pesan" placeholder="Pesan Anda" class="w-full border rounded px-4 py-2" rows="4"></textarea>
-        <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Kirim</button>
-      </form>
-    </div>
-  </section>
+<!-- Kontak -->
+<section id="kontak" class="py-16">
+  <div class="max-w-xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-blue-800 mb-6">Hubungi Kami</h2>
+    <p>Email: <a href="mailto:info@garudakiwitour.com" class="text-blue-600 underline">info@garudakiwitour.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/6282154465074" class="text-blue-600 underline" target="_blank">+62 821-5446-5074</a></p>
+    <form action="https://formspree.io/f/mjkyejdg" method="POST" class="mt-6 space-y-4">
+      <input type="text" name="nama" placeholder="Nama Anda" class="w-full border rounded px-4 py-2" required>
+      <input type="email" name="email" placeholder="Email Anda" class="w-full border rounded px-4 py-2" required>
+      <textarea name="pesan" placeholder="Pesan Anda" class="w-full border rounded px-4 py-2" rows="4"></textarea>
+      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Kirim</button>
+    </form>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer class="bg-blue-800 text-white py-6 text-center">
@@ -337,10 +436,7 @@
   });
 </script>
 <script>
-  AOS.init({
-    once: true,
-    duration: 800
-  });
+  AOS.init({ once: true, duration: 800 });
 </script>
 </body>
 </html>
