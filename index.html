@@ -366,17 +366,119 @@
   </div>
 </section>
 
-<!-- Galeri -->
-<section id="galeri" class="py-16">
+<!-- Galeri (Mobile Carousel + Desktop Grid + Lightbox) -->
+<section id="galeri" class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Galeri Perjalanan</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="Mount-Cook-in-NZ.jpeg" alt="Galeri 1" class="rounded-lg">
-      <img src="queenstown-from-bob-s-peak.webp" alt="Galeri 2" class="rounded-lg">
-      <img src="south island-a.jpg" alt="Galeri 3" class="rounded-lg">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <h2 class="text-3xl font-extrabold text-center md:text-left text-blue-800">Galeri Perjalanan</h2>
+        <p class="mt-2 text-gray-600 max-w-2xl text-center md:text-left">
+          Dokumentasi destinasi & momen real trip bersama peserta Garuda Kiwi Tour. Swipe di mobile, klik untuk lihat besar.
+        </p>
+      </div>
+      <div class="text-center md:text-right">
+        <span class="inline-flex items-center gap-2 bg-blue-50 text-blue-900 px-4 py-2 rounded-full text-sm">
+          <i class="fa-solid fa-camera"></i> Real Trip Moments
+        </span>
+      </div>
+    </div>
+
+    <!-- MOBILE: Carousel (hidden di md ke atas) -->
+    <div class="mt-10 md:hidden">
+      <div class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory"
+           style="-webkit-overflow-scrolling: touch;">
+        <!-- Slide -->
+        <button class="gallery-item snap-center shrink-0 w-[85%] rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                data-src="IMG_2545.jpg" data-alt="Trip Moment - Lake Tekapo Church">
+          <img src="IMG_2545.jpg" alt="Trip Moment - Lake Tekapo Church" class="w-full h-64 object-cover">
+        </button>
+
+        <button class="gallery-item snap-center shrink-0 w-[85%] rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                data-src="IMG_2697.jpg" data-alt="Trip Moment - Beach day">
+          <img src="IMG_2697.jpg" alt="Trip Moment - Beach day" class="w-full h-64 object-cover">
+        </button>
+
+        <button class="gallery-item snap-center shrink-0 w-[85%] rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                data-src="IMG_8472.JPG" data-alt="Trip Moment - Mt Cook group">
+          <img src="IMG_8472.JPG" alt="Trip Moment - Mt Cook group" class="w-full h-64 object-cover">
+        </button>
+
+        <button class="gallery-item snap-center shrink-0 w-[85%] rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                data-src="Mount-Cook-in-NZ.jpeg" data-alt="Mount Cook - New Zealand">
+          <img src="Mount-Cook-in-NZ.jpeg" alt="Mount Cook - New Zealand" class="w-full h-64 object-cover">
+        </button>
+
+        <button class="gallery-item snap-center shrink-0 w-[85%] rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                data-src="queenstown-from-bob-s-peak.webp" data-alt="Queenstown View">
+          <img src="queenstown-from-bob-s-peak.webp" alt="Queenstown View" class="w-full h-64 object-cover">
+        </button>
+
+        <button class="gallery-item snap-center shrink-0 w-[85%] rounded-2xl overflow-hidden shadow hover:shadow-lg transition"
+                data-src="south island-a.jpg" data-alt="South Island Scenic">
+          <img src="south island-a.jpg" alt="South Island Scenic" class="w-full h-64 object-cover">
+        </button>
+      </div>
+
+      <p class="mt-3 text-xs text-gray-500 text-center">
+        Tip: swipe ke samping untuk lihat foto lainnya.
+      </p>
+    </div>
+
+    <!-- DESKTOP: Grid (muncul mulai md) -->
+    <div class="mt-10 hidden md:grid grid-cols-3 gap-4">
+      <button class="gallery-item group rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+              data-src="IMG_2545.jpg" data-alt="Trip Moment - Lake Tekapo Church">
+        <img src="IMG_2545.jpg" alt="Trip Moment - Lake Tekapo Church"
+             class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+      </button>
+
+      <button class="gallery-item group rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+              data-src="IMG_2697.jpg" data-alt="Trip Moment - Beach day">
+        <img src="IMG_2697.jpg" alt="Trip Moment - Beach day"
+             class="w-full h-96 object-cover group-hover:scale-105 transition duration-300">
+      </button>
+
+      <button class="gallery-item group rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+              data-src="IMG_8472.JPG" data-alt="Trip Moment - Mt Cook group">
+        <img src="IMG_8472.JPG" alt="Trip Moment - Mt Cook group"
+             class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+      </button>
+
+      <button class="gallery-item group rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+              data-src="Mount-Cook-in-NZ.jpeg" data-alt="Mount Cook - New Zealand">
+        <img src="Mount-Cook-in-NZ.jpeg" alt="Mount Cook - New Zealand"
+             class="w-full h-80 object-cover group-hover:scale-105 transition duration-300">
+      </button>
+
+      <button class="gallery-item group rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+              data-src="queenstown-from-bob-s-peak.webp" data-alt="Queenstown View">
+        <img src="queenstown-from-bob-s-peak.webp" alt="Queenstown View"
+             class="w-full h-72 object-cover group-hover:scale-105 transition duration-300">
+      </button>
+
+      <button class="gallery-item group rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+              data-src="south island-a.jpg" data-alt="South Island Scenic">
+        <img src="south island-a.jpg" alt="South Island Scenic"
+             class="w-full h-96 object-cover group-hover:scale-105 transition duration-300">
+      </button>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 hidden z-[999]">
+    <div class="absolute inset-0 bg-black/80"></div>
+    <div class="relative w-full h-full flex items-center justify-center p-4">
+      <button id="lightboxClose"
+        class="absolute top-5 right-5 bg-white/10 hover:bg-white/20 text-white rounded-full w-11 h-11 flex items-center justify-center">
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <img id="lightboxImg" src="" alt="" class="max-h-[85vh] max-w-[95vw] rounded-2xl shadow-2xl">
+      <p id="lightboxCaption" class="absolute bottom-6 text-center text-white/90 text-sm px-4"></p>
     </div>
   </div>
 </section>
+
 
 <!-- FAQ -->
 <section class="py-16 bg-white">
@@ -511,6 +613,40 @@
 
   // AOS
   AOS.init({ once: true, duration: 800 });
+</script>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.gallery-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.getAttribute('data-src');
+      const alt = btn.getAttribute('data-alt') || '';
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightboxCaption.textContent = alt;
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox(){
+    lightbox.classList.add('hidden');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('absolute')) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('hidden') && e.key === 'Escape') closeLightbox();
+  });
 </script>
 
 </body>
