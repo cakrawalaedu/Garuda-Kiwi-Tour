@@ -3,298 +3,487 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Garuda Kiwi Tour | Your Travel Buddy</title>
 
-  <meta name="description" content="Garuda Kiwi Tour - Open Trip & Private Trip ke New Zealand. Open Trip 10D8N April 2026 (Early Bird IDR 32.8 Juta/pax).">
+  <title>Garuda Kiwi Tour | Paket Wisata Eksklusif New Zealand</title>
+  <meta name="description" content="Jelajahi Selandia Baru dengan Garuda Kiwi Tour. Open Trip & Private Trip New Zealand. Open Trip 10D8N April 2026 Early Bird IDR 32.8 Juta/pax.">
+  <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="Logo.png" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font -->
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Icons -->
+
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/ae943c6289.js" crossorigin="anonymous"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
     body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-    .glass { backdrop-filter: blur(12px); background: rgba(255,255,255,.75); }
+    .animate-fade-in { animation: fadeIn 1s ease-in-out; }
+    .animate-slide-up { animation: slideUp 1.2s ease-out; }
+    .animate-zoom-in { animation: zoomIn 0.8s ease-in-out; }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes slideUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes zoomIn { from{opacity:0;transform:scale(0.9)} to{opacity:1;transform:scale(1)} }
   </style>
+
+  <!-- SEO: JSON-LD Event (Open Trip 10D8N) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Event",
+    "name":"Open Trip 10D8N Autumn in North & South Island New Zealand (14–23 April 2026)",
+    "startDate":"2026-04-14T09:00:00+13:00",
+    "endDate":"2026-04-23T18:00:00+12:00",
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus":"https://schema.org/EventScheduled",
+    "description":"Open Trip 10D8N New Zealand (North & South Island): Auckland, Hobbiton, Rotorua, Tekapo, Mt Cook, Wanaka, Queenstown, Milford Sound, Glenorchy. Early Bird IDR 32.800.000/pax s/d 31 Des 2025.",
+    "image":["https://yourdomain.com/opentrip-april-2026-hero.jpg"],
+    "location":{
+      "@type":"Place",
+      "name":"New Zealand",
+      "address":{"@type":"PostalAddress","addressCountry":"NZ"}
+    },
+    "organizer":{
+      "@type":"Organization",
+      "name":"Garuda Kiwi Tour",
+      "url":"https://yourdomain.com"
+    },
+    "offers":{
+      "@type":"Offer",
+      "price":"32800000",
+      "priceCurrency":"IDR",
+      "availability":"https://schema.org/InStock",
+      "url":"https://yourdomain.com/open-trip-april-2026-10d8n.html",
+      "validFrom":"2025-01-01T00:00:00+07:00"
+    }
+  }
+  </script>
 </head>
 
 <body class="bg-white text-gray-800">
 
-  <!-- ===== TOP PROMO BAR ===== -->
-  <div class="w-full bg-blue-900 text-white text-center text-sm py-2 px-3">
-    <strong>OPEN TRIP 10D8N (14–23 Apr 2026)</strong>
-    • Early Bird <strong class="text-yellow-300">IDR 32.800.000</strong> s/d 31 Des 2025
-    • <a href="open-trip-april-2026-10d8n.html" class="underline font-semibold">Lihat Detail</a>
-    <span class="mx-2 opacity-70">|</span>
-    <span class="opacity-90">Open Trip 1–8 Apr: <strong class="text-red-300">SOLD OUT</strong></span>
+<!-- Promo bar global (UPDATED) -->
+<div class="w-full bg-blue-900 text-white text-center text-sm py-2 px-3">
+  <strong>OPEN TRIP 10D8N (14–23 Apr 2026)</strong> • Early Bird <strong class="text-yellow-300">IDR 32.800.000</strong> s/d 31 Des 2025 •
+  <a href="open-trip-april-2026-10d8n.html" class="underline font-semibold">Booking di sini</a>
+  <span class="mx-2 opacity-70">|</span>
+  <span class="opacity-90">Open Trip 1–8 Apr 2026: <strong class="text-red-300">SOLD OUT</strong></span>
+</div>
+
+<!-- Navbar -->
+<header class="sticky top-0 bg-white shadow z-50 animate-fade-in">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+
+    <!-- Logo dan Judul -->
+    <div class="flex items-center space-x-3 animate-slide-up">
+      <img src="Logo.png" alt="Logo Garuda Kiwi Tour" class="h-10 w-auto">
+      <h1 class="text-2xl font-bold text-blue-800">Garuda Kiwi Tour</h1>
+    </div>
+
+    <!-- Tombol Mobile -->
+    <button id="menuToggle" class="md:hidden text-2xl text-blue-800 focus:outline-none">
+      <span id="menuIcon">☰</span>
+    </button>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-4 text-sm font-medium animate-slide-up">
+      <a href="#home" class="hover:text-blue-600">Beranda</a>
+      <a href="#paket" class="hover:text-blue-600">Paket</a>
+      <a href="#tentang" class="hover:text-blue-600">Tentang</a>
+      <a href="blog.html" class="hover:text-blue-600">Blog</a>
+      <a href="#galeri" class="hover:text-blue-600">Galeri</a>
+      <a href="#testimoni" class="hover:text-blue-600">Testimoni</a>
+      <a href="#kontak" class="hover:text-blue-600">Kontak</a>
+
+      <!-- CTA NAV (UPDATED to 10D8N) -->
+      <a href="open-trip-april-2026-10d8n.html"
+         class="text-white bg-blue-700 hover:bg-blue-600 px-3 py-1.5 rounded-lg">
+        Open Trip 10D8N Apr 2026
+      </a>
+    </nav>
   </div>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="sticky top-0 bg-white shadow z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="Logo.png" alt="Garuda Kiwi Tour" class="h-9 w-auto">
-        <div class="leading-tight">
-          <div class="text-blue-800 font-extrabold text-lg">Garuda Kiwi Tour</div>
-          <div class="text-xs text-gray-500 -mt-0.5">Your Travel Buddy</div>
-        </div>
-      </a>
+  <!-- Menu mobile -->
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white">
+    <a href="#home" class="block text-blue-800 hover:text-blue-600">Beranda</a>
+    <a href="#paket" class="block text-blue-800 hover:text-blue-600">Paket</a>
 
-      <nav class="hidden md:flex items-center gap-4 text-sm">
-        <a href="#open-trip" class="hover:text-blue-600">Open Trip</a>
-        <a href="#private-trip" class="hover:text-blue-600">Private Trip</a>
-        <a href="#faq" class="hover:text-blue-600">FAQ</a>
-        <a href="open-trip-april-2026-10d8n.html"
-           class="bg-yellow-400 hover:bg-yellow-300 text-blue-900 px-4 py-2 rounded-lg font-semibold shadow">
-          Early Bird 10D8N
-        </a>
-      </nav>
+    <!-- CTA MOBILE (UPDATED to 10D8N) -->
+    <a href="open-trip-april-2026-10d8n.html" class="block text-white bg-blue-700 px-3 py-2 rounded-lg">
+      Open Trip 10D8N Apr 2026 (Early Bird)
+    </a>
 
-      <!-- Mobile Button -->
-      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-gray-200">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
+    <a href="#tentang" class="block text-blue-800 hover:text-blue-600">Tentang</a>
+    <a href="blog.html" class="block text-blue-800 hover:text-blue-600">Blog</a>
+    <a href="#galeri" class="block text-blue-800 hover:text-blue-600">Galeri</a>
+    <a href="#testimoni" class="block text-blue-800 hover:text-blue-600">Testimoni</a>
+    <a href="#kontak" class="block text-blue-800 hover:text-blue-600">Kontak</a>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100 bg-white">
-      <div class="max-w-7xl mx-auto px-4 py-3 space-y-2 text-sm">
-        <a href="#open-trip" class="block py-2">Open Trip</a>
-        <a href="#private-trip" class="block py-2">Private Trip</a>
-        <a href="#faq" class="block py-2">FAQ</a>
-        <a href="open-trip-april-2026-10d8n.html"
-           class="block text-center bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold py-2 rounded-lg">
-          Early Bird 10D8N
-        </a>
+    <!-- Badge + Countdown (UPDATED to 14 Apr 2026) -->
+    <div class="pt-2">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-900 px-4 py-2 rounded-full text-sm">
+        Early Bird s/d 31 Des 2025 • <span id="otCountdown" class="font-semibold">—</span>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- ===== HERO ===== -->
-  <section class="relative overflow-hidden text-white">
-    <div class="absolute inset-0">
-      <!-- Gambar yang kamu kirim -->
-      <img src="opentrip-april-2026-hero.jpg" alt="New Zealand Autumn" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-black/55"></div>
+<!-- 🎯 HERO SECTION (slideshow tetap) -->
+<section id="home" class="relative h-[90vh] overflow-hidden text-white">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+    <div id="heroSlideshow" class="absolute inset-0 w-full h-full z-0">
+      <img src="hero1-fiordland.jpg" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000" alt="Fiordland">
+      <img src="hero2-mountain.jpg" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000" alt="Mountain">
+      <img src="hero3-river.jpg" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-1000" alt="River">
     </div>
+  </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 bg-white/15 px-3 py-1 rounded-full text-xs tracking-wide">
-          <i class="fa-solid fa-bolt text-yellow-300"></i>
-          Open Trip April 2026 • Kuota Terbatas
+  <div class="relative z-20 flex items-center justify-center h-full px-6 text-center max-w-2xl mx-auto" data-aos="zoom-in">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
+        Petualangan Tak Terlupakan Menanti Anda
+      </h1>
+      <p class="text-lg md:text-xl mb-6 text-gray-100 animate__animated animate__fadeInUp animate__delay-1s">
+        Jelajahi keindahan Selandia Baru bersama <strong>Garuda Kiwi Tour</strong> — dirancang oleh tim lokal yang tinggal langsung di NZ. Aman, fleksibel, dan cocok untuk keluarga.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#paket" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition">
+          ✈️ Lihat Paket Wisata
+        </a>
+
+        <!-- HERO CTA (UPDATED to 10D8N) -->
+        <a href="open-trip-april-2026-10d8n.html"
+           class="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold px-6 py-3 rounded-full shadow-lg transition">
+          🚀 Open Trip 10D8N Apr 2026 (Early Bird)
+        </a>
+      </div>
+
+      <div class="mt-4 inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm">
+        Early Bird <strong>IDR 32.800.000</strong> s/d 31 Des 2025 • <span id="otCountdownHero" class="font-semibold">—</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paket -->
+<section id="paket" class="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-50" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Paket Wisata</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- OPEN TRIP 1–8 APR (SOLD OUT) -->
+      <div class="relative bg-gradient-to-br from-yellow-50 via-white to-blue-50 border-2 border-red-200 shadow-xl rounded-2xl overflow-hidden" data-aos="zoom-in">
+        <div class="absolute inset-0 bg-black/35 z-10"></div>
+        <div class="absolute top-3 right-3 z-20 bg-red-600 text-white font-extrabold text-xs px-3 py-1 rounded-full shadow">
+          SOLD OUT
+        </div>
+        <div class="absolute top-3 left-3 z-20 bg-white/90 text-red-700 font-bold text-xs px-3 py-1 rounded-full shadow">
+          1–8 APR 2026
         </div>
 
-        <h1 class="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">
-          Autumn in New Zealand <br class="hidden md:block">
-          10D8N North & South Island
-        </h1>
+        <img src="opentrip-april-2026-hero.jpg" alt="Open Trip 1–8 April 2026" class="w-full h-56 object-cover">
 
-        <p class="mt-4 text-gray-200 md:text-lg leading-relaxed">
-          Sekali jalan, nikmati highlight terbaik New Zealand di musim gugur:
-          Auckland, Hobbiton, Rotorua, Tekapo, Mt Cook, Wanaka, Queenstown, Milford Sound & Glenorchy.
-        </p>
+        <div class="relative z-20 p-5">
+          <h3 class="text-xl font-semibold text-white mb-1">Open Trip 8D6N (1–8 April 2026)</h3>
+          <p class="text-sm text-gray-100 mb-3 leading-snug">
+            Christchurch • Tekapo • Mt Cook • Wanaka • Arrowtown • Queenstown • Milford Sound • Glenorchy
+          </p>
 
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <div class="bg-white/85 rounded-xl p-4 mb-4 shadow-inner text-center">
+            <p class="text-gray-600 text-sm">Kuota sudah penuh</p>
+            <p class="text-2xl font-extrabold text-red-700">SOLD OUT</p>
+            <p class="text-xs text-gray-600 mt-1">Bisa masuk waitlist kalau ada kursi kosong</p>
+          </div>
+
+          <a href="https://wa.me/6282154465074?text=Halo%20GKT%2C%20saya%20mau%20WAITLIST%20Open%20Trip%201-8%20April%202026.%20Mohon%20info%20kalau%20ada%20seat%20kosong%20ya."
+             class="block w-full text-center bg-white/80 hover:bg-white text-blue-900 font-semibold py-2.5 rounded-xl shadow transition">
+            Masuk Waitlist
+          </a>
+        </div>
+      </div>
+
+      <!-- NEW OPEN TRIP 10D8N (EARLY BIRD) -->
+      <div class="relative bg-gradient-to-br from-blue-50 via-white to-yellow-50 border-2 border-blue-200 shadow-xl rounded-2xl overflow-hidden transform hover:shadow-2xl hover:-translate-y-1 transition" data-aos="zoom-in" data-aos-delay="80">
+        <a href="open-trip-april-2026-10d8n.html">
+          <img src="opentrip-april-2026-hero.jpg" alt="Open Trip 10D8N April 2026 New Zealand" class="w-full h-56 object-cover">
+        </a>
+
+        <div class="absolute top-3 left-3 bg-yellow-400 text-blue-900 font-extrabold text-xs px-3 py-1 rounded-full shadow">
+          EARLY BIRD s/d 31 Des 2025
+        </div>
+        <div class="absolute top-3 right-3 bg-blue-700 text-white font-bold text-xs px-3 py-1 rounded-full shadow">
+          14–23 APR 2026
+        </div>
+
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-blue-800 mb-1">Open Trip 10D8N (April 2026)</h3>
+          <p class="text-sm text-gray-700 mb-3 leading-snug">
+            Auckland • Hobbiton • Rotorua • Tekapo • Mt Cook • Wanaka • Queenstown • Milford Sound • Glenorchy
+          </p>
+
+          <div class="bg-white/80 border border-blue-200 rounded-xl p-4 mb-4 shadow-inner text-center">
+            <p class="text-gray-500 text-sm">Harga Normal <span class="line-through">IDR 33.800.000</span></p>
+            <p class="text-3xl font-extrabold text-blue-900">IDR 32.800.000</p>
+            <p class="text-xs text-gray-600 mt-1">All-In Package • Open Group • Kuota terbatas</p>
+          </div>
+
           <a href="open-trip-april-2026-10d8n.html"
-             class="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold px-6 py-3 rounded-xl shadow-lg">
-            Lihat Detail 10D8N (Early Bird)
-          </a>
-          <a href="#open-trip"
-             class="bg-white/20 hover:bg-white/30 px-6 py-3 rounded-xl">
-            Lihat Semua Open Trip
+             class="block w-full text-center bg-blue-700 hover:bg-blue-600 text-white font-semibold py-2.5 rounded-xl shadow transition">
+            Lihat Detail & Booking
           </a>
         </div>
-
-        <div class="mt-4 text-sm text-gray-200">
-          🔥 Early Bird: <strong>IDR 32.800.000 / pax</strong> sampai <strong>31 Des 2025</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== OPEN TRIP SECTION ===== -->
-  <section id="open-trip" class="py-16 bg-gradient-to-br from-blue-50 via-white to-yellow-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center">
-        <h2 class="text-3xl font-extrabold text-blue-800">Open Trip</h2>
-        <p class="mt-2 text-gray-700 max-w-2xl mx-auto">
-          Jadwal open group yang sudah kami susun rapi—tinggal join, tinggal berangkat.
-        </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mt-10">
-
-        <!-- SOLD OUT: 1–8 APR -->
-        <div class="relative bg-white rounded-2xl overflow-hidden shadow-xl border-2 border-red-200">
-          <div class="absolute inset-0 bg-black/35 z-10"></div>
-          <div class="absolute top-4 right-4 z-20 bg-red-600 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow">
-            SOLD OUT
-          </div>
-          <div class="absolute top-4 left-4 z-20 bg-white/90 text-red-700 text-xs font-bold px-3 py-1 rounded-full shadow">
-            1–8 APR 2026
-          </div>
-
-          <img src="opentrip-april-2026-hero.jpg" alt="Open Trip 1–8 April 2026" class="w-full h-56 object-cover">
-
-          <div class="relative z-20 p-6">
-            <h3 class="text-xl font-extrabold text-white">Open Trip 8D6N South Island</h3>
-            <p class="mt-2 text-sm text-gray-100">
-              Christchurch • Tekapo • Mt Cook • Wanaka • Arrowtown • Queenstown • Milford Sound • Glenorchy
-            </p>
-
-            <div class="mt-4 bg-white/85 rounded-xl p-4 text-center">
-              <div class="text-xs text-gray-600">Kuota sudah penuh</div>
-              <div class="text-2xl font-extrabold text-red-700">SOLD OUT</div>
-              <div class="text-xs text-gray-600 mt-1">Bisa masuk waitlist kalau ada kursi kosong</div>
-            </div>
-
-            <a href="https://wa.me/6282154465074?text=Halo%20GKT%2C%20saya%20mau%20WAITLIST%20Open%20Trip%201-8%20April%202026.%20Mohon%20info%20kalau%20ada%20seat%20kosong%20ya."
-               class="mt-4 inline-flex w-full justify-center items-center gap-2 bg-white/80 hover:bg-white text-blue-900 font-semibold py-2.5 rounded-xl shadow">
-              <i class="fa-brands fa-whatsapp"></i> Masuk Waitlist
-            </a>
-          </div>
-        </div>
-
-        <!-- NEW: 10D8N 14–23 APR -->
-        <div class="relative bg-white rounded-2xl overflow-hidden shadow-xl border-2 border-blue-200">
-          <div class="absolute top-4 left-4 bg-yellow-400 text-blue-900 text-xs font-extrabold px-3 py-1 rounded-full shadow">
-            EARLY BIRD s/d 31 Des 2025
-          </div>
-          <div class="absolute top-4 right-4 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-            14–23 APR 2026
-          </div>
-
-          <a href="open-trip-april-2026-10d8n.html">
-            <img src="opentrip-april-2026-hero.jpg" alt="Open Trip 10D8N April 2026" class="w-full h-56 object-cover">
-          </a>
-
-          <div class="p-6">
-            <h3 class="text-xl font-extrabold text-blue-900">Open Trip 10D8N North & South Island</h3>
-            <p class="mt-2 text-sm text-gray-700">
-              Auckland • Hobbiton • Rotorua • Christchurch • Tekapo • Mt Cook • Wanaka • Queenstown • Milford Sound • Glenorchy
-            </p>
-
-            <div class="mt-4 bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl p-4 text-center">
-              <div class="text-xs text-gray-600">Harga Normal <span class="line-through">IDR 33.800.000</span></div>
-              <div class="text-3xl font-extrabold text-blue-900">IDR 32.800.000</div>
-              <div class="text-xs text-gray-600 mt-1">All-In Package • Open Group • Kuota terbatas</div>
-            </div>
-
-            <a href="open-trip-april-2026-10d8n.html"
-               class="mt-4 inline-flex w-full justify-center items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-semibold py-2.5 rounded-xl shadow">
-              <i class="fa-solid fa-plane"></i> Lihat Detail & Booking
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PRIVATE TRIP SECTION ===== -->
-  <section id="private-trip" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center">
-        <h2 class="text-3xl font-extrabold text-blue-800">Private Trip by Request</h2>
-        <p class="mt-2 text-gray-700 max-w-2xl mx-auto">
-          Mau itinerary lebih fleksibel? Cocok untuk keluarga, honeymoon, atau grup kantor.
-          Kamu pilih tanggal & gaya trip — kami yang susun rute dan operasionalnya.
-        </p>
-      </div>
-
-      <div class="mt-10 grid md:grid-cols-3 gap-6 text-sm">
-        <div class="p-6 rounded-2xl border border-gray-200 shadow-sm">
-          <div class="font-bold text-blue-900">Custom Itinerary</div>
-          <div class="mt-2 text-gray-700">Rute disesuaikan dengan pace & minat peserta.</div>
-        </div>
-        <div class="p-6 rounded-2xl border border-gray-200 shadow-sm">
-          <div class="font-bold text-blue-900">Private Transport</div>
-          <div class="mt-2 text-gray-700">Mobil/van sesuai jumlah pax, nyaman untuk scenic drive.</div>
-        </div>
-        <div class="p-6 rounded-2xl border border-gray-200 shadow-sm">
-          <div class="font-bold text-blue-900">Budget Transparent</div>
-          <div class="mt-2 text-gray-700">Rincian biaya jelas—mudah disesuaikan naik/turun.</div>
-        </div>
-      </div>
-
-      <div class="mt-10 text-center">
-        <a href="https://wa.me/6282154465074?text=Halo%20GKT%2C%20saya%20ingin%20konsultasi%20Private%20Trip%20New%20Zealand.%20Bisa%20dibantu%20ya."
-           class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold px-6 py-3 rounded-xl shadow">
-          <i class="fa-brands fa-whatsapp"></i> Konsultasi Private Trip
+      <!-- Paket South Island -->
+      <div class="bg-white border border-blue-100 shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-[1.02]" data-aos="zoom-in" data-aos-delay="120">
+        <a href="detail-southisland.html">
+          <img src="south island-a.jpg" alt="South Island" class="w-full h-56 object-cover">
         </a>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2 text-blue-800">Favourite 8D6N South Island Private Tour</h3>
+          <p class="text-sm text-gray-600 mb-2">Eksplorasi Christchurch, Tekapo, Mt Cook, Queenstown & Milford Sound.</p>
+          <p class="text-blue-700 font-bold mb-4">Mulai dari IDR 20.500.000/pax</p>
+          <a href="detail-southisland.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">Lihat Detail</a>
+        </div>
+      </div>
+
+      <!-- Paket North & South Island -->
+      <div class="bg-white border border-blue-100 shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-[1.02]" data-aos="zoom-in" data-aos-delay="160">
+        <a href="detail-northsouth.html">
+          <img src="northsouth-hero2.jpg" alt="North & South Island" class="w-full h-56 object-cover">
+        </a>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2 text-blue-800">10D8N North & South Island Private Tour</h3>
+          <p class="text-sm text-gray-600 mb-2">Auckland, Rotorua, Tekapo, Queenstown & Milford Sound dalam satu perjalanan epik.</p>
+          <p class="text-blue-700 font-bold mb-4">Mulai dari IDR 25.500.000/pax</p>
+          <a href="detail-northsouth.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">Lihat Detail</a>
+        </div>
+      </div>
+
+      <!-- Paket Family Fun NZ -->
+      <div class="bg-white border border-blue-100 shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-[1.02]" data-aos="zoom-in" data-aos-delay="200">
+        <a href="detail-family.html">
+          <img src="family-fun-hero.jpg" alt="Family Fun NZ" class="w-full h-56 object-cover">
+        </a>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2 text-blue-800">8D6N Family Fun NZ</h3>
+          <p class="text-sm text-gray-600 mb-2">Tur ramah keluarga menjelajahi Auckland, Rotorua, Hobbiton, Taupo, dan Wellington.</p>
+          <p class="text-blue-700 font-bold mb-4">Mulai dari IDR 18.800.000/pax</p>
+          <a href="detail-family.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">Lihat Detail</a>
+        </div>
+      </div>
+
+      <!-- Custom Paket -->
+      <div class="bg-white border border-blue-100 shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-[1.02]" data-aos="zoom-in" data-aos-delay="240">
+        <a href="detail-custom.html">
+          <img src="newzealand-hero.jpg" alt="Buat paket Liburan Sesuai Keinginanmu!" class="w-full h-56 object-cover">
+        </a>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2 text-blue-800">Buat Paket Liburan Sesuai Keinginanmu!</h3>
+          <p class="text-sm text-gray-600 mb-2">Pilih destinasi, aktivitas, dan kebutuhanmu. Tim kami siap merancang itinerary yang pas buat kamu dan keluarga.</p>
+          <p class="text-blue-700 font-bold mb-4">Harga Menyesuaikan</p>
+          <a href="detail-custom.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">Mulai Custom Paket</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Tentang Kami -->
+<section id="tentang" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-blue-800 mb-6">Tentang Kami</h2>
+    <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+      Garuda Kiwi Tour adalah agensi tur Indonesia yang berbasis di Selandia Baru, menyediakan layanan perjalanan eksklusif dan privat.
+      Kami hadir untuk membantu wisatawan Indonesia menjelajahi keindahan alam dan budaya Selandia Baru dengan aman, nyaman, dan penuh kesan.
+      Dipandu oleh orang Indonesia yang tinggal di NZ, kami tahu persis apa yang Anda cari.
+    </p>
+  </div>
+</section>
+
+<!-- Keunggulan -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Kenapa Memilih Kami?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div>
+        <i class="fas fa-map-marked-alt text-4xl text-blue-700 mb-4"></i>
+        <h4 class="text-xl font-semibold mb-2">Pemandu Lokal Berpengalaman</h4>
+        <p>Kami orang Indonesia yang sudah lama tinggal di Selandia Baru. Kamu akan merasa seperti di rumah!</p>
+      </div>
+      <div>
+        <i class="fas fa-shield-alt text-4xl text-blue-700 mb-4"></i>
+        <h4 class="text-xl font-semibold mb-2">Aman & Terpercaya</h4>
+        <p>Perjalanan dirancang untuk kenyamanan & keamanan, termasuk koordinasi dan layanan darurat.</p>
+      </div>
+      <div>
+        <i class="fas fa-star text-4xl text-blue-700 mb-4"></i>
+        <h4 class="text-xl font-semibold mb-2">Layanan Eksklusif</h4>
+        <p>Paket private trip fleksibel, bisa menyesuaikan kebutuhan pribadi Anda.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== FAQ ===== -->
-  <section id="faq" class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-extrabold text-center text-blue-800">FAQ</h2>
+<!-- Galeri -->
+<section id="galeri" class="py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Galeri Perjalanan</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="Mount-Cook-in-NZ.jpeg" alt="Galeri 1" class="rounded-lg">
+      <img src="queenstown-from-bob-s-peak.webp" alt="Galeri 2" class="rounded-lg">
+      <img src="south island-a.jpg" alt="Galeri 3" class="rounded-lg">
+    </div>
+  </div>
+</section>
 
-      <div class="mt-8 space-y-3">
-        <details class="bg-white rounded-2xl p-5 border border-gray-200">
-          <summary class="cursor-pointer font-semibold flex justify-between items-center">
-            Apakah Open Trip pasti berangkat?
-            <span class="text-gray-400">▾</span>
-          </summary>
-          <div class="mt-3 text-sm text-gray-700">
-            Open Trip berangkat mengikuti minimum peserta yang sudah ditetapkan. Jika ada perubahan, peserta akan diinformasikan lebih awal.
-          </div>
-        </details>
-
-        <details class="bg-white rounded-2xl p-5 border border-gray-200">
-          <summary class="cursor-pointer font-semibold flex justify-between items-center">
-            Apa bedanya All-In vs Land Only?
-            <span class="text-gray-400">▾</span>
-          </summary>
-          <div class="mt-3 text-sm text-gray-700">
-            All-In termasuk tiket pesawat sesuai paket. Land Only untuk peserta yang sudah punya tiket internasional sendiri.
-          </div>
-        </details>
-
-        <details class="bg-white rounded-2xl p-5 border border-gray-200">
-          <summary class="cursor-pointer font-semibold flex justify-between items-center">
-            Bisa dibantu pengajuan visa?
-            <span class="text-gray-400">▾</span>
-          </summary>
-          <div class="mt-3 text-sm text-gray-700">
-            Bisa. Tim kami dapat membantu arahan dan dokumen pengajuan visa (biaya terpisah sesuai ketentuan).
-          </div>
-        </details>
+<!-- FAQ -->
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Pertanyaan Umum (FAQ)</h2>
+    <div class="space-y-8 text-left">
+      <div>
+        <h4 class="font-semibold text-blue-700 text-lg">1. Apakah paket tur ini cocok untuk keluarga, termasuk anak-anak dan lansia?</h4>
+        <p class="text-gray-700 mt-2">Ya, tentu! Paket kami fleksibel untuk segala usia. Kami dapat menyesuaikan itinerary dan pilihan akomodasi agar nyaman bagi keluarga.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-blue-700 text-lg">2. Apakah harga sudah termasuk tiket pesawat?</h4>
+        <p class="text-gray-700 mt-2">Untuk paket lengkap (All-In), harga sudah termasuk tiket pesawat sesuai detail di halaman paket. Opsi Land Only tidak termasuk tiket internasional.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-blue-700 text-lg">3. Bagaimana jika saya belum memiliki visa Selandia Baru?</h4>
+        <p class="text-gray-700 mt-2">Kami bisa bantu pendampingan proses visa (biaya terpisah) termasuk arahan dokumen dan konsultasi.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-blue-700 text-lg">4. Apakah saya bisa memilih private tour atau bergabung dengan grup?</h4>
+        <p class="text-gray-700 mt-2">Bisa. Kami menyediakan Private Trip (lebih fleksibel) dan Open Trip (gabung grup kecil).</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-blue-700 text-lg">5. Kapan waktu terbaik untuk berlibur ke New Zealand?</h4>
+        <p class="text-gray-700 mt-2">Setiap musim punya daya tarik: Spring, Summer, Autumn, Winter. Kami bisa rekomendasikan sesuai preferensi Anda.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-blue-700 text-lg">6. Bagaimana cara mendaftar dan kapan batas pendaftaran?</h4>
+        <p class="text-gray-700 mt-2">Klik tombol “Booking” di halaman paket atau hubungi WhatsApp. Pendaftaran bisa ditutup jika kuota penuh.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="bg-blue-900 text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="font-extrabold text-lg">Garuda Kiwi Tour</div>
-      <div class="text-sm opacity-90">Your Travel Buddy to New Zealand</div>
-      <div class="mt-3 text-sm">
-        WhatsApp: <a class="underline" href="https://wa.me/6282154465074">+62 821-5446-5074</a>
-        • Instagram: <span class="font-semibold">@garudakiwi.tour</span>
+<!-- Testimoni -->
+<section id="testimoni" class="py-16 bg-blue-50">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Apa Kata Mereka?</h2>
+    <div class="space-y-8">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="italic text-gray-700">"Tim Garuda Kiwi Tour benar-benar memikirkan kenyamanan kami. Orang tua saya sangat senang, dan ini jadi liburan keluarga yang paling berkesan!"</p>
+        <h4 class="mt-4 font-semibold text-right text-blue-700">- William & Keluarga, Pontianak</h4>
       </div>
-      <div class="mt-3 text-xs opacity-80">© 2026 Garuda Kiwi Tour</div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="italic text-gray-700">"Sangat detail, mulai dari pengurusan visa sampai tips kuliner dan spot foto terbaik. Rasanya seperti ditemani teman sendiri selama perjalanan!"</p>
+        <h4 class="mt-4 font-semibold text-right text-blue-700">- Evelyn, Medan</h4>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="italic text-gray-700">"Tour privatnya worth it! Kami bisa bebas atur waktu, nggak terburu-buru, dan guide-nya ramah banget."</p>
+        <h4 class="mt-4 font-semibold text-right text-blue-700">- Heni, Pontianak</h4>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- ===== FLOATING WHATSAPP ===== -->
-  <a href="https://wa.me/6282154465074?text=Halo%20GKT%2C%20saya%20ingin%20tanya%20Open%20Trip%20New%20Zealand%20April%202026."
-     class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2">
-    <i class="fa-brands fa-whatsapp text-xl"></i>
-    <span class="hidden sm:inline font-semibold">Chat WhatsApp</span>
-  </a>
+<!-- Kontak -->
+<section id="kontak" class="py-16">
+  <div class="max-w-xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-blue-800 mb-6">Hubungi Kami</h2>
+    <p>Email: <a href="mailto:info@garudakiwitour.com" class="text-blue-600 underline">info@garudakiwitour.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/6282154465074" class="text-blue-600 underline" target="_blank">+62 821-5446-5074</a></p>
 
-  <script>
-    // Mobile menu toggle
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
-  </script>
+    <form action="https://formspree.io/f/mjkyejdg" method="POST" class="mt-6 space-y-4">
+      <input type="text" name="nama" placeholder="Nama Anda" class="w-full border rounded px-4 py-2" required>
+      <input type="email" name="email" placeholder="Email Anda" class="w-full border rounded px-4 py-2" required>
+      <textarea name="pesan" placeholder="Pesan Anda" class="w-full border rounded px-4 py-2" rows="4"></textarea>
+      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Kirim</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-blue-800 text-white py-6 text-center">
+  <p>&copy; 2025 Garuda Kiwi Tour | All Rights Reserved</p>
+  <div class="mt-2 space-x-4">
+    <a href="#" class="hover:text-yellow-300"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="https://instagram.com/garudakiwi.tour" class="hover:text-yellow-300"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://wa.me/6282154465074" class="hover:text-yellow-300"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+  <div class="mt-4 text-sm text-gray-300">
+    <a href="terms-and-conditions.html" class="hover:text-yellow-300">Syarat & Ketentuan</a>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/6282154465074?text=Halo%20GKT%2C%20saya%20ingin%20tanya%20Open%20Trip%20New%20Zealand%20April%202026."
+   class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2">
+  <i class="fa-brands fa-whatsapp text-xl"></i>
+  <span class="hidden sm:inline font-semibold">Chat WhatsApp</span>
+</a>
+
+<!-- Scripts -->
+<script>
+  // Mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+  });
+
+  // Hero slideshow
+  const slides = document.querySelectorAll('#heroSlideshow img');
+  let idx = 0;
+  function showSlide() {
+    slides.forEach((img, i) => img.style.opacity = (i === idx ? '1' : '0'));
+    idx = (idx + 1) % slides.length;
+  }
+  showSlide();
+  setInterval(showSlide, 4000);
+
+  // Countdown (UPDATED to 14 Apr 2026 NZ time)
+  function runCountdown(elId){
+    const el = document.getElementById(elId);
+    if(!el) return;
+    const target = new Date('2026-04-14T09:00:00+13:00');
+    function tick(){
+      const now = new Date();
+      const diff = target - now;
+      if(diff <= 0){ el.textContent = 'Boarding time!'; return; }
+      const d = Math.floor(diff/86400000);
+      const h = Math.floor((diff%86400000)/3600000);
+      el.textContent = d + ' hari ' + h + ' jam';
+    }
+    tick();
+    setInterval(tick, 60000);
+  }
+  runCountdown('otCountdown');
+  runCountdown('otCountdownHero');
+
+  // AOS
+  AOS.init({ once: true, duration: 800 });
+</script>
 
 </body>
 </html>
