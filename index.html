@@ -69,16 +69,14 @@
   </script>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 pt-9">
 
  <!-- SLIDE-IN PROMO BAR (NEW) -->
   <div id="promoBar"
-       class="fixed top-0 left-0 right-0 z-50 bg-blue-900 text-white text-sm text-center py-2 transform -translate-y-full transition-transform duration-700">
-    <span id="promoText"></span>
-  </div>
+  class="fixed top-0 left-0 right-0 z-[999] bg-blue-900 text-white text-sm text-center py-2 transform -translate-y-full transition-transform duration-700">
 
 <!-- Navbar -->
-<header class="sticky top-0 bg-white shadow z-50 animate-fade-in">
+<header class="sticky top-0 bg-white shadow z-40 animate-fade-in">
   <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
     <!-- Logo dan Judul -->
@@ -647,40 +645,39 @@
   });
 </script>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
   const promoBar = document.getElementById('promoBar');
   const promoText = document.getElementById('promoText');
+  if (!promoBar || !promoText) return;
 
   const promos = [
-    {
-      text: 'OPEN TRIP 10D8N (14–23 APR 2026) • EARLY BIRD IDR 32.800.000 • Booking sekarang',
-      duration: 4000
-    },
-    {
-      text: 'OPEN TRIP 1–8 APR 2026 • SOLD OUT • Terima kasih atas antusiasmenya',
-      duration: 3500
-    }
+    { text: 'OPEN TRIP 10D8N (14–23 APR 2026) • EARLY BIRD IDR 32.800.000 • Booking sekarang', duration: 4200 },
+    { text: 'OPEN TRIP 1–8 APR 2026 • SOLD OUT • Terima kasih atas antusiasmenya', duration: 3600 }
   ];
 
   let index = 0;
 
+  // pastikan start hidden setelah DOM ready
+  promoBar.style.transform = 'translateY(-100%)';
+
   function showPromo() {
     promoText.textContent = promos[index].text;
-    promoBar.classList.remove('-translate-y-full');
+
+    // slide in
+    promoBar.style.transform = 'translateY(0)';
 
     setTimeout(() => {
-      promoBar.classList.add('-translate-y-full');
+      // slide out
+      promoBar.style.transform = 'translateY(-100%)';
+
       index++;
-      if (index < promos.length) {
-        setTimeout(showPromo, 1200);
-      }
+      if (index < promos.length) setTimeout(showPromo, 900);
     }, promos[index].duration);
   }
 
-  window.addEventListener('load', () => {
-    setTimeout(showPromo, 800);
-  });
+  setTimeout(showPromo, 500);
+});
 </script>
-
 
 </body>
 </html>
