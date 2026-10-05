@@ -32,6 +32,8 @@
   );
 
   const form = document.getElementById("contact-form");
+  if (!form) return;
+
   const status = document.getElementById("form-status");
   const submit = form.querySelector('button[type="submit"]');
   form.addEventListener("submit", async (event) => {

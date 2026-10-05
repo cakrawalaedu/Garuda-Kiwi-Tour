@@ -10,7 +10,7 @@ Urutan: Hero → Featured Journey → Why Garuda Kiwi Tour → Real Trip Moments
 
 Featured Journey adalah South Island Open Trip 17–24 May 2027, 8D6N, maximum 10 travellers. Harga normal Rp31.000.000/pax; Early Access Privilege Rp30.500.000/pax untuk empat travellers pertama; Reservation Payment Rp3.000.000/pax; pembayaran hingga 5x. Fasilitas memuat Qantas full-service, Mercedes-Benz Sprinter, Milford Sound Cruise, mostly 4-star accommodation + satu private stay di Lake Tekapo. Copy late autumn tidak menjanjikan foliage atau kondisi cuaca tertentu.
 
-Foto Real Trip Moments dan dua testimoni berasal dari homepage lama. Foto perjalanan sebelumnya diberi konteks yang jelas, bukan klaim kondisi untuk Mei 2027. Tautan Featured Journey meminta informasi keberangkatan 2027 lewat WhatsApp, bukan menuju halaman open trip 2026.
+Foto Real Trip Moments dan dua testimoni berasal dari homepage lama. Foto perjalanan sebelumnya diberi konteks yang jelas, bukan klaim kondisi untuk Mei 2027. Tautan Featured Journey, kartu Open Trip, dan tautan footer Mei 2027 kini menuju `south-island-may-2027.html`, landing page campaign NZMAY, yang menyediakan itinerary lengkap dan enquiry WhatsApp.
 
 ## Aset gambar yang digunakan
 
