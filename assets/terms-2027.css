@@ -1,0 +1,92 @@
+.legal-content {
+  max-width: 900px;
+  padding-block: 52px 72px;
+}
+.legal-intro {
+  padding-bottom: 32px;
+}
+.legal-intro h1 {
+  font-size: clamp(44px, 6vw, 68px);
+  margin-block: 18px 24px;
+}
+.legal-intro p + p,
+.legal-section p + p {
+  margin-top: 16px;
+}
+.legal-section {
+  padding-block: 30px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 20px;
+}
+.legal-section h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  margin-block: 12px 20px;
+}
+.legal-section ul {
+  padding-left: 20px;
+  margin: 0;
+}
+.legal-section li + li {
+  margin-top: 12px;
+}
+.legal-page strong {
+  font-weight: 600;
+}
+.legal-intro a {
+  border-bottom: 1px solid var(--gold);
+}
+.payment-schedule {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-block: 24px;
+  text-align: left;
+  font-size: 11px;
+  overflow-wrap: break-word;
+}
+.payment-schedule caption {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  padding-bottom: 14px;
+}
+.payment-schedule th,
+.payment-schedule td {
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.payment-schedule th {
+  font-weight: 600;
+}
+.payment-schedule thead {
+  background: #eeeee5;
+}
+.legal-contact {
+  border-top: 1px solid var(--gold);
+  padding-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.legal-contact p {
+  flex-basis: 100%;
+}
+.legal-page .site-footer {
+  padding-block: 28px;
+}
+.legal-page .footer-bottom {
+  padding: 0;
+  margin-top: 0;
+  border-top: 0;
+}
+@media (min-width: 600px) {
+  .payment-schedule {
+    font-size: 13px;
+  }
+  .payment-schedule th,
+  .payment-schedule td {
+    padding: 16px;
+  }
+}
