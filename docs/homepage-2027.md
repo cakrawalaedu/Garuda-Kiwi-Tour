@@ -31,13 +31,13 @@ Tidak ada gambar wajib yang belum tersedia. Foto kendaraan Mercedes-Benz Sprinte
 
 ## Kompatibilitas dan kontak
 
-Anchor `home`, `opentrip`, `tentang`, `galeri`, `paket`, `services`, `testimoni`, dan `kontak` dipertahankan agar tautan lama tetap bekerja. Halaman tour dan artikel tidak dihapus atau dirancang ulang. Terms & Conditions kini diperbarui khusus untuk South Island Open Trip 17–24 May 2027.
+Anchor `home`, `opentrip`, `tentang`, `galeri`, `paket`, `services`, `testimoni`, dan `kontak` dipertahankan agar tautan lama tetap bekerja. Halaman tour dan artikel tidak dihapus atau dirancang ulang. T&C dipisahkan: `terms-and-conditions.html` memuat ketentuan umum GKT, sedangkan `terms-and-conditions-may-2027.html` memuat ketentuan South Island Open Trip 17–24 May 2027.
 
 WhatsApp tetap `https://wa.me/6282154465074`, Instagram tetap `https://instagram.com/garudakiwi.tour`, email tetap `garudakiwi.tour@gmail.com`. Form tetap POST ke `https://formspree.io/f/mjkyejdg`, dengan nama field `nama`, `email`, dan `pesan`. JavaScript menampilkan status pengiriman dan mempertahankan input ketika gagal. Jika JavaScript dinonaktifkan, form tetap memakai native POST dan navigasi tetap tersedia.
 
 `index.pre-2027.html` tidak diubah; SHA-256: `95a1e8c5cacc4d4e398ef640c85f882f07df567325a95cc69dc72daf15d61b1e`.
 
-Tautan `terms-and-conditions.html` kini membuka ketentuan South Island Open Trip 17–24 May 2027: Reservation Payment Rp3.000.000/pax, seat confirmed setelah pembayaran diverifikasi, dan pembayaran up to 5x sesuai waktu reservasi. Booking Confirmation menjadi acuan final jadwal individual. Homepage dan file backup tidak berubah dalam task T&C ini.
+Tautan T&C pada Featured Journey May 2027 menuju `terms-and-conditions-may-2027.html`; tautan pada form kontak umum dan footer tetap menuju `terms-and-conditions.html`. T&C umum tidak menetapkan harga, deposit, tanggal pembayaran, atau aturan May 2027 bagi produk lain; Proposal/Booking Confirmation perjalanan terkait menjadi acuan. Pemisahan ini hanya mengganti satu href pada homepage; file backup tidak berubah. Rincian audit ada di `docs/terms-architecture.md`.
 
 ## Menjalankan
 

@@ -305,11 +305,11 @@
   </button>
 
   <div id="termsContent" class="hidden mt-4 text-sm text-gray-700 leading-relaxed space-y-3">
-    <p><strong>1. Pendaftaran & Pembayaran:</strong> DP 30% saat pendaftaran. Pelunasan maksimal H-30 sebelum keberangkatan.</p>
-    <p><strong>2. Pembatalan:</strong> Potongan sesuai waktu pembatalan. H-14 ke bawah = tidak ada pengembalian.</p>
+    <p><strong>1. Pendaftaran & Pembayaran:</strong> Nominal deposit, tahapan pembayaran, dan pelunasan mengikuti Proposal/Booking Confirmation paket private ini. Lihat <a href="terms-and-conditions.html#payment" class="underline hover:text-blue-800">ketentuan umum pembayaran</a>.</p>
+    <p><strong>2. Pembatalan:</strong> Ketentuan pembatalan dan refund mengikuti Proposal/Booking Confirmation paket ini serta kebijakan airline/vendor terkait. Lihat <a href="terms-and-conditions.html#cancellation" class="underline hover:text-blue-800">ketentuan umum pembatalan</a>.</p>
     <p><strong>3. Perubahan Itinerary:</strong> Dapat dilakukan oleh tim untuk alasan keamanan, cuaca, atau kebijakan lokal.</p>
     <p><strong>4. Tanggung Jawab Peserta:</strong> Peserta bertanggung jawab atas dokumen perjalanan dan kondisi kesehatan pribadi.</p>
-    <p><strong>5. Force Majeure:</strong> Kami tidak bertanggung jawab atas kejadian di luar kendali (bencana, pembatalan maskapai, dll).</p>
+    <p><strong>5. Force Majeure:</strong> Penanganan perubahan perjalanan dan biaya akibat keadaan di luar kendali mengikuti Proposal/Booking Confirmation paket ini serta kebijakan airline/vendor terkait. Lihat <a href="terms-and-conditions.html#vendor" class="underline hover:text-blue-800">ketentuan umum vendor dan kondisi perjalanan</a>.</p>
     <p class="text-blue-600">
       <a href="terms-and-conditions.html" class="underline hover:text-blue-800">Baca lengkap di halaman resmi →</a>
     </p>
@@ -367,7 +367,7 @@
     <div class="text-sm text-gray-700">
       <p id="hargaPerOrang" class="mb-1">Harga per orang: -</p>
       <p id="totalHarga" class="font-semibold">Total: -</p>
-      <p id="depositInfo" class="text-blue-700">Deposit 30%: -</p>
+      <p id="depositInfo" class="text-blue-700">Deposit: sesuai Proposal/Booking Confirmation paket ini.</p>
     </div>
 
     <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded w-full">
@@ -422,7 +422,6 @@
     const isSingle = singleEl.checked;
 
     const total = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
-    const deposit = Math.round(total * 0.3);
 
     hargaPerOrangText.innerHTML = isDiskonAktif
       ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
@@ -430,14 +429,14 @@
 
     if (jumlah > 0 && jumlah < 4) {
       totalHargaText.textContent = "Total: -";
-      depositInfoText.textContent = "Deposit 30%: -";
+      depositInfoText.textContent = "Deposit: sesuai Proposal/Booking Confirmation paket ini.";
       hargaPerOrangText.innerHTML += `<br><span class="text-red-600 italic">*Minimal 4 peserta untuk harga ini</span>`;
     } else {
       totalHargaText.textContent = jumlah > 0
         ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
         : "Total: -";
 
-      depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+      depositInfoText.textContent = "Deposit: sesuai Proposal/Booking Confirmation paket ini.";
     }
   }
 
@@ -473,7 +472,6 @@
   const hargaSebelum = hargaAwal[paket];
   const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
   const totalHarga = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
-  const deposit = Math.round(totalHarga * 0.3);
   const kamar = isSingle ? "Permintaan kamar pribadi: ✅\\n" : "";
 
   const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.
@@ -485,7 +483,7 @@ Paket: ${paket}
 Jumlah Peserta: ${jumlah}
 ${kamar}${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli)` : `Harga per pax: ${formatRupiah(hargaSebelum)}`}
 Total Harga: ${formatRupiah(totalHarga)}
-Deposit 30%: ${formatRupiah(deposit)}`;
+Deposit dan pelunasan: sesuai Proposal/Booking Confirmation paket ini.`;
 
   const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
