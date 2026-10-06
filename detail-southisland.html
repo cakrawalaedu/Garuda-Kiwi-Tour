@@ -6,7 +6,7 @@
   <title>Detail Paket: South Island</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="Logo.png" type="image/png">
   <script src="https://kit.fontawesome.com/ae943c6289.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -305,11 +305,11 @@
   </button>
 
   <div id="termsContent" class="hidden mt-4 text-sm text-gray-700 leading-relaxed space-y-3">
-    <p><strong>1. Pendaftaran & Pembayaran:</strong> DP 30% saat pendaftaran. Pelunasan maksimal H-30 sebelum keberangkatan.</p>
-    <p><strong>2. Pembatalan:</strong> Potongan sesuai waktu pembatalan. H-14 ke bawah = tidak ada pengembalian.</p>
+    <p><strong>1. Pendaftaran & Pembayaran:</strong> Nominal deposit, tahapan pembayaran, dan pelunasan mengikuti Proposal/Booking Confirmation paket private ini. Lihat <a href="terms-and-conditions.html#payment" class="underline hover:text-blue-800">ketentuan umum pembayaran</a>.</p>
+    <p><strong>2. Pembatalan:</strong> Ketentuan pembatalan dan refund mengikuti Proposal/Booking Confirmation paket ini serta kebijakan airline/vendor terkait. Lihat <a href="terms-and-conditions.html#cancellation" class="underline hover:text-blue-800">ketentuan umum pembatalan</a>.</p>
     <p><strong>3. Perubahan Itinerary:</strong> Dapat dilakukan oleh tim untuk alasan keamanan, cuaca, atau kebijakan lokal.</p>
     <p><strong>4. Tanggung Jawab Peserta:</strong> Peserta bertanggung jawab atas dokumen perjalanan dan kondisi kesehatan pribadi.</p>
-    <p><strong>5. Force Majeure:</strong> Kami tidak bertanggung jawab atas kejadian di luar kendali (bencana, pembatalan maskapai, dll).</p>
+    <p><strong>5. Force Majeure:</strong> Penanganan perubahan perjalanan dan biaya akibat keadaan di luar kendali mengikuti Proposal/Booking Confirmation paket ini serta kebijakan airline/vendor terkait. Lihat <a href="terms-and-conditions.html#vendor" class="underline hover:text-blue-800">ketentuan umum vendor dan kondisi perjalanan</a>.</p>
     <p class="text-blue-600">
       <a href="terms-and-conditions.html" class="underline hover:text-blue-800">Baca lengkap di halaman resmi →</a>
     </p>
@@ -367,7 +367,7 @@
     <div class="text-sm text-gray-700">
       <p id="hargaPerOrang" class="mb-1">Harga per orang: -</p>
       <p id="totalHarga" class="font-semibold">Total: -</p>
-      <p id="depositInfo" class="text-blue-700">Deposit 30%: -</p>
+      <p id="depositInfo" class="text-blue-700">Deposit: sesuai Proposal/Booking Confirmation paket ini.</p>
     </div>
 
     <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded w-full">
@@ -422,7 +422,6 @@
     const isSingle = singleEl.checked;
 
     const total = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
-    const deposit = Math.round(total * 0.3);
 
     hargaPerOrangText.innerHTML = isDiskonAktif
       ? `Harga per orang: <s>${formatRupiah(hargaSebelum)}</s> → <strong>${formatRupiah(hargaDiskon)}</strong>`
@@ -430,14 +429,14 @@
 
     if (jumlah > 0 && jumlah < 4) {
       totalHargaText.textContent = "Total: -";
-      depositInfoText.textContent = "Deposit 30%: -";
+      depositInfoText.textContent = "Deposit: sesuai Proposal/Booking Confirmation paket ini.";
       hargaPerOrangText.innerHTML += `<br><span class="text-red-600 italic">*Minimal 4 peserta untuk harga ini</span>`;
     } else {
       totalHargaText.textContent = jumlah > 0
         ? `Total: ${formatRupiah(total)}${isSingle ? ' (termasuk Single Supplement)' : ''}`
         : "Total: -";
 
-      depositInfoText.textContent = jumlah > 0 ? `Deposit 30%: ${formatRupiah(deposit)}` : "Deposit 30%: -";
+      depositInfoText.textContent = "Deposit: sesuai Proposal/Booking Confirmation paket ini.";
     }
   }
 
@@ -473,7 +472,6 @@
   const hargaSebelum = hargaAwal[paket];
   const hargaDiskon = isDiskonAktif ? hargaSebelum - diskonPerPax : hargaSebelum;
   const totalHarga = (hargaDiskon * jumlah) + (isSingle ? singleSupplement : 0);
-  const deposit = Math.round(totalHarga * 0.3);
   const kamar = isSingle ? "Permintaan kamar pribadi: ✅\\n" : "";
 
   const msg = `Halo Garuda Kiwi Tour! Saya ingin mendaftar tur South Island.
@@ -485,7 +483,7 @@ Paket: ${paket}
 Jumlah Peserta: ${jumlah}
 ${kamar}${isDiskonAktif ? `Harga setelah diskon: ${formatRupiah(hargaDiskon)} (Diskon aktif hingga 31 Juli)` : `Harga per pax: ${formatRupiah(hargaSebelum)}`}
 Total Harga: ${formatRupiah(totalHarga)}
-Deposit 30%: ${formatRupiah(deposit)}`;
+Deposit dan pelunasan: sesuai Proposal/Booking Confirmation paket ini.`;
 
   const url = `https://wa.me/6282154465074?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
@@ -555,11 +553,11 @@ Deposit 30%: ${formatRupiah(deposit)}`;
         <!-- Slide 2 -->
         <li class="splide__slide">
           <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
-            <img src="winter-queenstown.jpg" alt="Queenstown Winter" class="w-full h-40 object-cover">
+            <img src="queenstown-from-bob-s-peak.webp" alt="Pemandangan Queenstown dan pegunungan bersalju" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">6D5N Winter Wonderland</h3>
               <p class="text-gray-600 mb-4">Nikmati salju, ski, dan pemandangan Queenstown di musim dingin Selandia Baru.</p>
-              <a href="detail-winter.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+              <a href="detail-custom.html#custom-paket" class="text-blue-600 font-semibold hover:underline">Konsultasi Paket →</a>
             </div>
           </div>
         </li>
@@ -567,11 +565,11 @@ Deposit 30%: ${formatRupiah(deposit)}`;
         <!-- Slide 4 -->
         <li class="splide__slide">
           <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
-            <img src="adventure-coast.jpg" alt="South Coast Adventure" class="w-full h-40 object-cover">
+            <img src="south island-a.jpg" alt="Pemandangan Fiordland di South Island" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">7D6N South Coast Adventure</h3>
               <p class="text-gray-600 mb-4">Eksplorasi sisi liar NZ: dari Dunedin ke Catlins & pantai selatan yang dramatis.</p>
-              <a href="detail-southcoast.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+              <a href="detail-custom.html#custom-paket" class="text-blue-600 font-semibold hover:underline">Konsultasi Paket →</a>
             </div>
           </div>
         </li>
@@ -579,11 +577,11 @@ Deposit 30%: ${formatRupiah(deposit)}`;
         <!-- Slide 5 -->
         <li class="splide__slide">
           <div class="zoom-hover bg-white shadow-md rounded-lg overflow-hidden transition hover:shadow-xl hover:scale-[1.02] duration-300">
-            <img src="hobbiton-day.jpg" alt="Hobbiton Tour" class="w-full h-40 object-cover">
+            <img src="newzealand-hero.jpg" alt="Pemandangan New Zealand" class="w-full h-40 object-cover">
             <div class="p-4">
               <h3 class="text-lg font-semibold text-blue-800 mb-2">1D Hobbiton Day Escape</h3>
               <p class="text-gray-600 mb-4">Satu hari di dunia The Shire — cocok untuk fans Lord of the Rings!</p>
-              <a href="detail-hobbiton.html" class="text-blue-600 font-semibold hover:underline">Lihat Detail →</a>
+              <a href="detail-custom.html#custom-paket" class="text-blue-600 font-semibold hover:underline">Konsultasi Paket →</a>
             </div>
           </div>
         </li>
