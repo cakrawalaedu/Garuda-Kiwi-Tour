@@ -4,11 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#142b35" />
-    <title>South Island Open Trip · 17–24 May 2027 | Garuda Kiwi Tour</title>
+    <title>South Island Open Trip 17–24 May 2027 | Garuda Kiwi Tour</title>
     <meta
       name="description"
-      content="South Island Open Trip 17–24 May 2027: 8D6N, maximum 10 travellers, Qantas full-service dan Milford Sound Cruise. Early Access Rp30.500.000/pax untuk 4 travellers pertama dengan Reservation Payment terverifikasi."
+      content="South Island Open Trip 17–24 May 2027, 8D6N, maksimal 10 travellers. Qantas full-service, Sprinter, dan Milford Sound Cruise. Itinerary dan reservasi."
     />
+    <link
+      rel="canonical"
+      href="https://garudakiwitour.com/south-island-may-2027.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Garuda Kiwi Tour" />
+    <meta property="og:locale" content="id_ID" />
+    <meta
+      property="og:title"
+      content="South Island Open Trip 17–24 May 2027 | Garuda Kiwi Tour"
+    />
+    <meta
+      property="og:description"
+      content="South Island Open Trip 17–24 May 2027, 8D6N, maksimal 10 travellers. Qantas full-service, Sprinter, dan Milford Sound Cruise. Itinerary dan reservasi."
+    />
+    <meta
+      property="og:url"
+      content="https://garudakiwitour.com/south-island-may-2027.html"
+    />
+    <meta
+      property="og:image"
+      content="https://garudakiwitour.com/northsouth-hero2.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1333" />
+    <meta
+      property="og:image:alt"
+      content="Pegunungan dan pantulan air di Milford Sound, South Island"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="South Island Open Trip 17–24 May 2027 | Garuda Kiwi Tour"
+    />
+    <meta
+      name="twitter:description"
+      content="South Island Open Trip 17–24 May 2027, 8D6N, maksimal 10 travellers. Qantas full-service, Sprinter, dan Milford Sound Cruise. Itinerary dan reservasi."
+    />
+    <meta
+      name="twitter:image"
+      content="https://garudakiwitour.com/northsouth-hero2.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Pegunungan dan pantulan air di Milford Sound, South Island"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TouristTrip",
+        "@id": "https://garudakiwitour.com/south-island-may-2027.html#trip",
+        "name": "South Island Open Trip 17–24 May 2027",
+        "description": "Perjalanan South Island New Zealand selama 8D6N pada 17–24 May 2027, untuk grup maksimal 10 travellers. Rute Christchurch, Fairlie, Lake Tekapo, Lake Pukaki, Aoraki / Mount Cook, Wanaka, Queenstown, Arrowtown, Glenorchy, dan Milford Sound.",
+        "url": "https://garudakiwitour.com/south-island-may-2027.html",
+        "image": "https://garudakiwitour.com/northsouth-hero2.jpg",
+        "touristType": "Small group",
+        "provider": {
+          "@id": "https://garudakiwitour.com/#organization"
+        }
+      }
+    </script>
     <link rel="icon" type="image/png" href="Logo.png" />
     <link
       rel="preload"
@@ -30,6 +92,7 @@
       document.documentElement.classList.add("js");
     </script>
     <script src="assets/gkt-2027.js" defer></script>
+    <script src="assets/south-island-may-2027.js" defer></script>
   </head>
   <body class="campaign-page">
     <a class="skip-link" href="#main">Lewati navigasi</a>
@@ -1204,6 +1267,9 @@
           <div class="pdf-actions">
             <button
               class="button button-navy"
+              id="itinerary-pdf-link"
+              data-itinerary-pdf
+              data-pdf-filename="garuda-kiwi-tour-south-island-may-2027.pdf"
               type="button"
               disabled
               aria-describedby="pdf-status"
@@ -1249,13 +1315,212 @@
         </div>
       </section>
       <section
+        class="section reservation-form-section"
+        id="reservation-form"
+        aria-labelledby="reservation-form-title"
+      >
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">10 / Reservation Form</p>
+              <h2 id="reservation-form-title">Tell us who’s travelling.</h2>
+            </div>
+            <p>
+              Bagikan detail singkat perjalanan Anda. Tim akan menghubungi Anda
+              untuk membahas ketersediaan dan langkah reservasi berikutnya.
+            </p>
+          </div>
+          <div class="reservation-form-grid">
+            <div>
+              <form
+                class="contact-form"
+                id="nzmay-reservation-form"
+                action="https://formspree.io/f/mjkyejdg"
+                method="POST"
+                aria-describedby="reservation-seat-note"
+              >
+                <input
+                  type="hidden"
+                  name="source"
+                  value="NZMAY Reservation Form"
+                />
+                <input
+                  type="hidden"
+                  name="trip"
+                  value="South Island Open Trip 17–24 May 2027"
+                />
+                <div class="reservation-fields">
+                  <div class="field field-wide">
+                    <label for="reservation-name"
+                      >Full Name / Nama sesuai identitas
+                      <span aria-hidden="true">*</span></label
+                    >
+                    <input
+                      id="reservation-name"
+                      name="full_name"
+                      type="text"
+                      autocomplete="name"
+                      pattern=".*\S.*"
+                      required
+                      placeholder="Nama lengkap"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="reservation-whatsapp"
+                      >WhatsApp aktif <span aria-hidden="true">*</span></label
+                    >
+                    <input
+                      id="reservation-whatsapp"
+                      name="whatsapp"
+                      type="tel"
+                      inputmode="tel"
+                      autocomplete="tel"
+                      pattern="\+?[0-9](?: ?[0-9]){7,14}"
+                      minlength="8"
+                      maxlength="24"
+                      required
+                      placeholder="+62 821 5446 5074"
+                      title="Gunakan 8–15 angka, spasi, dan tanda + untuk kode negara; contoh +62 821 5446 5074."
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="reservation-email"
+                      >Email <span aria-hidden="true">*</span></label
+                    >
+                    <input
+                      id="reservation-email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      required
+                      placeholder="nama@email.com"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="reservation-count"
+                      >Jumlah peserta <span aria-hidden="true">*</span></label
+                    >
+                    <input
+                      id="reservation-count"
+                      name="participants"
+                      type="number"
+                      inputmode="numeric"
+                      min="1"
+                      max="10"
+                      step="1"
+                      value="1"
+                      required
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="reservation-travelling-as"
+                      >Travelling as <span aria-hidden="true">*</span></label
+                    >
+                    <select
+                      id="reservation-travelling-as"
+                      name="travelling_as"
+                      required
+                    >
+                      <option value="" disabled selected>Pilih / Choose</option>
+                      <option value="Solo">Solo</option>
+                      <option value="Couple">Couple</option>
+                      <option value="Family">Family</option>
+                      <option value="Friends">Friends</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="reservation-room"
+                      >Room Preference <span aria-hidden="true">*</span></label
+                    >
+                    <select
+                      id="reservation-room"
+                      name="room_preference"
+                      required
+                    >
+                      <option value="" disabled selected>Pilih / Choose</option>
+                      <option value="Twin Share">Twin Share</option>
+                      <option value="Double">Double</option>
+                      <option value="Single Room">Single Room</option>
+                    </select>
+                  </div>
+                  <div class="field field-wide">
+                    <label for="reservation-other-names"
+                      >Nama peserta lain
+                      <span class="olive">(optional)</span></label
+                    >
+                    <textarea
+                      id="reservation-other-names"
+                      name="other_participant_names"
+                      rows="2"
+                      placeholder="Jika sudah tersedia, pisahkan nama dengan baris baru."
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="reservation-checks">
+                  <label
+                    class="reservation-check"
+                    for="reservation-understanding"
+                  >
+                    <input
+                      id="reservation-understanding"
+                      type="checkbox"
+                      name="understands_seat_not_confirmed"
+                      value="yes"
+                      required
+                    />
+                    <span
+                      >Saya telah membaca informasi perjalanan dan memahami
+                      bahwa pengisian form ini belum mengonfirmasi seat.</span
+                    >
+                  </label>
+                  <label class="reservation-check" for="reservation-terms">
+                    <input
+                      id="reservation-terms"
+                      type="checkbox"
+                      name="has_read_specific_terms"
+                      value="yes"
+                      required
+                    />
+                    <span
+                      >Saya telah membaca
+                      <a
+                        href="terms-and-conditions-may-2027.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Terms &amp; Conditions South Island Open Trip May
+                        2027</a
+                      >.</span
+                    >
+                  </label>
+                </div>
+                <button class="button button-navy" type="submit">
+                  Submit reservation enquiry
+                </button>
+                <p
+                  class="form-status"
+                  id="reservation-form-status"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                ></p>
+              </form>
+              <p class="reservation-seat-note" id="reservation-seat-note">
+                Submitting this form does not confirm your seat. Seat is
+                confirmed only after the Reservation Payment Rp3.000.000/pax has
+                been verified by Garuda Kiwi Tour.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
         class="conversation-section campaign-reservation"
         id="reservation"
         aria-labelledby="reservation-title"
       >
         <div class="container conversation-inner">
           <div>
-            <p class="eyebrow">10 / Your South Island journey</p>
+            <p class="eyebrow">11 / Your South Island journey</p>
             <h2 id="reservation-title">
               A small group.<br /><em>A personal beginning.</em>
             </h2>
@@ -1307,7 +1572,8 @@
             ><a href="#pricing">Pricing</a
             ><a href="#included">Included / not included</a
             ><a href="#faq">FAQ</a
-            ><a href="#full-itinerary">Full Itinerary PDF status</a>
+            ><a href="#full-itinerary">Full Itinerary PDF status</a
+            ><a href="#reservation-form">Reservation Form</a>
           </nav>
           <nav aria-label="Garuda Kiwi Tour">
             <span class="footer-label">Explore GKT</span
@@ -1417,5 +1683,24 @@
         </p>
       </div>
     </footer>
+    <nav
+      class="mobile-reservation-cta"
+      aria-label="Reservasi perjalanan May 2027"
+    >
+      <a
+        class="button button-navy"
+        href="#reservation-form"
+        data-placement="mobile-sticky"
+        >Reserve</a
+      >
+      <a
+        class="button sticky-whatsapp"
+        href="https://wa.me/6282154465074?text=Halo%20GKT%2C%20saya%20tertarik%20South%20Island%20Open%20Trip%2017%E2%80%9324%20May%202027%20%28NZMAY%29.%20Mohon%20informasi%20ketersediaan%2C%20itinerary%2C%20dan%20skema%20reservasi."
+        data-placement="mobile-sticky"
+        target="_blank"
+        rel="noopener noreferrer"
+        >WhatsApp</a
+      >
+    </nav>
   </body>
 </html>

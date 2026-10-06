@@ -818,3 +818,116 @@
     transition: none;
   }
 }
+
+/* Reservation additions use the existing page typography and palette. */
+.reservation-form-grid {
+  display: grid;
+  gap: 32px;
+  align-items: start;
+}
+.reservation-form-section .section-heading {
+  margin-bottom: 32px;
+}
+.reservation-form-section .contact-form {
+  min-width: 0;
+}
+.reservation-fields {
+  display: grid;
+  gap: 22px;
+}
+.reservation-form-section .field select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-bottom: 1px solid #bec6bb;
+  border-radius: 0;
+  padding: 12px 4px 12px 0;
+  background: transparent;
+  color: var(--ink);
+  font: 16px/1.7 var(--sans);
+  min-height: 48px;
+}
+.reservation-form-section select:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 5px;
+}
+.reservation-form-section textarea {
+  min-height: 78px;
+}
+.reservation-checks {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.reservation-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+  cursor: pointer;
+}
+.reservation-check input {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 3px 0 0;
+  accent-color: var(--navy);
+}
+.reservation-check a,
+.reservation-seat-note a {
+  border-bottom: 1px solid var(--gold);
+}
+.reservation-seat-note {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #56645f;
+}
+.reservation-form-section .form-status {
+  font-size: 12px;
+}
+.mobile-reservation-cta {
+  display: none;
+}
+@media (min-width: 600px) {
+  .reservation-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .reservation-fields .field-wide {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 899px) {
+  .campaign-page {
+    --mobile-cta-space: calc(80px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: var(--mobile-cta-space);
+  }
+  .campaign-page :is(input, select, textarea, button, a) {
+    scroll-margin-bottom: var(--mobile-cta-space);
+  }
+  .mobile-reservation-cta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 19;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: var(--ivory);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -4px 18px rgb(20 43 53 / 6%);
+  }
+  .mobile-reservation-cta .button {
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px;
+  }
+  .mobile-reservation-cta .sticky-whatsapp {
+    background: var(--paper);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+}

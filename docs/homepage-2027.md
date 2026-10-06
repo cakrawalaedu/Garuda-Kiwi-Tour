@@ -39,6 +39,14 @@ WhatsApp tetap `https://wa.me/6282154465074`, Instagram tetap `https://instagram
 
 Tautan T&C pada Featured Journey May 2027 menuju `terms-and-conditions-may-2027.html`; tautan pada form kontak umum dan footer tetap menuju `terms-and-conditions.html`. T&C umum tidak menetapkan harga, deposit, tanggal pembayaran, atau aturan May 2027 bagi produk lain; Proposal/Booking Confirmation perjalanan terkait menjadi acuan. Pemisahan ini hanya mengganti satu href pada homepage; file backup tidak berubah. Rincian audit ada di `docs/terms-architecture.md`.
 
+## SEO dan social sharing
+
+Homepage memakai canonical `https://garudakiwitour.com/`, title/description yang deskriptif, Open Graph dan Twitter `summary_large_image`. Social preview memakai foto JPEG existing `hero2-mountain.jpg` melalui URL absolut `https://garudakiwitour.com/hero2-mountain.jpg`; tidak ada foto baru dibuat. File 4800×3200, sekitar 3,54 MB, tetap utuh.
+
+JSON-LD minimal `TravelAgency` memakai nama, website, Instagram, email, telepon, dan alamat Pontianak yang diberikan pengguna. Tidak ada rating, review, geo, postal code, atau jam operasional yang dibuat. Perubahan SEO hanya di HEAD; body homepage dan form kontak tetap.
+
+`robots.txt` mempertahankan crawling halaman/aset publik dan mengecualikan backup, `/docs/`, serta legacy HTML `style.css`. `sitemap.xml` memuat 15 URL publik aktif; empat URL utama diikuti halaman private/family/custom, blog, dan artikel. Backup, docs, aset, dan paket bertanggal 2026 tidak dimasukkan. Halaman lama tidak dihapus atau diberi noindex massal. URL absolut mengacu pada domain deploy; validasi lokal memeriksa file checkout, bukan mengklaim production sudah diperbarui.
+
 ## Menjalankan
 
 Dari root proyek: `python3 -m http.server 8000 --bind 127.0.0.1`. Validasi HTTP akhir memeriksa 67 sumber daya lokal unik, semuanya cocok dengan isi checkout tanpa 404; seluruh fragment lokal tersedia dan backup identik dengan baseline. Pemeriksaan Chromium pada lebar 320, 390, 768, 900, dan 1440 px lolos tanpa overflow atau error JavaScript/request. Tiga font lokal terdaftar dan termuat; seluruh sembilan instance gambar termuat. Menu mobile, Escape, penutupan setelah navigasi, navigasi tanpa JavaScript, dan reduced motion berfungsi. Form memblokir field wajib/email tidak valid; simulasi sukses mengosongkan input, sedangkan simulasi HTTP/network failure mempertahankan input dan mengaktifkan tombol kembali. Tidak ada pesan sungguhan yang dikirim.

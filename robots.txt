@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /index.pre-2027.html
+Disallow: /docs/
+Disallow: /style.css
+
+Sitemap: https://garudakiwitour.com/sitemap.xml
