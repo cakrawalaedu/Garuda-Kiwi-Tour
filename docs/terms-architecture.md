@@ -34,7 +34,7 @@ Harga, promo, tanggal, jumlah peserta terkait harga, single supplement, dan desa
 ## Validasi 6 Oktober 2026
 
 - 19 HTML, 4 CSS, dan 375 referensi lokal diaudit: seluruh 70 resource unik HTTP 200 dan byte-identical dengan checkout; 177 fragment valid; tidak ada 404/path/kapitalisasi gagal.
-- Homepage hanya berbeda satu href; landing page hanya berbeda tujuh href. T&C spesifik, backup, custom, dan tiga campaign 2026 identik dengan baseline terkait; tidak ada halaman lama dihapus.
+- Perubahan fungsional homepage hanya satu href; landing page hanya tujuh href. Formatter menyesuaikan pemenggalan baris tautan yang menjadi lebih panjang. T&C spesifik, backup, custom, dan tiga campaign 2026 identik dengan baseline terkait; tidak ada halaman lama dihapus.
 - Chromium: T&C umum tanpa overflow/error pada 320, 390, 768, dan 1440 px; file T&C spesifik baru termuat pada 390 px. Gambar/font lokal, menu, Escape, serta navigasi tanpa JavaScript berfungsi.
 - Klik Featured membuka T&C spesifik; form/footer tetap umum; link payment landing page membuka tabel spesifik; listing T&C umum membuka halaman spesifik dengan label yang diminta.
 - 14 blok JavaScript legacy lolos sintaks; 12 skenario pricing mempertahankan harga/total/minimum peserta/single supplement. Catatan deposit dan template WhatsApp netral, tanpa DP 30%. Tidak ada pesan sungguhan dikirim.
