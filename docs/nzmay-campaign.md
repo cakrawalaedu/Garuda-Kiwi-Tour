@@ -18,9 +18,11 @@ Makanan/minuman pribadi, visa NZ dan assistance, visa transit Australia bila dib
 
 ## PDF dan T&C
 
-Belum ada PDF khusus perjalanan Mei 2027. Ketiga PDF di repositori adalah dokumen 2026 dan tidak ditautkan sebagai dokumen 2027. Tombol `View Full Itinerary PDF` dinonaktifkan, disertai keterangan bahwa PDF belum tersedia, serta tautan menuju itinerary di halaman ini. Tidak dibuat file PDF fiktif atau URL unduhan yang menghasilkan 404.
+PDF final unggahan pengguna tersedia di root sebagai `garuda-kiwi-tour-south-island-may-2027.pdf`: 2.090.261 bytes, 8 halaman, judul `Garuda Kiwi Tour - South Island 17-24 May 2027`. Dokumen disimpan byte-identical tanpa mengubah isi, gambar, atau layout; SHA-256 `f34fe01c0e6a3050e769db1365f103e98d1cae0b397c2f589892b3e32d6a7b4a`. PDF perjalanan 2026 tetap dipertahankan dan tidak digunakan sebagai itinerary 2027.
 
-Filename final yang disiapkan adalah `garuda-kiwi-tour-south-island-may-2027.pdf` di root. Tombol disabled menyimpan nama tersebut dalam `data-pdf-filename`; tidak ada href atau request ke file yang belum tersedia. Setelah PDF final benar-benar di-upload, ganti tombol dengan anchor aktif sesuai langkah di `docs/tracking-setup.md` dan perbarui status PDF. `terms-and-conditions-may-2027.html` kini memuat T&C khusus keberangkatan 17–24 May 2027, memakai font/style dasar yang sama dengan tambahan scoped stylesheet `assets/terms-2027.css`. Konten spesifik disalin identik dari versi T&C pada commit `fbe13a0`; ketujuh tautan T&C lama landing page menuju file spesifik tersebut dengan fragment semula. Form reservation menambahkan satu tautan T&C spesifik lagi. `terms-and-conditions.html` menjadi halaman umum yang mengacu ke Proposal/Booking Confirmation per perjalanan. Task pemisahan T&C hanya mengubah href Featured Journey. Task conversion/SEO berikutnya menambahkan metadata, form, dan CTA mobile; desain yang sudah jadi tetap. Audit pemisahan ada di `docs/terms-architecture.md`.
+`View Full Itinerary PDF` kini berupa anchor aktif `#itinerary-pdf-link` dengan `href="garuda-kiwi-tour-south-island-may-2027.pdf"`, `data-itinerary-pdf`, dan `data-pdf-filename` yang sesuai. PDF dibuka pada tab baru dengan `target="_blank"` dan `rel="noopener noreferrer"`; copy ketersediaan menggantikan status unavailable. Hook `DownloadItinerary` existing memancarkan event klik lokal tanpa perubahan JavaScript tracking atau pemasangan tracker. Kontrak link/event, identitas file, dan langkah untuk revisi dokumen berikutnya tercatat di `docs/tracking-setup.md`. Sitemap tetap berisi 16 URL halaman publik; PDF tersedia melalui landing page dan tidak perlu dimasukkan ke sitemap.
+
+`terms-and-conditions-may-2027.html` kini memuat T&C khusus keberangkatan 17–24 May 2027, memakai font/style dasar yang sama dengan tambahan scoped stylesheet `assets/terms-2027.css`. Konten spesifik disalin identik dari versi T&C pada commit `fbe13a0`; ketujuh tautan T&C lama landing page menuju file spesifik tersebut dengan fragment semula. Form reservation menambahkan satu tautan T&C spesifik lagi. `terms-and-conditions.html` menjadi halaman umum yang mengacu ke Proposal/Booking Confirmation per perjalanan. Task pemisahan T&C hanya mengubah href Featured Journey. Task conversion/SEO berikutnya menambahkan metadata, form, dan CTA mobile; desain yang sudah jadi tetap. Audit pemisahan ada di `docs/terms-architecture.md`.
 
 Milestone pembayaran: Reservation Rp3.000.000/pax, Payment 2 pada 30 November 2026, Payment 3 pada 15 January 2027, Payment 4 pada 28 February 2027, dan Final Payment pada 2 April 2027. Tanggal berlaku untuk Early Access dan harga normal, dengan total sesuai harga paket. Reservasi kurang dari 14 hari sebelum milestone berikutnya dapat melewati milestone itu dan membagi sisa pembayaran ke milestone berikutnya. Up to 5x bukan jaminan lima pembayaran untuk setiap peserta; Booking Confirmation menjadi acuan final individual.
 
@@ -42,7 +44,7 @@ Sticky CTA `Reserve` / `WhatsApp` tampil pada lebar di bawah 900 px. Reserve men
 
 Canonical landing page adalah `https://garudakiwitour.com/south-island-may-2027.html`. OG/Twitter memakai JPEG existing `northsouth-hero2.jpg` (2000×1333, sekitar 0,48 MB) melalui URL absolut pada domain tersebut. JSON-LD minimal `TouristTrip` hanya memuat nama, tanggal/durasi/rute pada deskripsi, URL, foto, small group, dan provider GKT; tidak ada availability, rating, review, hotel name, flight number, atau offer yang dibuat.
 
-Lima event lokal `gkt:conversion` menyiapkan integrasi tracking, tanpa library analytics/ID dummy atau request tracking. Trigger dan adapter untuk ViewMay2027, DownloadItinerary, ClickWhatsApp, StartReservation, dan SubmitReservation dijelaskan di `docs/tracking-setup.md`. PDF final, endpoint reservation khusus bila diinginkan, serta ID Meta Pixel/GA4 masih menunggu tim; endpoint saat ini sesuai brief pengguna.
+Lima event lokal `gkt:conversion` menyiapkan integrasi tracking, tanpa library analytics/ID dummy atau request tracking. Trigger dan adapter untuk ViewMay2027, DownloadItinerary, ClickWhatsApp, StartReservation, dan SubmitReservation dijelaskan di `docs/tracking-setup.md`. Endpoint reservation khusus bila diinginkan serta ID Meta Pixel/GA4 masih menunggu tim; endpoint saat ini sesuai brief pengguna. PDF final telah tersedia dan ditautkan.
 
 ## Foto dan penggantian nanti
 
@@ -57,7 +59,9 @@ Tidak ada foto baru yang dibuat. Foto destinasi bukan bukti kondisi Mei 2027 ata
 
 Homepage kini mengarahkan CTA Featured Journey, kartu Open Trip, dan tautan footer Mei 2027 ke landing page baru. `index.pre-2027.html` dan seluruh halaman lama dipertahankan.
 
-## Validasi
+## Riwayat validasi T&C — 5 Oktober 2026
+
+Catatan berikut merekam validasi sebelum PDF final diunggah dan diaktifkan. Status PDF pada catatan historis ini bukan status ketersediaan saat ini.
 
 Validasi T&C dan landing page pada 5 October 2026: server statis Python melayani seluruh 18 halaman HTML dan 69 resource lokal unik, semuanya HTTP 200 dan byte-identical dengan checkout. Audit 357 referensi lokal mencakup 4 CSS (termasuk legacy `style.css`); seluruh 166 fragment link valid. Tidak ada 404 atau kesalahan kapitalisasi/path. Homepage `index.html` dan backup tidak berubah dibanding `a3341ae`; SHA-256 backup tetap `95a1e8c5cacc4d4e398ef640c85f882f07df567325a95cc69dc72daf15d61b1e`. Tidak ada halaman lama yang dihapus.
 
@@ -65,21 +69,21 @@ Chromium pada 320, 390, 768, 900, dan 1440 px: Terms dan landing page tanpa over
 
 Tanggal milestone dan nominal Reservation Payment pada tabel cocok dengan brief; nominal empat milestone berikutnya hanya mengacu ke Booking Confirmation. Review konten memeriksa konfirmasi seat, Early Access, up to 5x, aturan kurang dari 14 hari, visa, refund vendor, musim/track, tanggung jawab, dan dokumentasi. Tidak ada DP 50% atau persentase penalti pada landing page May 2027 maupun Terms. Homepage dan struktur/desain landing page tidak dirancang ulang.
 
-PDF tetap nonaktif dan tidak menautkan dokumen 2026. Semua enquiry WhatsApp pada landing page tetap membawa NZMAY. Tidak ada pesan yang dikirim sungguhan. Pemeriksaan sintaks JavaScript dan `git diff --check` lolos. Validasi form homepage sebelumnya tetap tercatat pada `docs/homepage-2027.md`; form tidak berubah dalam task T&C ini.
+Pada validasi T&C tanggal 5 Oktober 2026, PDF masih nonaktif dan tidak menautkan dokumen 2026. Semua enquiry WhatsApp pada landing page saat itu tetap membawa NZMAY. Tidak ada pesan yang dikirim sungguhan. Pemeriksaan sintaks JavaScript dan `git diff --check` lolos. Validasi form homepage sebelumnya tetap tercatat pada `docs/homepage-2027.md`; form tidak berubah dalam task T&C ini.
 
-## Validasi conversion readiness dan SEO — 6 Oktober 2026
+## Riwayat validasi conversion readiness dan SEO — 6 Oktober 2026 (sebelum aktivasi PDF)
 
 Homepage dan landing page lolos Chromium pada 320, 390, 768, 900, dan 1440 px tanpa overflow, error console/JavaScript, atau failed local request. Sticky CTA tampil di bawah 900 px, mempunyai touch target 48 px, Reserve menuju form, dan footer tetap dapat terlihat di atas bar. Screenshot form/sticky mempertahankan palet dan typography halaman. Body homepage tetap byte-identical dengan baseline `065fecb`; perubahan homepage hanya metadata HEAD.
 
 Empat belas skenario input invalid diblokir tanpa POST. Mock Formspree sukses, HTTP 422, network failure, dan pending/submit ganda lulus: payload memuat metadata dan dua acknowledgement, nama ditrim, sukses menampilkan pesan exact dan mereset form, error mempertahankan data, dan pending hanya menghasilkan satu request. Optional names boleh kosong. No-JS native form diblokir saat invalid dan payload valid diuji memakai respons simulasi. Batas nomor WhatsApp native diselaraskan menjadi 8–15 angka; delapan skenario valid/invalid tanpa JavaScript lulus. Tidak ada submission Formspree atau pesan WhatsApp sungguhan.
 
-Event View/Start hanya sekali per load, Submit hanya saat sukses, dan ClickWhatsApp diuji dengan navigasi dicegah. Event payload tidak memuat PII. Hook DownloadItinerary diuji dengan anchor simulasi di DOM browser saja, tanpa membuat PDF atau meminta URL file yang belum tersedia; tombol di repository tetap disabled.
+Event View/Start hanya sekali per load, Submit hanya saat sukses, dan ClickWhatsApp diuji dengan navigasi dicegah. Event payload tidak memuat PII. Pada tahap validasi ini, hook DownloadItinerary diuji dengan anchor simulasi di DOM browser saja, tanpa membuat PDF atau meminta URL file yang belum tersedia; tombol di repository saat itu masih disabled.
 
 Audit seluruh 19 HTML dan 4 CSS memeriksa 409 referensi, termasuk 30 URL production yang dipetakan ke checkout: 73 resource unik HTTP 200 dan byte-identical, 179 fragment HTML valid, tanpa 404. Canonical, OG/Twitter, JSON-LD TravelAgency/TouristTrip, robots, dan sitemap XML 15 URL unik lulus. Alamat schema berasal dari brief pengguna. JSON-LD tidak memuat rating/review/availability/flight number/hotel name atau offer yang belum dikonfirmasi.
 
-Backup, kedua file T&C, halaman custom, dan tiga produk bertanggal 2026 tetap utuh; tidak ada file lama dihapus atau noindex massal. Pemeriksaan format file yang diubah, sintaks JavaScript, dan `git diff --check` lulus. PDF final serta ID tracking sebenarnya masih TBC; endpoint reservation khusus opsional karena endpoint website dipakai sesuai instruksi.
+Backup, kedua file T&C, halaman custom, dan tiga produk bertanggal 2026 tetap utuh; tidak ada file lama dihapus atau noindex massal. Pemeriksaan format file yang diubah, sintaks JavaScript, dan `git diff --check` lulus. Pada tahap validasi historis ini, PDF final dan ID tracking sebenarnya belum tersedia. Status terkini: PDF final sudah diaktifkan; ID tracking masih menunggu tim. Endpoint reservation khusus tetap opsional karena endpoint website dipakai sesuai instruksi.
 
-## Validasi final conversion polish — 6 Oktober 2026
+## Riwayat validasi final conversion polish — 6 Oktober 2026 (sebelum aktivasi PDF)
 
 Dua puluh pemeriksaan nomor WhatsApp (10 dengan JavaScript dan 10 native tanpa JavaScript) lulus: empat format yang diminta pengguna, batas 7/8/15/16 digit, penolakan huruf, serta format dengan separator yang panjangnya melebihi 24 karakter. Mock POST untuk format valid mempertahankan nomor mentah persis seperti input. Simulasi HTTP 422 dan network failure mempertahankan data serta mengaktifkan tombol kembali. Tidak ada submission Formspree sungguhan.
 
@@ -89,4 +93,12 @@ Homepage, landing page dan Privacy Policy lolos pada 320, 390, 768, 900, dan 144
 
 Tiga belas kondisi field invalid diuji masing-masing dengan dan tanpa JavaScript (26 kasus); field wajib, email, jumlah peserta, pilihan dan acknowledgement menahan POST. Respons sukses simulasi menampilkan pesan exact, mereset field/checkbox, mempertahankan hidden source/trip, dan mengaktifkan tombol kembali.
 
-Audit terkini memeriksa 20 HTML dan 4 CSS, 425 referensi termasuk 32 URL production yang dipetakan ke checkout, 74 resource unik HTTP 200/byte-identical, dan 182 fragment valid. Tidak ada 404 atau kesalahan kapitalisasi/path. Sitemap valid dengan 16 URL termasuk Privacy Policy; robots, metadata SEO, JSON-LD, dan routing T&C tetap benar. Homepage hanya menambahkan link privacy pada footer dibanding `be4a403`; stylesheet dan desain tidak berubah. Backup, kedua T&C, dan halaman lama tetap utuh; tidak ada tracker/ID dummy atau file PDF baru.
+Audit pada tahap final conversion polish memeriksa 20 HTML dan 4 CSS, 425 referensi termasuk 32 URL production yang dipetakan ke checkout, 74 resource unik HTTP 200/byte-identical, dan 182 fragment valid. Tidak ada 404 atau kesalahan kapitalisasi/path. Sitemap valid dengan 16 URL termasuk Privacy Policy; robots, metadata SEO, JSON-LD, dan routing T&C tetap benar. Homepage hanya menambahkan link privacy pada footer dibanding `be4a403`; stylesheet dan desain tidak berubah. Pada tahap final conversion polish tersebut, backup, kedua T&C, dan halaman lama tetap utuh; tidak ada tracker/ID dummy atau file PDF baru.
+
+## Aktivasi PDF final
+
+PDF final unggahan pengguna kini menjadi sumber unduhan pada landing page, sesuai filename dan SHA-256 di bagian PDF di atas. Dokumen 2026, backup homepage, T&C, dan halaman lama dipertahankan. Aktivasi hanya mengubah tautan/status PDF pada halaman serta menambahkan file final; sitemap dan JavaScript tracking existing tetap.
+
+Validasi aktivasi pada 6 Oktober 2026: GET PDF mengembalikan HTTP 200, `Content-Type: application/pdf`, dan 2.090.261 byte yang identik dengan lampiran, termasuk SHA-256. Klik link desktop/mobile, klik ikon SVG, Enter, serta fallback tanpa JavaScript membuka PDF pada tab baru. Setiap klik dengan JavaScript memicu tepat satu event lokal `DownloadItinerary` dengan trip/source yang sesuai dan tanpa data pribadi; tidak ada tracker baru yang dipasang.
+
+Landing page lolos pada 320, 390, 768, 900, dan 1440 px tanpa overflow atau CTA mobile menutupi link. Copy PDF unavailable sudah diganti. Tidak ada error console/JavaScript atau respons lokal gagal. Audit 20 HTML dan 4 CSS memeriksa 426 referensi, 75 resource unik HTTP 200/byte-identical, dan 182 fragment valid: tidak ada 404 atau broken link. Sitemap 16 URL tetap; homepage, backup, kedua T&C, Reservation Form, JavaScript, styles, dan tiga PDF lama tidak berubah dibanding `d24d9df`. Pemeriksaan format dan `git diff --check` lulus. Tidak ada submission Formspree atau pesan WhatsApp sungguhan.
