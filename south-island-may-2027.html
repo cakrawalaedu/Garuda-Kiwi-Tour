@@ -1375,12 +1375,10 @@
                       type="tel"
                       inputmode="tel"
                       autocomplete="tel"
-                      pattern="\+?[0-9](?: ?[0-9]){7,14}"
-                      minlength="8"
-                      maxlength="24"
+                      pattern=" *\+?(?=(?:[ \-]*[0-9]){8,15}[ \-]*$)[0-9 \-]+"
                       required
                       placeholder="+62 821 5446 5074"
-                      title="Gunakan 8–15 angka, spasi, dan tanda + untuk kode negara; contoh +62 821 5446 5074."
+                      title="Gunakan total 8–15 angka. Spasi, tanda hubung, dan tanda + untuk kode negara diperbolehkan."
                     />
                   </div>
                   <div class="field">
@@ -1435,6 +1433,7 @@
                     <select
                       id="reservation-room"
                       name="room_preference"
+                      aria-describedby="reservation-room-note"
                       required
                     >
                       <option value="" disabled selected>Pilih / Choose</option>
@@ -1442,6 +1441,11 @@
                       <option value="Double">Double</option>
                       <option value="Single Room">Single Room</option>
                     </select>
+                    <p class="season-note" id="reservation-room-note">
+                      Room preference is subject to availability. Single Room
+                      may involve an additional supplement, which will be
+                      confirmed before reservation.
+                    </p>
                   </div>
                   <div class="field field-wide">
                     <label for="reservation-other-names"
@@ -1508,6 +1512,10 @@
                 Submitting this form does not confirm your seat. Seat is
                 confirmed only after the Reservation Payment Rp3.000.000/pax has
                 been verified by Garuda Kiwi Tour.
+              </p>
+              <p class="form-note">
+                Informasi penggunaan data form tersedia di
+                <a href="privacy-policy.html">Privacy Policy</a>.
               </p>
             </div>
           </div>
@@ -1583,6 +1591,7 @@
             ><a href="terms-and-conditions-may-2027.html"
               >Terms &amp; Conditions</a
             >
+            <a href="privacy-policy.html">Privacy Policy</a>
           </nav>
           <nav aria-label="Kontak dan media sosial">
             <span class="footer-label">Connect</span

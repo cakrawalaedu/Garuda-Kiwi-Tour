@@ -32,6 +32,10 @@ Nominal Payment 2–Final Payment belum diberikan dalam brief dan ditampilkan se
 
 Section `#reservation-form` memuat form `#nzmay-reservation-form` dengan enam field wajib (full name, WhatsApp, email, jumlah peserta, travelling as, room preference), nama peserta lain optional, dan dua checkbox wajib. Jumlah peserta 1–10 mengikuti batas grup yang sudah dikonfirmasi; preferensi kamar dibahas bersama tim. Hidden fields `source` dan `trip` membedakan enquiry dari form kontak homepage. Endpoint Formspree website tetap dipakai; tidak ada payment gateway atau field kartu.
 
+WhatsApp menerima empat format umum yang diberikan pengguna, termasuk spasi dan tanda hubung. Validasi menghitung total 8–15 digit, tetap mempertahankan input/payload asli, dan tersedia tanpa JavaScript. Room Preference tetap Twin Share / Double / Single Room, dengan keterangan bahwa pilihan mengikuti ketersediaan dan Single Room mungkin memerlukan supplement yang dikonfirmasi sebelum reservasi, tanpa nominal baru.
+
+`privacy-policy.html` memakai style dokumen website yang tersedia. Copy hanya mencakup penggunaan data contact/reservation untuk enquiry, reservasi dan komunikasi perjalanan; data tidak dijual kepada pengiklan; form saat ini diproses melalui Formspree; dan email untuk pertanyaan, koreksi atau permintaan terkait data. Link tersedia di footer homepage, footer landing page, dan dekat form reservasi. Halaman publik ini juga masuk sitemap; tidak dibuat retention period atau kebijakan hukum tambahan.
+
 Pesan setelah form menegaskan bahwa submission tidak mengonfirmasi seat; Reservation Payment Rp3.000.000/pax harus diverifikasi GKT. JavaScript menampilkan acknowledgement sukses yang diminta pengguna, memblokir submit ganda saat pending, dan mempertahankan input saat gagal. Tanpa JavaScript, native POST dan validasi HTML tetap tersedia.
 
 Sticky CTA `Reserve` / `WhatsApp` tampil pada lebar di bawah 900 px. Reserve menuju form; WhatsApp memakai pesan NZMAY existing. Body menyediakan ruang bawah 80 px + safe-area, dan field/link mempunyai scroll margin agar footer serta interaksi form tetap dapat dijangkau.
@@ -74,3 +78,15 @@ Event View/Start hanya sekali per load, Submit hanya saat sukses, dan ClickWhats
 Audit seluruh 19 HTML dan 4 CSS memeriksa 409 referensi, termasuk 30 URL production yang dipetakan ke checkout: 73 resource unik HTTP 200 dan byte-identical, 179 fragment HTML valid, tanpa 404. Canonical, OG/Twitter, JSON-LD TravelAgency/TouristTrip, robots, dan sitemap XML 15 URL unik lulus. Alamat schema berasal dari brief pengguna. JSON-LD tidak memuat rating/review/availability/flight number/hotel name atau offer yang belum dikonfirmasi.
 
 Backup, kedua file T&C, halaman custom, dan tiga produk bertanggal 2026 tetap utuh; tidak ada file lama dihapus atau noindex massal. Pemeriksaan format file yang diubah, sintaks JavaScript, dan `git diff --check` lulus. PDF final serta ID tracking sebenarnya masih TBC; endpoint reservation khusus opsional karena endpoint website dipakai sesuai instruksi.
+
+## Validasi final conversion polish — 6 Oktober 2026
+
+Dua puluh pemeriksaan nomor WhatsApp (10 dengan JavaScript dan 10 native tanpa JavaScript) lulus: empat format yang diminta pengguna, batas 7/8/15/16 digit, penolakan huruf, serta format dengan separator yang panjangnya melebihi 24 karakter. Mock POST untuk format valid mempertahankan nomor mentah persis seperti input. Simulasi HTTP 422 dan network failure mempertahankan data serta mengaktifkan tombol kembali. Tidak ada submission Formspree sungguhan.
+
+Keterangan Room Preference tampil dengan copy exact yang diminta dan terhubung melalui `aria-describedby`; ketiga opsi tetap dan tidak ada nominal supplement baru. Ketiga link Privacy Policy (footer homepage, footer landing page, dekat form) membuka halaman HTTP 200. Privacy Policy hanya memuat informasi yang diberikan pengguna.
+
+Homepage, landing page dan Privacy Policy lolos pada 320, 390, 768, 900, dan 1440 px tanpa overflow. Menu, Escape/fokus, navigasi tanpa JavaScript, gambar dan font yang digunakan lulus. Sticky CTA tampil pada tiga lebar di bawah 900 px; Reserve/keyboard menuju nama peserta, tombol submit dan footer dapat terlihat di atas bar. Screenshot mobile memperlihatkan keterangan kamar terbaca dengan style form yang sama. Tidak ada error JavaScript atau local HTTP failure; console error dari dua mock kegagalan Formspree adalah hasil simulasi yang disengaja.
+
+Tiga belas kondisi field invalid diuji masing-masing dengan dan tanpa JavaScript (26 kasus); field wajib, email, jumlah peserta, pilihan dan acknowledgement menahan POST. Respons sukses simulasi menampilkan pesan exact, mereset field/checkbox, mempertahankan hidden source/trip, dan mengaktifkan tombol kembali.
+
+Audit terkini memeriksa 20 HTML dan 4 CSS, 425 referensi termasuk 32 URL production yang dipetakan ke checkout, 74 resource unik HTTP 200/byte-identical, dan 182 fragment valid. Tidak ada 404 atau kesalahan kapitalisasi/path. Sitemap valid dengan 16 URL termasuk Privacy Policy; robots, metadata SEO, JSON-LD, dan routing T&C tetap benar. Homepage hanya menambahkan link privacy pada footer dibanding `be4a403`; stylesheet dan desain tidak berubah. Backup, kedua T&C, dan halaman lama tetap utuh; tidak ada tracker/ID dummy atau file PDF baru.

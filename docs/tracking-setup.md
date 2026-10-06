@@ -31,6 +31,10 @@ Form `#nzmay-reservation-form` berada dalam section `#reservation-form`. Endpoin
 
 Dua checkbox wajib menjelaskan bahwa form belum mengonfirmasi seat dan mengarahkan ke T&C May 2027. Pesan sukses adalah enquiry acknowledgement; Reservation Payment Rp3.000.000/pax masih harus diverifikasi GKT untuk konfirmasi seat. Tanpa JavaScript, form memakai native POST dengan validasi HTML. Jangan melakukan submission sungguhan saat QA; intercept endpoint dengan respons simulasi sebelum halaman dibuka.
 
+Validasi WhatsApp menerima angka dengan spasi, tanda hubung, dan tanda `+` di awal untuk kode negara, misalnya `082154465074`, `0821 5446 5074`, `0821-5446-5074`, atau `+62 821 5446 5074`. Batas 8–15 berlaku pada jumlah digit, bukan panjang string. Validasi HTML dan JavaScript mempertahankan nomor persis seperti input pengguna; tidak ada normalisasi pada field atau payload Formspree.
+
+Pilihan kamar tetap Twin Share / Double / Single Room. Keterangan terhubung melalui `aria-describedby` menjelaskan bahwa preferensi mengikuti ketersediaan dan single room dapat memerlukan supplement yang dikonfirmasi sebelum reservasi; nominal belum ditetapkan. Privacy Policy tersedia di `privacy-policy.html`, footer homepage/landing page, dan dekat form reservasi. Halaman ini hanya menjelaskan penggunaan data form, pemrosesan melalui Formspree, tidak dijual kepada pengiklan, serta kontak email untuk pertanyaan/koreksi/permintaan data.
+
 ## Mengaktifkan PDF final nanti
 
 Audit repository hanya menemukan tiga PDF perjalanan 2026. File final `garuda-kiwi-tour-south-island-may-2027.pdf` belum tersedia; tidak ada request ke filename yang belum ada.

@@ -45,7 +45,9 @@ Homepage memakai canonical `https://garudakiwitour.com/`, title/description yang
 
 JSON-LD minimal `TravelAgency` memakai nama, website, Instagram, email, telepon, dan alamat Pontianak yang diberikan pengguna. Tidak ada rating, review, geo, postal code, atau jam operasional yang dibuat. Perubahan SEO hanya di HEAD; body homepage dan form kontak tetap.
 
-`robots.txt` mempertahankan crawling halaman/aset publik dan mengecualikan backup, `/docs/`, serta legacy HTML `style.css`. `sitemap.xml` memuat 15 URL publik aktif; empat URL utama diikuti halaman private/family/custom, blog, dan artikel. Backup, docs, aset, dan paket bertanggal 2026 tidak dimasukkan. Halaman lama tidak dihapus atau diberi noindex massal. URL absolut mengacu pada domain deploy; validasi lokal memeriksa file checkout, bukan mengklaim production sudah diperbarui.
+Final conversion polish menambahkan link `privacy-policy.html` pada footer. Form kontak dan desain tetap; halaman privacy memakai style dokumen yang tersedia dan hanya menjelaskan penggunaan data, Formspree, tidak dijual kepada pengiklan, serta kontak email untuk permintaan terkait data.
+
+`robots.txt` mempertahankan crawling halaman/aset publik dan mengecualikan backup, `/docs/`, serta legacy HTML `style.css`. `sitemap.xml` memuat 16 URL publik aktif; empat URL utama diikuti halaman private/family/custom, blog, artikel, dan Privacy Policy. Backup, docs, aset, dan paket bertanggal 2026 tidak dimasukkan. Halaman lama tidak dihapus atau diberi noindex massal. URL absolut mengacu pada domain deploy; validasi lokal memeriksa file checkout, bukan mengklaim production sudah diperbarui.
 
 ## Menjalankan
 

@@ -59,6 +59,7 @@
 
   const phone = form.elements.namedItem("whatsapp");
   const validatePhone = () => {
+    // Count digits for validation only; preserve the original input and payload.
     const digits = phone.value.replace(/\D/g, "");
     phone.setCustomValidity(
       phone.value && (digits.length < 8 || digits.length > 15)
